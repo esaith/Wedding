@@ -1,0 +1,64 @@
+.nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 75px;
+  text-transform: uppercase;
+  background-color: white;
+  z-index: 99;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  letter-spacing: 0.1em;
+
+  div {
+    padding: 10px;
+    cursor: pointer;
+    color: #222;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0 20px;
+    border-bottom: 3px solid transparent;
+
+    &:hover {
+      border-bottom: 3px solid black;
+    }
+  }
+}
+
+.scroll-background {
+  position: relative;
+  width: 100%;
+}
+
+.section {
+  min-height: 100vh;
+  position: fixed;
+  top: 75px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.s-one {
+  background-color: white;
+  z-index: 3;
+  padding-bottom: 10px;
+  box-shadow: 1px 2px 7px 1px #111;
+
+  img {
+    width: 100%;
+  }
+}
+
+.s-two {
+  background-color: purple;
+  z-index: 2;
+}
+
+.s-three {
+  background-color: green;
+  z-index: 1;
+}
