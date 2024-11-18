@@ -26,7 +26,6 @@ export class HomeComponent implements AfterViewInit {
 
     if (this.scrollbackground) {
       const height = this.maxScrollHeight.toString() + 'px';
-      console.log(height);
       this.renderer.setStyle(this.scrollbackground.nativeElement, 'height', height);
     }
 
@@ -39,7 +38,6 @@ export class HomeComponent implements AfterViewInit {
 
           if (window.scrollY > rollingSumOfClientHeights + this.maxScrollBuffer || i === this.sections?.length - 1 && window.scrollY > rollingSumOfClientHeights) {
             const diff = Math.abs(rollingSumOfClientHeights - window.scrollY);
-            console.log(rollingSumOfClientHeights, window.scrollY, diff);
             this.renderer.setStyle(section, 'transform', `translateY(-${diff / section.clientHeight * 100 * 1.24}vh)`);
           } else {
             this.renderer.setStyle(section, 'transform', `translateY(0vh)`);
