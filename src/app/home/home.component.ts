@@ -12,6 +12,8 @@ export class HomeComponent implements AfterViewInit {
   private html?: HTMLElement;
   private maxScrollHeight = 0;
   private maxScrollBuffer = 400;
+  itineraryTab = 1;
+  clickMeClicked = false;
 
   constructor(private renderer: Renderer2, private elementRef: ElementRef) { }
 
@@ -47,5 +49,10 @@ export class HomeComponent implements AfterViewInit {
         }
       }
     });
+  }
+
+  selectItineraryTab(index: number) {
+    this.itineraryTab = index;
+    this.clickMeClicked = true;
   }
 }

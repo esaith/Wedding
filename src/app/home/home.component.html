@@ -1,7 +1,7 @@
 <div class="nav">
     <div>Home</div>
     <div>About</div>
-    <div>Party</div>
+    <div>Itinerary</div>
     <div>Registry</div>
     <div>Place</div>
     <div>Accommodations</div>
@@ -18,9 +18,9 @@
         </div>
     </div>
 
-    <div class="section s-two" #section>
+    <div class="section s-two" #section id="about">
         <div class="content">
-            <div class="line"></div>
+            <div class="header-line line"></div>
             <div class="description">
                 <div class="description-top">
                     <div class="w">W</div>
@@ -43,30 +43,113 @@
     </div>
 
     <div class="section s-three" #section>
-        <h1>Section 1</h1>
-        <h1>Section 2</h1>
-        <h1>Section 3</h1>
-        <h1>Section 4</h1>
-        <h1>Section 5</h1>
-        <h1>Section 6</h1>
-        <h1>Section 7</h1>
-        <h1>Section 8</h1>
-        <h1>Section 9</h1>
-        <h1>Section 10</h1>
-        <h1>Section 11</h1>
-        <h1>Section 12</h1>
-        <h1>Section 13</h1>
-        <h1>Section 14</h1>
-        <h1>Section 15</h1>
-        <h1>Section 16</h1>
-        <h1>Section 17</h1>
-        <h1>Section 18</h1>
-        <h1>Section 19</h1>
-        <h1>Section 20</h1>
-        <h1>Section 21</h1>
-        <h1>Section 22</h1>
-        <h1>Section 23</h1>
-        <h1>Section 24</h1>
-        <h1>Section 25</h1>
+        <div class="line header-line"></div>
+        <div class="text-center text-5xl mt-5 tracking-widest">ITINERARY</div>
+        <div class="itinerary-content">
+            <div class="itinerary-box">
+                <div>
+                    <div class="circle-1 cursor-pointer" [class.fill]="itineraryTab === 1" (click)="selectItineraryTab(1)">
+                        <div class="absolute top-5 -left-7 text-center text-sm tracking-normal">
+                            <div class="font-bold">Ceremony</div>
+                            <div>1:00pm</div>
+                        </div>
+                    </div>
+                    <div class="circle-2 cursor-pointer" [class.fill]="itineraryTab === 2" (click)="selectItineraryTab(2)">
+                        <div class="absolute top-5 -left-4 text-center text-sm tracking-normal">
+                            <div class="font-bold">Dinner</div>
+                            <div class="font-bold text-nowrap" *ngIf="!clickMeClicked">(Click Me)</div>
+                            <div>2:45pm</div>
+                        </div>
+                    </div>
+                    <div class="circle-3 cursor-pointer" [class.fill]="itineraryTab === 3" (click)="selectItineraryTab(3)">
+                        <div class="absolute top-5 -left-4 text-center text-sm tracking-normal">
+                            <div class="font-bold">Show</div>
+                            <div class="font-bold text-nowrap" *ngIf="!clickMeClicked">(Click Me)</div>
+                            <div>7:00pm</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex align-center tab" [class.showtab]="itineraryTab === 1">
+                    <img class="m-auto mx-2" src="https://placehold.co/100x200" />
+                    <div class="itinerary-description">
+                        <div class="itinerary-description-title">Ceremony</div>
+                        <div class="py-6">Although the courthouse will have our signatures on the dotted line, we know it won't be real in our eyes until you
+                            help us make the commitment.
+                        </div>
+                        <div class="pb-5">Ceremony: 1:00pm - 1:30pm</div>
+                        <div>Arrive 10-15 minutes early to grab a seat.</div>
+                        <div>Ceremony is outdoors but shaded, in the event of inclement weather we will proceed indoors.</div>
+                        <div>We will continue with photography until 3:00pm.</div>
+                    </div>
+                    <div class="itinerary-details">
+                        <div class="itinerary-details-title">The Wedding Salons at the Wynn Hotel</div>
+                        <div class="text-sm">
+                            <div>Sunday</div>
+                            <div>May 25</div>
+                            <div>1:00pm</div>
+                        </div>
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-3 rounded text-sm">View on Map</button>
+                        <div class="font-bold">Attire</div>
+                        <div>Cocktail Attire - Purple Encouraged</div>
+                    </div>
+                </div>
+                <div class="flex align-center tab" [class.showtab]="itineraryTab === 2">
+                    <img class="m-auto mx-2" src="https://placehold.co/100x200" />
+                    <div class="itinerary-description">
+                        <div class="itinerary-description-title">Dinner</div>
+                        <div class="py-6">No need to front, this is what we all have been waiting for – food! Enjoy a margarita or glass of prosecco with a
+                            family style dinner.
+                        </div>
+                        <div class="pb-5">Dinner: 2:45pm - 5:45pm</div>
+                        <div>We will be providing transportation from the Wynn Hotel to Mon Ami Gabi at 3:15pm.</div>
+                        <div>CSelect your entrée when seated, choices include: Chicken, Steak, or House Burger</div>
+                        <div>Please enjoy the open bar.</div>
+                    </div>
+                    <div class="itinerary-details">
+                        <div class="itinerary-details-title">Mon Ami Gabi</div>
+                        <div class="text-sm">
+                            <div>Sunday</div>
+                            <div>May 25</div>
+                            <div>2:45pm</div>
+                        </div>
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-3 rounded text-sm">View on Map</button>
+                        <div class="font-bold">Attire</div>
+                        <div>Cocktail Attire - Purple Encouraged</div>
+                    </div>
+                </div>
+                <div class="flex align-center tab" [class.showtab]="itineraryTab === 3">
+                    <img class="m-auto mx-2" src="https://placehold.co/100x200" />
+                    <div class="itinerary-description">
+                        <div class="itinerary-description-title">Show</div>
+                        <div class="py-6">We'd like to treat you to a Vegas show and see a water-themed "O" Cirque du Soleil production.
+                        </div>
+                        <div>Show: 7:00pm - 8:30pm</div>
+                        <div>90 minutes without an intermission</div>
+                        <div class="text-sm pt-5">No shopping bags, luggage, or backpacks will be permitted into the O Theatre except for small personal bags or
+                            purses (9″ x 5″x 2″
+                            max)</div>
+                        <div class="text-sm">No photography or video recording devices, including devices such as Google Glass, are permitted into the theater.
+                        </div>
+                        <div class="text-sm"> For more info:
+                            https://bellagio.mgmresorts.com/en/entertainment/faq-o-by-cirque-du-soleil.html#i-would-like-to-know-more</div>
+                    </div>
+                    <div class="itinerary-details">
+                        <div class="itinerary-details-title"> "O" by Cirque du Soleil at the Bellagio Hotel</div>
+                        <div class="text-sm">
+                            <div>Sunday</div>
+                            <div>May 25</div>
+                            <div>7:00pm</div>
+                        </div>
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-3 rounded text-sm">View on Map</button>
+                        <div class="font-bold">Attire</div>
+                        <div>Cocktail Attire - Purple Encouraged</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section s-four" #section>
+
     </div>
 </div>
