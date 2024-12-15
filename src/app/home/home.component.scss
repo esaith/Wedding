@@ -11,6 +11,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 1px 4px 1px #333;
 
   div {
     padding: 10px;
@@ -57,22 +58,25 @@
   box-shadow: 1px 2px 7px 1px #111;
 
   img {
-    width: 100%;
+    margin: auto;
   }
 
   .img-title {
     position: absolute;
-    top: 30px;
+    top: -1px;
     left: 50%;
     transform: translateX(-50%);
+    width: 1080px;
+    text-align: center;
 
     .names {
-      font-size: 55px;
+      font-size: 30px;
       font-weight: bold;
       color: white;
       text-shadow: 1px 1px 6px black;
-      padding: 20px;
+      padding: 10px;
       letter-spacing: 0.3em;
+      background-color: black;
     }
 
     .date {
