@@ -39,7 +39,6 @@
 }
 
 .section {
-  background-color: white;
   min-height: 100vh;
   position: fixed;
   top: 75px;
@@ -53,7 +52,7 @@
 }
 
 .s-one {
-  z-index: 3;
+  z-index: 4;
   padding-bottom: 10px;
   box-shadow: 1px 2px 7px 1px #111;
 
@@ -89,7 +88,7 @@
 }
 
 .s-two {
-  z-index: 2;
+  z-index: 3;
   padding: 40px;
 
   .line {
@@ -117,7 +116,7 @@
 }
 
 .s-three {
-  z-index: 1;
+  z-index: 2;
 
   .itinerary-content {
     width: 100%;
@@ -206,4 +205,32 @@
 }
 
 .s-four {
+  z-index: 1;
+}
+
+.s-five {
+  z-index: 0;
+
+  .s-five-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 300px));
+    gap: 10px;
+  }
+
+  .place-selected {
+    border-bottom: 2px solid white;
+  }
+
+  .place-content {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 300ms ease-in;
+
+    &.place-content-selected {
+      transition: opacity 300ms ease-in;
+      height: 100%;
+      opacity: 1;
+    }
+  }
 }

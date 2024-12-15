@@ -14,6 +14,7 @@ export class HomeComponent implements AfterViewInit {
   private maxScrollBuffer = 400;
   itineraryTab = 1;
   clickMeClicked = false;
+  place = 'eat'
 
   constructor(private renderer: Renderer2, private elementRef: ElementRef) { }
 
@@ -24,7 +25,7 @@ export class HomeComponent implements AfterViewInit {
       }
     }
 
-    this.maxScrollHeight += this.maxScrollBuffer;
+    this.maxScrollHeight += this.maxScrollBuffer + 1500;
 
     if (this.scrollbackground) {
       const height = this.maxScrollHeight.toString() + 'px';
@@ -54,5 +55,9 @@ export class HomeComponent implements AfterViewInit {
   selectItineraryTab(index: number) {
     this.itineraryTab = index;
     this.clickMeClicked = true;
+  }
+
+  selectPlace(place: string) {
+    this.place = place;
   }
 }
