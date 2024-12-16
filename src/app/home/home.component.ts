@@ -1,5 +1,6 @@
-import { AfterViewInit, Component, ElementRef, OnInit, QueryList, Renderer2, ViewChild, ViewChildren } from '@angular/core';
-import { from, fromEvent } from 'rxjs';
+import { AfterViewInit, Component, ElementRef, QueryList, Renderer2, ViewChild, ViewChildren } from '@angular/core';
+import { fromEvent } from 'rxjs';
+import { FamilyGuest, Guest, GuestService } from '../entities/guest';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +17,28 @@ export class HomeComponent implements AfterViewInit {
   clickMeClicked = false;
   place = 'eat'
 
-  constructor(private renderer: Renderer2, private elementRef: ElementRef) { }
+  isGuestAttending = true;
+  isGuestNotAttending = false;
+
+  familyLastName = ''
+
+  guestName = '';
+  hasPlusOne = false;
+  plusOneName = ''
+
+  guestAttendingCeremony = false;
+  plusOneAttendingCeremony = false;
+
+  guestAttendingReception = false;
+  plusOneAttendingReception = false;
+
+  guestAttendingShow = false;
+  plusOneAttendingShow = false;
+
+  families = new Array<FamilyGuest>();
+  family = new FamilyGuest();
+
+  constructor(private renderer: Renderer2, private guestService: GuestService) { }
 
   ngAfterViewInit() {
     if (this.sections) {
@@ -25,7 +47,7 @@ export class HomeComponent implements AfterViewInit {
       }
     }
 
-    this.maxScrollHeight += this.maxScrollBuffer + 1500;
+    this.maxScrollHeight += this.maxScrollBuffer + 4000;
 
     if (this.scrollbackground) {
       const height = this.maxScrollHeight.toString() + 'px';
@@ -50,6 +72,8 @@ export class HomeComponent implements AfterViewInit {
         }
       }
     });
+
+    this.families = this.guestService.getGuests();
   }
 
   selectItineraryTab(index: number) {
@@ -57,7 +81,47 @@ export class HomeComponent implements AfterViewInit {
     this.clickMeClicked = true;
   }
 
+  onFamilyNameChange() {
+    const family = this.families.find(x => x.familyName === this.familyLastName.trim());
+    if (family) {
+      this.family = family;
+      this.family.isAttending = true;
+      this.updateCeremonyShow();
+    }
+  }
+
   selectPlace(place: string) {
     this.place = place;
   }
+
+  toggleIsGuestAttending() {
+    this.isGuestAttending = !this.isGuestAttending;
+    this.isGuestNotAttending = !this.isGuestAttending;
+
+    this.family.isAttending = this.isGuestAttending;
+  }
+  toggleIsGuestAttendingNo() {
+    this.isGuestNotAttending = !this.isGuestNotAttending;
+    this.isGuestAttending = !this.isGuestNotAttending;
+
+    this.family.isAttending = this.isGuestAttending;
+  }
+
+  toggleHasPlusOne() {
+    this.hasPlusOne = !this.hasPlusOne;
+  }
+
+  updateCeremonyAttendence(guest: Guest) {
+    if (guest.IsAdult) {
+      this.family.atMaxCeremonyAdult = this.family.guests.filter(x => x.IsAdult && x.AttendingCeremony).length === this.family.maxAdultsToCeremony
+    } else {
+      this.family.atMaxCeremonyKid = this.family.guests.filter(x => !x.IsAdult && x.AttendingCeremony).length === this.family.maxKidsToCeremony
+    }
+  }
+
+  updateCeremonyShow() {
+    this.family.atMaxShow = this.family.guests.filter(x => x.AttendingShow).length === this.family.maxShowTickets
+  }
 }
+
+

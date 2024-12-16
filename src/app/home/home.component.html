@@ -577,4 +577,100 @@
             </div>
         </div>
     </div>
+
+    <div class="section bg-white s-six mb-5" #section id="rsvp">
+        <div class="content  m-auto">
+            <div class="line header-line"></div>
+            <div class="text-center text-5xl mt-5 mb-20 tracking-widest">Répondez S'il Vous Plaît (RSVP)</div>
+
+            <form class="max-xl">
+                <div class="mb-5">
+                    <label for="familyLastName" class="block mb-2 text-sm font-medium text-gray-900">Invited Person's Last Name</label>
+                    <input type="text" id="familyLastName" [(ngModel)]="familyLastName" (ngModelChange)="onFamilyNameChange()" name="familyLastName"
+                        class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required />
+                </div>
+
+                <div class="mb-5">
+                    <label class="h-5 text-sm font-medium text-gray-900">Are you attending?</label>
+                    <div class="flex align-center">
+                        <div>
+                            <input id="guestAttendingYes" type="checkbox"
+                                class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300" required
+                                (click)="toggleIsGuestAttending()" name="isGuestAttendingYes" [(ngModel)]="isGuestAttending" />
+                            <label class="ms-2 text-sm font-medium text-gray-900">Yes</label>
+                        </div>
+
+                        <div class="ml-10">
+                            <input id="guestAttendingNo" type="checkbox"
+                                class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300" required
+                                (click)="toggleIsGuestAttendingNo()" name="isGuestAttendingNo" [(ngModel)]="isGuestNotAttending" />
+                            <label class="ms-2 text-sm font-medium text-gray-900">No</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div *ngFor="let guest of family.guests; let i = index">
+                    <div class="mb-5">
+                        <label for="guest-{{i}}" class="block mb-2 text-sm font-medium text-gray-900">{{guest.IsAdult ? 'Adult' : 'Child'}}</label>
+                        <input type="text" id="guest-{{i}}" [(ngModel)]="guest.Name" name="guest-{{i}}"
+                            class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                            required disabled="{{!guest.AllowNameModification}}" />
+                    </div>
+                </div>
+
+                <div class="guest-questions my-10 text-center" *ngIf="family && family.isAttending">
+                    <div></div>
+                    <div>Ceremony</div>
+                    <div>Reception</div>
+                    <div>Show</div>
+                    <div *ngIf="!family.allowExtraTicket"></div>
+                    <div *ngIf="family.allowExtraTicket">Extra Show ticket</div>
+                    <div></div>
+                    <div class="font-xxs">Max {{family.maxAdults}} Adults
+                        <span *ngIf="family.maxKidsToCeremony === 1"><br>& {{family.maxKidsToCeremony}} Child</span>
+                        <span *ngIf="family.maxKidsToCeremony > 1"><br>& {{family.maxKidsToCeremony}} Children</span>
+                        <br *ngIf="family.maxKidsToCeremony > 0"> <span *ngIf="family.maxKidsToCeremony > 0">(5+ yrs old)</span>
+                    </div>
+                    <div class="font-xxs">Max {{family.maxAdults}} Adults <span *ngIf="family.maxKids > 0">& {{family.maxKids}} Children</span></div>
+                    <div class="font-xxs">Max {{family.maxShowTickets}} tickets.
+                        <span *ngIf="family.maxKids > 0"><br>(5+ yrs old)</span>
+                        <span *ngIf="family.maxShowTickets < family.maxAdults"></span>
+                    </div>
+                    <div class="font-xxs" *ngIf="!family.allowExtraTicket"></div>
+                    <div class="font-xxs" *ngIf="family.allowExtraTicket">(If available)</div>
+                    <ng-container *ngFor="let guest of family.guests; let i = index">
+                        <ng-container *ngIf="guest.Name && guest.Name.trim().length > 0">
+                            <div>{{guest.Name}}</div>
+                            <div>
+                                <input type="checkbox" id="guestAttendingCeremony-{{i}}" name="guestAttendingCeremony-{{i}}"
+                                    [(ngModel)]="guest.AttendingCeremony" (ngModelChange)="updateCeremonyAttendence(guest)"
+                                    class="w-4 h-4 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                                    disabled="{{guest.IsUnderFive || !guest.AttendingCeremony && (guest.IsAdult && family.atMaxCeremonyAdult || !guest.IsAdult && family.atMaxCeremonyKid)}}" />
+                            </div>
+                            <div>
+                                <input type="checkbox" id="guestAttendingReception-{{i}}" name="guestAttendingReception-{{i}}"
+                                    [(ngModel)]="guest.AttendingReception"
+                                    class="w-4 h-4 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                            </div>
+                            <div>
+                                <input type="checkbox" id="guestAttendingShow-{{i}}" name="guestAttendingShow-{{i}}" [(ngModel)]="guest.AttendingShow"
+                                    class="w-4 h-4 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                                    (ngModelChange)="updateCeremonyShow()" disabled="{{guest.IsUnderFive || !guest.AttendingShow && family.atMaxShow}}" />
+                            </div>
+                            <div *ngIf="!family.allowExtraTicket"></div>
+                            <div *ngIf="family.allowExtraTicket">
+                                <input type="checkbox" id="guestAttendingShowExtraTicket-{{i}}" name="guestAttendingShowExtraTicket-{{i}}"
+                                    [(ngModel)]="guest.AttendingShowExtraTicket"
+                                    class="w-4 h-4 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                                    disabled="{{guest.IsUnderFive || guest.AttendingShow}}" />
+                            </div>
+                        </ng-container>
+                    </ng-container>
+                </div>
+
+                <button type="submit"
+                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+            </form>
+        </div>
+    </div>
 </div>
