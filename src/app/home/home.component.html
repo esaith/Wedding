@@ -585,7 +585,7 @@
 
             <form class="max-xl">
                 <div class="mb-5">
-                    <label for="familyLastName" class="block mb-2 text-sm font-medium text-gray-900">Invited Person's Last Name</label>
+                    <label for="familyLastName" class="block mb-2 text-sm font-medium text-gray-900">Invited Person's Addresse Name</label>
                     <input type="text" id="familyLastName" [(ngModel)]="familyLastName" (ngModelChange)="onFamilyNameChange()" name="familyLastName"
                         class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required />
                 </div>
@@ -626,7 +626,7 @@
                     <div *ngIf="!family.allowExtraTicket"></div>
                     <div *ngIf="family.allowExtraTicket">Extra Show ticket</div>
                     <div></div>
-                    <div class="font-xxs">Max {{family.maxAdults}} Adults
+                    <div class="font-xxs">Max {{family.maxAdultsToCeremony}} Adults
                         <span *ngIf="family.maxKidsToCeremony === 1"><br>& {{family.maxKidsToCeremony}} Child</span>
                         <span *ngIf="family.maxKidsToCeremony > 1"><br>& {{family.maxKidsToCeremony}} Children</span>
                         <br *ngIf="family.maxKidsToCeremony > 0"> <span *ngIf="family.maxKidsToCeremony > 0">(5+ yrs old)</span>
