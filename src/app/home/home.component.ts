@@ -81,6 +81,15 @@ export class HomeComponent implements AfterViewInit {
 
     if (family) {
       this.family = family;
+
+      if (this.family.isAttending) {
+        this.isGuestAttending = true;
+        this.isGuestNotAttending = false;
+      } else {
+        this.isGuestAttending = false;
+        this.isGuestNotAttending = true;
+      }
+
       this.updateCeremonyShow();
     }
   }
@@ -124,6 +133,10 @@ export class HomeComponent implements AfterViewInit {
       return;
 
     this.family.atMaxShow = this.family.guests.filter(x => x.attendingShow).length === this.family.maxShowTickets
+  }
+
+  submitRsvp() {
+    this
   }
 }
 
