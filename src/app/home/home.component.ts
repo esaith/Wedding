@@ -21,19 +21,8 @@ export class HomeComponent implements AfterViewInit {
   isGuestAttending = true;
   isGuestNotAttending = false;
 
-  familyLastName = ''
+  familyLastName = '';
 
-  guestName = '';
-  hasPlusOne = false;
-  plusOneName = ''
-
-  guestAttendingCeremony = false;
-  plusOneAttendingCeremony = false;
-
-  guestAttendingReception = false;
-  plusOneAttendingReception = false;
-
-  guestAttendingShow = false;
   plusOneAttendingShow = false;
 
   families = new Array<FamilyGuest>();
@@ -117,10 +106,6 @@ export class HomeComponent implements AfterViewInit {
     this.isGuestAttending = !this.isGuestNotAttending;
 
     this.family.isAttending = this.isGuestAttending;
-  }
-
-  toggleHasPlusOne() {
-    this.hasPlusOne = !this.hasPlusOne;
   }
 
   updateCeremonyAttendence(guest: Guest) {
