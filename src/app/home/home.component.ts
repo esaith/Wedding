@@ -27,6 +27,7 @@ export class HomeComponent implements AfterViewInit {
 
   families = new Array<FamilyGuest>();
   family: FamilyGuest | null | undefined;
+  submissionComplete = false;
 
   constructor(private renderer: Renderer2, private guestService: GuestService) { }
 
@@ -135,9 +136,11 @@ export class HomeComponent implements AfterViewInit {
     this.family.atMaxShow = this.family.guests.filter(x => x.attendingShow).length === this.family.maxShowTickets
   }
 
-  submitRsvp() {
-    this
+  async submitRsvp() {
+    if (this.family) {
+      this.submissionComplete = false;
+      await lastValueFrom(this.guestService.submit(this.family));
+      this.submissionComplete = true;
+    }
   }
 }
-
-

@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { FamilyGuest } from "./family-guest";
+import { FamilyGuest, FamilyGuestDTO } from "./family-guest";
 import { HttpClient } from '@angular/common/http';
 import { Observable, of, switchMap } from "rxjs";
 
@@ -18,5 +18,10 @@ export class GuestService {
                 return of(familyGuest);
             })
         );
+    }
+
+    submit(familyGuest: FamilyGuest): Observable<FamilyGuest> {
+        const dto = new FamilyGuestDTO(familyGuest);
+        return this.http.put<FamilyGuest>(`${this.baseApi}/family/submit`, dto);
     }
 }
