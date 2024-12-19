@@ -35,12 +35,13 @@
         </div>
     </div>
 
-    <div class="section bg-white s-three">
+    <div class="section bg-white s-three z-30 tracking-normal">
         <div class="border-b-2 w-80 mx-auto mt-5 border-black"></div>
         <div class="text-center text-3xl md:text-3xl mt-5 tracking-widest">ITINERARY</div>
         <div class="itinerary-content">
-            <div class="itinerary-box">
-                <div>
+            <div class="relative itinerary-box md:max-w-7xl md:flex md:items-start md:mt-10 md:mx-auto md:mb-2.5 
+                p-2.5 md:text-lg md:border md:border-solid md:border-slate-500">
+                <div class="hidden md:flex">
                     <div class="circle-1 cursor-pointer" [class.fill]="itineraryTab === 1" (click)="selectItineraryTab(1)">
                         <div class="absolute top-5 -left-7 text-center text-sm tracking-normal">
                             <div class="font-bold">Ceremony</div>
@@ -62,21 +63,21 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex align-center tab" [class.showtab]="itineraryTab === 1">
-                    <img class="m-auto mx-2" src="https://placehold.co/100x200" />
-                    <div class="itinerary-description">
-                        <div class="itinerary-description-title">Ceremony</div>
+                <div class="md:items-center md:h-96 block md:hidden tab" [class.showtab]="itineraryTab === 1">
+                    <img class="m-auto w-60 md:mx-2 md:w-52 h-96" src="https://placehold.co/100x200" />
+                    <div class="itinerary-description md:">
+                        <div class="itinerary-description-title text-2xl md:text-4xl font-bold">Ceremony</div>
                         <div class="py-6">Although the courthouse will have our signatures on the dotted line, we know it won't be real in our eyes until you
                             help us make the commitment.
                         </div>
-                        <div class="pb-5">Ceremony: 1:00pm - 1:30pm</div>
+                        <div class="pb-5 font-bold">Ceremony: 1:00pm - 1:30pm</div>
                         <div>Arrive 10-15 minutes early to grab a seat.</div>
                         <div>Ceremony is outdoors but shaded, in the event of inclement weather we will proceed indoors.</div>
-                        <div>We will continue with photography until 3:00pm.</div>
+                        <div>We will continue with photography until 2:45pm.</div>
                     </div>
-                    <div class="itinerary-details">
-                        <div class="itinerary-details-title">The Wedding Salons at the Wynn Hotel</div>
-                        <div class="text-sm">
+                    <div class="itinerary-details p-2.5">
+                        <div class="font-bold">The Wedding Salons at the Wynn Hotel</div>
+                        <div class="text-sm hidden md:block">
                             <div>Sunday</div>
                             <div>May 25</div>
                             <div>1:00pm</div>
@@ -86,21 +87,22 @@
                         <div>Cocktail Attire - Purple Encouraged</div>
                     </div>
                 </div>
-                <div class="flex align-center tab" [class.showtab]="itineraryTab === 2">
-                    <img class="m-auto mx-2" src="https://placehold.co/100x200" />
+                <div class="border-b-2 w-80 mx-auto my-5 border-black md:hidden"></div>
+                <div class="md:items-center md:h-96 block md:hidden tab" [class.showtab]="itineraryTab === 2">
+                    <img class="m-auto md:mx-2 w-52 h-96" src="https://placehold.co/100x200" />
                     <div class="itinerary-description">
-                        <div class="itinerary-description-title">Dinner</div>
-                        <div class="py-6">No need to front, this is what we all have been waiting for – food! Enjoy a margarita or glass of prosecco with a
+                        <div class="itinerary-description-title text-2xl md:text-4xl font-bold">Dinner</div>
+                        <div class="py-6">No need to front, this is what we all have been waiting for - food! Enjoy a margarita or glass of prosecco with a
                             family style dinner.
                         </div>
-                        <div class="pb-5">Dinner: 2:45pm - 5:45pm</div>
+                        <div class="pb-5 font-bold">Dinner: 2:45pm - 5:45pm</div>
                         <div>We will be providing transportation from the Wynn Hotel to Mon Ami Gabi at 3:15pm.</div>
                         <div>CSelect your entrée when seated, choices include: Chicken, Steak, or House Burger</div>
                         <div>Please enjoy the open bar.</div>
                     </div>
                     <div class="itinerary-details">
-                        <div class="itinerary-details-title">Mon Ami Gabi</div>
-                        <div class="text-sm">
+                        <div class="font-bold">Mon Ami Gabi</div>
+                        <div class="text-sm hidden md:block">
                             <div>Sunday</div>
                             <div>May 25</div>
                             <div>2:45pm</div>
@@ -110,13 +112,14 @@
                         <div>Cocktail Attire - Purple Encouraged</div>
                     </div>
                 </div>
-                <div class="flex align-center tab" [class.showtab]="itineraryTab === 3">
-                    <img class="m-auto mx-2" src="https://placehold.co/100x200" />
+                <div class="border-b-2 w-80 mx-auto my-5 border-black md:hidden"></div>
+                <div class="md:items-center md:h-96 block md:hidden tab" [class.showtab]="itineraryTab === 3">
+                    <img class="m-auto md:mx-2 w-52 h-96" src="https://placehold.co/100x200" />
                     <div class="itinerary-description">
-                        <div class="itinerary-description-title">Show</div>
+                        <div class="itinerary-description-title text-xl md:text-4xl font-bold">Show</div>
                         <div class="py-6">We'd like to treat you to a Vegas show and see a water-themed "O" Cirque du Soleil production.
                         </div>
-                        <div>Show: 7:00pm - 8:30pm</div>
+                        <div class="font-bold">Show: 7:00pm - 8:30pm</div>
                         <div>90 minutes without an intermission</div>
                         <div class="text-sm pt-5">No shopping bags, luggage, or backpacks will be permitted into the O Theatre except for small personal bags or
                             purses (9″ x 5″x 2″
@@ -124,11 +127,14 @@
                         <div class="text-sm">No photography or video recording devices, including devices such as Google Glass, are permitted into the theater.
                         </div>
                         <div class="text-sm"> For more info:
-                            https://bellagio.mgmresorts.com/en/entertainment/faq-o-by-cirque-du-soleil.html#i-would-like-to-know-more</div>
+                            <a href="https://bellagio.mgmresorts.com/en/entertainment/faq-o-by-cirque-du-soleil.html" class="text-blue-500">
+                                https://bellagio.mgmresorts.com/en/entertainment/faq-o-by-cirque-du-soleil.html
+                            </a>
+                        </div>
                     </div>
                     <div class="itinerary-details">
-                        <div class="itinerary-details-title"> "O" by Cirque du Soleil at the Bellagio Hotel</div>
-                        <div class="text-sm">
+                        <div class="font-bold"> "O" by Cirque du Soleil at the Bellagio Hotel</div>
+                        <div class="text-sm hidden md:block">
                             <div>Sunday</div>
                             <div>May 25</div>
                             <div>7:00pm</div>
