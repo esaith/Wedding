@@ -5,8 +5,8 @@
     <div (click)="goToPage(1)">About</div>
     <div (click)="goToPage(2)">Itinerary</div>
     <div (click)="goToPage(3)">Registry</div>
-    <div (click)="goToPage(4)">Place</div>
-    <div (click)="goToPage(5)">RSVP</div>
+    <!-- <div (click)="goToPage(4)">Place</div> -->
+    <div (click)="goToPage(4)">RSVP</div>
 </div>
 
 <div #scrollbackground>
@@ -16,8 +16,8 @@
 
     <div class="section bg-white s-two md:min-h-screen z-40 px-5 pb-8">
         <div class="content m-auto text-neutral-700 leading-6 max-w-full md:max-w-4xl md:text-3xl">
-            <div class="border-b-2 w-80 mx-auto mt-5 border-black"></div>
-            <div class="flex items-center mt-5 md:mt-24">
+            <div class="border-b-2 w-80 mx-auto mt-5 md:mt-24 border-black"></div>
+            <div class="flex items-center mt-5">
                 <div class="text-6xl md:text-9xl relative md:top-0 w">W</div>
                 <div>e are thrilled to invite you to our Las Vegas Wedding! </div>
             </div>
@@ -36,7 +36,7 @@
     </div>
 
     <div class="section bg-white s-three z-30 tracking-normal">
-        <div class="border-b-2 w-80 mx-auto mt-5 border-black"></div>
+        <div class="border-b-2 w-80 mx-auto mt-5 md:mt-24 border-black"></div>
         <div class="text-center text-3xl md:text-3xl mt-5 tracking-widest">ITINERARY</div>
         <div class="itinerary-content">
             <div class="relative itinerary-box md:max-w-7xl md:flex md:items-start md:mt-10 md:mx-auto md:mb-2.5 
@@ -148,28 +148,26 @@
         </div>
     </div>
 
-    <div class="section bg-white s-four">
-        <div class="content">
-            <div class="border-b-2 w-80 mx-auto mt-5 border-black"></div>
-            <div class="text-center text-5xl mt-5 tracking-widest">Registry</div>
-            <div class="max-w-screen-md m-auto text-lg">
-
-                <div class="my-10">
-                    We are beyond grateful to be celebrating our wedding with you. We appreciate you coming from far and wide - city friends, we know that
-                    traveling the Las Vegas feels like crossing the country - to be with us this Memorial weekend. Your attendance is as good a gift as any, but
-                    for those who
-                    would like, we have thoughtfully put together our registry with items to help us start this next chapter in our lives.
-                </div>
-                <div class="my-7">
-                    We have so much to look forward to and have included cash gift options if you would like to contribute to our future plans. Thank you from
-                    the bottom of our hearts.
-                </div>
-                <div>You can find out registry here at <a href="http://www.amazon.com" target="_blank" class="text-cyan-600">Amazon</a></div>
+    <div class="section bg-white z-20 md:min-h-screen">
+        <div class="border-b-2 w-80 mx-auto mt-5 md:mt-24 border-black"></div>
+        <div class="text-center text-3xl md:text-3xl mt-5 tracking-widest">Registry</div>
+        <div class="max-w-screen-md m-auto text-lg">
+            <div class="p-2.5 md:my-10 md:p-0">
+                We are beyond grateful to be celebrating our wedding with you. We appreciate you coming from far and wide - city friends, we know that
+                traveling the Las Vegas feels like crossing the country - to be with us this Memorial weekend. Your attendance is as good a gift as any, but
+                for those who
+                would like, we have thoughtfully put together our registry with items to help us start this next chapter in our lives.
+            </div>
+            <div class="p-2.5 md:my-7 md:p-0">
+                We have so much to look forward to and have included cash gift options if you would like to contribute to our future plans. Thank you from
+                the bottom of our hearts.
+            </div>
+            <div class="p-2.5 md:my-7 md:p-0">You can find out registry here at <a href="http://www.amazon.com" target="_blank" class="text-cyan-600">Amazon</a>
             </div>
         </div>
     </div>
 
-    <div class="section bg-stone-700 s-five text-sm tracking-normal">
+    <div class="section bg-stone-700 s-five text-sm tracking-normal" *ngIf="false">
         <img class="w-3/8 mx-auto mt-20" src="https://placehold.co/600x400" />
         <div class="text-5xl text-center my-10 text-white">LAS VEGAS, NEVADA</div>
         <div class="w-1/4 my-20 mx-auto border-2 border-white"></div>
