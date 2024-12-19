@@ -41,14 +41,6 @@
   font-size: 8px;
 }
 
-.section {
-  position: fixed;
-  top: 75px;
-  width: 100%;
-  box-sizing: border-box;
-  box-shadow: 1px 2px 7px 1px #111;
-}
-
 .s-two {
   .content {
     @media only screen and (max-width: 720px) {
@@ -144,13 +136,7 @@
 }
 
 .s-six {
-  z-index: 1;
-  box-shadow: none;
-  min-height: 100vh;
-
   .content {
-    max-width: 800px;
-
     .disabled {
       label {
         color: gray;

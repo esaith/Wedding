@@ -1,590 +1,630 @@
-<div class="names fixed top-0 left-0 right-0 h-10 text-3xl text-white font-bold">JOHN & VERONICA</div>
+<div class="bg-white box-border">
+    <div class="names fixed top-0 left-0 right-0 h-10 text-3xl text-white font-bold">JOHN & VERONICA</div>
 
-<div class="nav fixed top-50 hidden md:flex align-center justify-center">
-    <div (click)="goToPage(0)">Home</div>
-    <div (click)="goToPage(1)">About</div>
-    <div (click)="goToPage(2)">Itinerary</div>
-    <div (click)="goToPage(3)">Registry</div>
-    <!-- <div (click)="goToPage(4)">Place</div> -->
-    <div (click)="goToPage(4)">RSVP</div>
-</div>
-
-<div #scrollbackground>
-    <div class="section bg-white s-one md:min-h-screen z-50 pb-5">
-        <img class="m-auto w-full md:w-1/2" src="/assets/images/JohnAndVeronica.jpg" />
+    <div class="nav fixed top-50 hidden md:flex align-center justify-center">
+        <div (click)="goToPage(0)">Home</div>
+        <div (click)="goToPage(1)">About</div>
+        <div (click)="goToPage(2)">Itinerary</div>
+        <div (click)="goToPage(3)">Registry</div>
+        <!-- <div (click)="goToPage(4)">Place</div> -->
+        <div (click)="goToPage(4)">RSVP</div>
     </div>
 
-    <div class="section bg-white s-two md:min-h-screen z-40 px-5 pb-8">
-        <div class="content m-auto text-neutral-700 leading-6 max-w-full md:max-w-4xl md:text-3xl">
+    <div #scrollbackground>
+        <div class="section fixed top-20 w-full bg-white s-one md:min-h-screen z-50 pb-5 shadow-2xl">
+            <img class="m-auto w-full md:w-1/2" src="/assets/images/JohnAndVeronica.jpg" />
+        </div>
+
+        <div class="section fixed top-20 w-full bg-white s-two md:min-h-screen z-40 px-5 pb-8 shadow-2xl">
+            <div class="content m-auto text-neutral-700 leading-6 max-w-full md:max-w-4xl md:text-3xl">
+                <div class="border-b-2 w-80 mx-auto mt-5 md:mt-24 border-black"></div>
+                <div class="flex items-center mt-5">
+                    <div class="text-6xl md:text-9xl relative md:top-0 w">W</div>
+                    <div>e are thrilled to invite you to our Las Vegas Wedding! </div>
+                </div>
+                <div>We encourage all of you to take this opportunity and make this
+                    into a small getaway or a full blown vacation.
+                </div>
+                <br />There will not be a wedding party and instead we invite our guests show up in style and be the "wedding party". Choose any shade of
+                purple for any piece of clothing or accessory. Feel free to show up decked out in purple as well :)
+                <br />
+                <br />Hope you're as excited as we are to make lasting memories!
+                <br />
+                <br />XOXO
+                <br />
+                <br />John & Veronica
+            </div>
+        </div>
+
+        <div class="section fixed top-20 w-full bg-white s-three z-30 tracking-normal shadow-2xl">
             <div class="border-b-2 w-80 mx-auto mt-5 md:mt-24 border-black"></div>
-            <div class="flex items-center mt-5">
-                <div class="text-6xl md:text-9xl relative md:top-0 w">W</div>
-                <div>e are thrilled to invite you to our Las Vegas Wedding! </div>
-            </div>
-            <div>We encourage all of you to take this opportunity and make this
-                into a small getaway or a full blown vacation.
-            </div>
-            <br />There will not be a wedding party and instead we invite our guests show up in style and be the "wedding party". Choose any shade of
-            purple for any piece of clothing or accessory. Feel free to show up decked out in purple as well :)
-            <br />
-            <br />Hope you're as excited as we are to make lasting memories!
-            <br />
-            <br />XOXO
-            <br />
-            <br />John & Veronica
-        </div>
-    </div>
-
-    <div class="section bg-white s-three z-30 tracking-normal">
-        <div class="border-b-2 w-80 mx-auto mt-5 md:mt-24 border-black"></div>
-        <div class="text-center text-3xl md:text-3xl mt-5 tracking-widest">ITINERARY</div>
-        <div class="itinerary-content">
-            <div class="relative itinerary-box md:max-w-7xl md:flex md:items-start md:mt-10 md:mx-auto md:mb-2.5 
+            <div class="text-center text-3xl md:text-3xl mt-5 tracking-widest">ITINERARY</div>
+            <div class="itinerary-content">
+                <div class="relative itinerary-box md:max-w-7xl md:flex md:items-start md:mt-10 md:mx-auto md:mb-2.5 
                 p-2.5 md:text-lg md:border md:border-solid md:border-slate-500">
-                <div class="hidden md:flex">
-                    <div class="circle-1 cursor-pointer" [class.fill]="itineraryTab === 1" (click)="selectItineraryTab(1)">
-                        <div class="absolute top-5 -left-7 text-center text-sm tracking-normal">
-                            <div class="font-bold">Ceremony</div>
-                            <div>1:00pm</div>
-                        </div>
-                    </div>
-                    <div class="circle-2 cursor-pointer" [class.fill]="itineraryTab === 2" (click)="selectItineraryTab(2)">
-                        <div class="absolute top-5 -left-4 text-center text-sm tracking-normal">
-                            <div class="font-bold">Dinner</div>
-                            <div class="font-bold text-nowrap" *ngIf="!clickMeClicked">(Click Me)</div>
-                            <div>2:45pm</div>
-                        </div>
-                    </div>
-                    <div class="circle-3 cursor-pointer" [class.fill]="itineraryTab === 3" (click)="selectItineraryTab(3)">
-                        <div class="absolute top-5 -left-4 text-center text-sm tracking-normal">
-                            <div class="font-bold">Show</div>
-                            <div class="font-bold text-nowrap" *ngIf="!clickMeClicked">(Click Me)</div>
-                            <div>7:00pm</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="md:items-center md:h-96 block md:hidden tab" [class.showtab]="itineraryTab === 1">
-                    <img class="m-auto w-60 md:mx-2 md:w-52 h-96" src="https://placehold.co/100x200" />
-                    <div class="itinerary-description md:">
-                        <div class="itinerary-description-title text-2xl md:text-4xl font-bold">Ceremony</div>
-                        <div class="py-6">Although the courthouse will have our signatures on the dotted line, we know it won't be real in our eyes until you
-                            help us make the commitment.
-                        </div>
-                        <div class="pb-5 font-bold">Ceremony: 1:00pm - 1:30pm</div>
-                        <div>Arrive 10-15 minutes early to grab a seat.</div>
-                        <div>Ceremony is outdoors but shaded, in the event of inclement weather we will proceed indoors.</div>
-                        <div>We will continue with photography until 2:45pm.</div>
-                    </div>
-                    <div class="itinerary-details p-2.5">
-                        <div class="font-bold">The Wedding Salons at the Wynn Hotel</div>
-                        <div class="text-sm hidden md:block">
-                            <div>Sunday</div>
-                            <div>May 25</div>
-                            <div>1:00pm</div>
-                        </div>
-                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-3 rounded text-sm">View on Map</button>
-                        <div class="font-bold">Attire</div>
-                        <div>Cocktail Attire - Purple Encouraged</div>
-                    </div>
-                </div>
-                <div class="border-b-2 w-80 mx-auto my-5 border-black md:hidden"></div>
-                <div class="md:items-center md:h-96 block md:hidden tab" [class.showtab]="itineraryTab === 2">
-                    <img class="m-auto md:mx-2 w-52 h-96" src="https://placehold.co/100x200" />
-                    <div class="itinerary-description">
-                        <div class="itinerary-description-title text-2xl md:text-4xl font-bold">Dinner</div>
-                        <div class="py-6">No need to front, this is what we all have been waiting for - food! Enjoy a margarita or glass of prosecco with a
-                            family style dinner.
-                        </div>
-                        <div class="pb-5 font-bold">Dinner: 2:45pm - 5:45pm</div>
-                        <div>We will be providing transportation from the Wynn Hotel to Mon Ami Gabi at 3:15pm.</div>
-                        <div>CSelect your entrée when seated, choices include: Chicken, Steak, or House Burger</div>
-                        <div>Please enjoy the open bar.</div>
-                    </div>
-                    <div class="itinerary-details">
-                        <div class="font-bold">Mon Ami Gabi</div>
-                        <div class="text-sm hidden md:block">
-                            <div>Sunday</div>
-                            <div>May 25</div>
-                            <div>2:45pm</div>
-                        </div>
-                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-3 rounded text-sm">View on Map</button>
-                        <div class="font-bold">Attire</div>
-                        <div>Cocktail Attire - Purple Encouraged</div>
-                    </div>
-                </div>
-                <div class="border-b-2 w-80 mx-auto my-5 border-black md:hidden"></div>
-                <div class="md:items-center md:h-96 block md:hidden tab" [class.showtab]="itineraryTab === 3">
-                    <img class="m-auto md:mx-2 w-52 h-96" src="https://placehold.co/100x200" />
-                    <div class="itinerary-description">
-                        <div class="itinerary-description-title text-xl md:text-4xl font-bold">Show</div>
-                        <div class="py-6">We'd like to treat you to a Vegas show and see a water-themed "O" Cirque du Soleil production.
-                        </div>
-                        <div class="font-bold">Show: 7:00pm - 8:30pm</div>
-                        <div>90 minutes without an intermission</div>
-                        <div class="text-sm pt-5">No shopping bags, luggage, or backpacks will be permitted into the O Theatre except for small personal bags or
-                            purses (9″ x 5″x 2″
-                            max)</div>
-                        <div class="text-sm">No photography or video recording devices, including devices such as Google Glass, are permitted into the theater.
-                        </div>
-                        <div class="text-sm"> For more info:
-                            <a href="https://bellagio.mgmresorts.com/en/entertainment/faq-o-by-cirque-du-soleil.html" class="text-blue-500">
-                                https://bellagio.mgmresorts.com/en/entertainment/faq-o-by-cirque-du-soleil.html
-                            </a>
-                        </div>
-                    </div>
-                    <div class="itinerary-details">
-                        <div class="font-bold"> "O" by Cirque du Soleil at the Bellagio Hotel</div>
-                        <div class="text-sm hidden md:block">
-                            <div>Sunday</div>
-                            <div>May 25</div>
-                            <div>7:00pm</div>
-                        </div>
-                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-3 rounded text-sm">View on Map</button>
-                        <div class="font-bold">Attire</div>
-                        <div>Cocktail Attire - Purple Encouraged</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="section bg-white z-20 md:min-h-screen">
-        <div class="border-b-2 w-80 mx-auto mt-5 md:mt-24 border-black"></div>
-        <div class="text-center text-3xl md:text-3xl mt-5 tracking-widest">Registry</div>
-        <div class="max-w-screen-md m-auto text-lg">
-            <div class="p-2.5 md:my-10 md:p-0">
-                We are beyond grateful to be celebrating our wedding with you. We appreciate you coming from far and wide - city friends, we know that
-                traveling the Las Vegas feels like crossing the country - to be with us this Memorial weekend. Your attendance is as good a gift as any, but
-                for those who
-                would like, we have thoughtfully put together our registry with items to help us start this next chapter in our lives.
-            </div>
-            <div class="p-2.5 md:my-7 md:p-0">
-                We have so much to look forward to and have included cash gift options if you would like to contribute to our future plans. Thank you from
-                the bottom of our hearts.
-            </div>
-            <div class="p-2.5 md:my-7 md:p-0">You can find out registry here at <a href="http://www.amazon.com" target="_blank" class="text-cyan-600">Amazon</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="section bg-stone-700 s-five text-sm tracking-normal" *ngIf="false">
-        <img class="w-3/8 mx-auto mt-20" src="https://placehold.co/600x400" />
-        <div class="text-5xl text-center my-10 text-white">LAS VEGAS, NEVADA</div>
-        <div class="w-1/4 my-20 mx-auto border-2 border-white"></div>
-        <div class="flex align-center justify-center text-white text-lg my-5 cursor-pointer">
-            <div class="mx-3" [class.place-selected]="place === 'eat'" (click)="selectPlace('eat')">Eat</div> /
-            <div class="mx-3" [class.place-selected]="place === 'drink'" (click)="selectPlace('drink')">Drink</div> /
-            <div class="mx-3" [class.place-selected]="place === 'shop'" (click)="selectPlace('shop')">Shop</div> /
-            <div class="mx-3" [class.place-selected]="place === 'do'" (click)="selectPlace('do')">Do</div>
-        </div>
-        <div class="mb-20">
-            <div class="flex justify-center place-content" [class.place-content-selected]="place === 'eat'">
-                <div class="s-five-grid ">
-                    <div class="bg-white p-4">
-                        <div class="font-bold">Joni's</div>
-                        <div class="my-3 italic">
-                            <div>34 S Etna Avenue</div>
-                            <div>Montauk, NY</div>
-                        </div>
-                        <div>We understand that your pilates and juice routine might not jive with a full weekend of burger & booze binging, so swing by Joni's
-                            for
-                            your
-                            sprouts fix. Open from early morning until mid-afternoon, this cute place serves eggs, veggies and yummy sandwiches. The Thai Me Up
-                            wrap
-                            is
-                            what
-                            we come for, but it's hard to go wrong.
-                        </div>
-                    </div>
-                    <div class="col-span-2 bg-white">
-                        <img class="w-full" src="https://placehold.co/400x200" />
-                        <div class="p-4">
-                            <div class="font-bold">Navy Beach</div>
-
-                            <div class="my-3 italic">
-                                <div>16 Navy Rd</div>
-                                <div>Montauk, NY</div>
+                    <div class="hidden md:flex">
+                        <div class="circle-1 cursor-pointer" [class.fill]="itineraryTab === 1" (click)="selectItineraryTab(1)">
+                            <div class="absolute top-5 -left-7 text-center text-sm tracking-normal">
+                                <div class="font-bold">Ceremony</div>
+                                <div>1:00pm</div>
                             </div>
-                            <div>For us, Montauk is synonymous with shellfish. Lobster, in particular. And Navy Beach serves theirs right - warm on a buttered
-                                bun.
-                                No
-                                shirt, no
-                                shorts, no problem? they don't mind if you stay in your bikini. You're on an island in June, so take full advantage.
+                        </div>
+                        <div class="circle-2 cursor-pointer" [class.fill]="itineraryTab === 2" (click)="selectItineraryTab(2)">
+                            <div class="absolute top-5 -left-4 text-center text-sm tracking-normal">
+                                <div class="font-bold">Dinner</div>
+                                <div class="font-bold text-nowrap" *ngIf="!clickMeClicked">(Click Me)</div>
+                                <div>2:45pm</div>
+                            </div>
+                        </div>
+                        <div class="circle-3 cursor-pointer" [class.fill]="itineraryTab === 3" (click)="selectItineraryTab(3)">
+                            <div class="absolute top-5 -left-4 text-center text-sm tracking-normal">
+                                <div class="font-bold">Show</div>
+                                <div class="font-bold text-nowrap" *ngIf="!clickMeClicked">(Click Me)</div>
+                                <div>7:00pm</div>
                             </div>
                         </div>
                     </div>
-                    <div class="bg-white p-4">
-                        <div class="font-bold">Gulf Coast Kitchen</div>
-                        <div class="my-3 italic">
-                            <div>32 Star Island Rd</div>
-                            <div>Montauk, NY</div>
-                        </div>
-                        <div>Housed in the Montauk Yacht Club on Star Island, it doesn't get much more radical (rad + nautical) than GCK. Views of Lake Montauk
-                            rival
-                            most
-                            on the East End and their wine & dine vibes give you another opportunity to kick up your vacation casual a notch.
-                        </div>
-                    </div>
-                    <div class="bg-white p-4">
-                        <div class="font-bold">Joni's</div>
-                        <div class="my-3 italic">
-                            <div>34 S Etna Avenue</div>
-                            <div>Montauk, NY</div>
-                        </div>
-                        <div>
-                            We understand that your pilates and juice routine might not jive with a full weekend of burger & booze binging, so swing by Joni’s
-                            for
-                            your
-                            sprouts fix. Open from early morning until mid-afternoon, this cute place serves eggs, veggies and yummy sandwiches. The Thai Me Up
-                            wrap
-                            is
-                            what
-                            we come for, but it's hard to go wrong.
-                        </div>
-                    </div>
-                    <div class="bg-white p-4">
-                        <div class="font-bold">Joni's</div>
-                        <div class="mt-3 italic">
-                            <div>34 S Etna Avenue</div>
-                            <div>Montauk, NY</div>
-                        </div>
-                        <div>
-                            We understand that your pilates and juice routine might not jive with a full weekend of burger & booze binging, so swing by Joni’s
-                            for
-                            your
-                            sprouts fix. Open from early morning until mid-afternoon, this cute place serves eggs, veggies and yummy sandwiches. The Thai Me Up
-                            wrap
-                            is
-                            what
-                            we come for, but it's hard to go wrong.
-                        </div>
-                    </div>
-                    <div class="col-span-2 bg-white">
-                        <img class="w-full" src="https://placehold.co/400x200" />
-                        <div class="p-4">
-                            <div class="font-bold">Navy Beach</div>
-                            <div class="my-3 italic">
-                                <div>16 Navy Rd</div>
-                                <div>Montauk, NY</div>
+                    <div class="md:items-center md:h-96 block md:hidden tab" [class.showtab]="itineraryTab === 1">
+                        <img class="m-auto w-60 md:mx-2 md:w-52 h-96" src="https://placehold.co/100x200" />
+                        <div class="itinerary-description md:">
+                            <div class="itinerary-description-title text-2xl md:text-4xl font-bold">Ceremony</div>
+                            <div class="py-6">Although the courthouse will have our signatures on the dotted line, we know it won't be real in our eyes until
+                                you
+                                help us make the commitment.
                             </div>
-                            <div>For us, Montauk is synonymous with shellfish. Lobster, in particular. And Navy Beach serves theirs right - warm on a buttered
-                                bun.
-                                No
-                                shirt, no
-                                shorts, no problem? they don't mind if you stay in your bikini. You're on an island in June, so take full advantage.
+                            <div class="pb-5 font-bold">Ceremony: 1:00pm - 1:30pm</div>
+                            <div>Arrive 10-15 minutes early to grab a seat.</div>
+                            <div>Ceremony is outdoors but shaded, in the event of inclement weather we will proceed indoors.</div>
+                            <div>We will continue with photography until 2:45pm.</div>
+                        </div>
+                        <div class="itinerary-details p-2.5">
+                            <div class="font-bold">The Wedding Salons at the Wynn Hotel</div>
+                            <div class="text-sm hidden md:block">
+                                <div>Sunday</div>
+                                <div>May 25</div>
+                                <div>1:00pm</div>
                             </div>
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-3 rounded text-sm">View on Map</button>
+                            <div class="font-bold">Attire</div>
+                            <div>Cocktail Attire - Purple Encouraged</div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="flex justify-center place-content" [class.place-content-selected]="place === 'drink'">
-                <div class="s-five-grid">
-                    <div class="bg-white p-4">
-                        <div class="font-bold">Joni's</div>
-                        <div class="my-3 italic">
-                            <div>34 S Etna Avenue</div>
-                            <div>Montauk, NY</div>
-                        </div>
-                        <div>We understand that your pilates and juice routine might not jive with a full weekend of burger & booze binging, so swing by Joni's
-                            for
-                            your
-                            sprouts fix. Open from early morning until mid-afternoon, this cute place serves eggs, veggies and yummy sandwiches. The Thai Me Up
-                            wrap
-                            is
-                            what
-                            we come for, but it's hard to go wrong.
-                        </div>
-                    </div>
-
-                    <div class="bg-white p-4">
-                        <div class="font-bold">Gulf Coast Kitchen</div>
-                        <div class="my-3 italic">
-                            <div>32 Star Island Rd</div>
-                            <div>Montauk, NY</div>
-                        </div>
-                        <div>Housed in the Montauk Yacht Club on Star Island, it doesn't get much more radical (rad + nautical) than GCK. Views of Lake Montauk
-                            rival
-                            most
-                            on the East End and their wine & dine vibes give you another opportunity to kick up your vacation casual a notch.
-                        </div>
-                    </div>
-                    <div class="col-span-2 bg-white">
-                        <img class="w-full" src="https://placehold.co/400x200" />
-                        <div class="p-4">
-                            <div class="font-bold">Navy Beach</div>
-
-                            <div class="my-3 italic">
-                                <div>16 Navy Rd</div>
-                                <div>Montauk, NY</div>
+                    <div class="border-b-2 w-80 mx-auto my-5 border-black md:hidden"></div>
+                    <div class="md:items-center md:h-96 block md:hidden tab" [class.showtab]="itineraryTab === 2">
+                        <img class="m-auto md:mx-2 w-52 h-96" src="https://placehold.co/100x200" />
+                        <div class="itinerary-description">
+                            <div class="itinerary-description-title text-2xl md:text-4xl font-bold">Dinner</div>
+                            <div class="py-6">No need to front, this is what we all have been waiting for - food! Enjoy a margarita or glass of prosecco with a
+                                family style dinner.
                             </div>
-                            <div>For us, Montauk is synonymous with shellfish. Lobster, in particular. And Navy Beach serves theirs right - warm on a buttered
-                                bun.
-                                No
-                                shirt, no
-                                shorts, no problem? they don't mind if you stay in your bikini. You're on an island in June, so take full advantage.
+                            <div class="pb-5 font-bold">Dinner: 2:45pm - 5:45pm</div>
+                            <div>We will be providing transportation from the Wynn Hotel to Mon Ami Gabi at 3:15pm.</div>
+                            <div>CSelect your entrée when seated, choices include: Chicken, Steak, or House Burger</div>
+                            <div>Please enjoy the open bar.</div>
+                        </div>
+                        <div class="itinerary-details">
+                            <div class="font-bold">Mon Ami Gabi</div>
+                            <div class="text-sm hidden md:block">
+                                <div>Sunday</div>
+                                <div>May 25</div>
+                                <div>2:45pm</div>
+                            </div>
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-3 rounded text-sm">View on Map</button>
+                            <div class="font-bold">Attire</div>
+                            <div>Cocktail Attire - Purple Encouraged</div>
+                        </div>
+                    </div>
+                    <div class="border-b-2 w-80 mx-auto my-5 border-black md:hidden"></div>
+                    <div class="md:items-center md:h-96 block md:hidden tab" [class.showtab]="itineraryTab === 3">
+                        <img class="m-auto md:mx-2 w-52 h-96" src="https://placehold.co/100x200" />
+                        <div class="itinerary-description">
+                            <div class="itinerary-description-title text-xl md:text-4xl font-bold">Show</div>
+                            <div class="py-6">We'd like to treat you to a Vegas show and see a water-themed "O" Cirque du Soleil production.
+                            </div>
+                            <div class="font-bold">Show: 7:00pm - 8:30pm</div>
+                            <div>90 minutes without an intermission</div>
+                            <div class="text-sm pt-5">No shopping bags, luggage, or backpacks will be permitted into the O Theatre except for small personal
+                                bags or
+                                purses (9″ x 5″x 2″
+                                max)</div>
+                            <div class="text-sm">No photography or video recording devices, including devices such as Google Glass, are permitted into the
+                                theater.
+                            </div>
+                            <div class="text-sm"> For more info:
+                                <a href="https://bellagio.mgmresorts.com/en/entertainment/faq-o-by-cirque-du-soleil.html" class="text-blue-500">
+                                    https://bellagio.mgmresorts.com/en/entertainment/faq-o-by-cirque-du-soleil.html
+                                </a>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-span-2 bg-white">
-                        <img class="w-full" src="https://placehold.co/400x200" />
-                        <div class="p-4">
-                            <div class="font-bold">Navy Beach</div>
-                            <div class="my-3 italic">
-                                <div>16 Navy Rd</div>
-                                <div>Montauk, NY</div>
+                        <div class="itinerary-details">
+                            <div class="font-bold"> "O" by Cirque du Soleil at the Bellagio Hotel</div>
+                            <div class="text-sm hidden md:block">
+                                <div>Sunday</div>
+                                <div>May 25</div>
+                                <div>7:00pm</div>
                             </div>
-                            <div>For us, Montauk is synonymous with shellfish. Lobster, in particular. And Navy Beach serves theirs right - warm on a buttered
-                                bun.
-                                No
-                                shirt, no
-                                shorts, no problem? they don't mind if you stay in your bikini. You're on an island in June, so take full advantage.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-white p-4">
-                        <div class="font-bold">Joni's</div>
-                        <div class="my-3 italic">
-                            <div>34 S Etna Avenue</div>
-                            <div>Montauk, NY</div>
-                        </div>
-                        <div>
-                            We understand that your pilates and juice routine might not jive with a full weekend of burger & booze binging, so swing by Joni’s
-                            for
-                            your
-                            sprouts fix. Open from early morning until mid-afternoon, this cute place serves eggs, veggies and yummy sandwiches. The Thai Me Up
-                            wrap
-                            is
-                            what
-                            we come for, but it's hard to go wrong.
-                        </div>
-                    </div>
-                    <div class="bg-white p-4">
-                        <div class="font-bold">Joni's</div>
-                        <div class="mt-3 italic">
-                            <div>34 S Etna Avenue</div>
-                            <div>Montauk, NY</div>
-                        </div>
-                        <div>
-                            We understand that your pilates and juice routine might not jive with a full weekend of burger & booze binging, so swing by Joni’s
-                            for
-                            your
-                            sprouts fix. Open from early morning until mid-afternoon, this cute place serves eggs, veggies and yummy sandwiches. The Thai Me Up
-                            wrap
-                            is
-                            what
-                            we come for, but it's hard to go wrong.
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <div class="flex justify-center place-content" [class.place-content-selected]="place === 'shop'">
-                <div class="s-five-grid">
-                    <div class="bg-white p-4">
-                        <div class="font-bold">Joni's</div>
-                        <div class="my-3 italic">
-                            <div>34 S Etna Avenue</div>
-                            <div>Montauk, NY</div>
-                        </div>
-                        <div>We understand that your pilates and juice routine might not jive with a full weekend of burger & booze binging, so swing by Joni's
-                            for
-                            your
-                            sprouts fix. Open from early morning until mid-afternoon, this cute place serves eggs, veggies and yummy sandwiches. The Thai Me Up
-                            wrap
-                            is
-                            what
-                            we come for, but it's hard to go wrong.
-                        </div>
-                    </div>
-                    <div class="col-span-2 bg-white">
-                        <img class="w-full" src="https://placehold.co/400x200" />
-                        <div class="p-4">
-                            <div class="font-bold">Navy Beach</div>
-
-                            <div class="my-3 italic">
-                                <div>16 Navy Rd</div>
-                                <div>Montauk, NY</div>
-                            </div>
-                            <div>For us, Montauk is synonymous with shellfish. Lobster, in particular. And Navy Beach serves theirs right - warm on a buttered
-                                bun.
-                                No
-                                shirt, no
-                                shorts, no problem? they don't mind if you stay in your bikini. You're on an island in June, so take full advantage.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-white p-4">
-                        <div class="font-bold">Gulf Coast Kitchen</div>
-                        <div class="my-3 italic">
-                            <div>32 Star Island Rd</div>
-                            <div>Montauk, NY</div>
-                        </div>
-                        <div>Housed in the Montauk Yacht Club on Star Island, it doesn't get much more radical (rad + nautical) than GCK. Views of Lake Montauk
-                            rival
-                            most
-                            on the East End and their wine & dine vibes give you another opportunity to kick up your vacation casual a notch.
-                        </div>
-                    </div>
-                    <div class="bg-white p-4">
-                        <div class="font-bold">Joni's</div>
-                        <div class="my-3 italic">
-                            <div>34 S Etna Avenue</div>
-                            <div>Montauk, NY</div>
-                        </div>
-                        <div>
-                            We understand that your pilates and juice routine might not jive with a full weekend of burger & booze binging, so swing by Joni’s
-                            for
-                            your
-                            sprouts fix. Open from early morning until mid-afternoon, this cute place serves eggs, veggies and yummy sandwiches. The Thai Me Up
-                            wrap
-                            is
-                            what
-                            we come for, but it's hard to go wrong.
-                        </div>
-                    </div>
-                    <div class="col-span-2 bg-white">
-                        <img class="w-full" src="https://placehold.co/400x200" />
-                        <div class="p-4">
-                            <div class="font-bold">Navy Beach</div>
-                            <div class="my-3 italic">
-                                <div>16 Navy Rd</div>
-                                <div>Montauk, NY</div>
-                            </div>
-                            <div>For us, Montauk is synonymous with shellfish. Lobster, in particular. And Navy Beach serves theirs right - warm on a buttered
-                                bun.
-                                No
-                                shirt, no
-                                shorts, no problem? they don't mind if you stay in your bikini. You're on an island in June, so take full advantage.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-white p-4">
-                        <div class="font-bold">Joni's</div>
-                        <div class="mt-3 italic">
-                            <div>34 S Etna Avenue</div>
-                            <div>Montauk, NY</div>
-                        </div>
-                        <div>
-                            We understand that your pilates and juice routine might not jive with a full weekend of burger & booze binging, so swing by Joni’s
-                            for
-                            your
-                            sprouts fix. Open from early morning until mid-afternoon, this cute place serves eggs, veggies and yummy sandwiches. The Thai Me Up
-                            wrap
-                            is
-                            what
-                            we come for, but it's hard to go wrong.
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="flex justify-center place-content" [class.place-content-selected]="place === 'do'">
-                <div class="s-five-grid">
-                    <div class="col-span-2 bg-white">
-                        <img class="w-full" src="https://placehold.co/400x200" />
-                        <div class="p-4">
-                            <div class="font-bold">Navy Beach</div>
-
-                            <div class="my-3 italic">
-                                <div>16 Navy Rd</div>
-                                <div>Montauk, NY</div>
-                            </div>
-                            <div>For us, Montauk is synonymous with shellfish. Lobster, in particular. And Navy Beach serves theirs right - warm on a buttered
-                                bun.
-                                No
-                                shirt, no
-                                shorts, no problem? they don't mind if you stay in your bikini. You're on an island in June, so take full advantage.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-white p-4">
-                        <div class="font-bold">Joni's</div>
-                        <div class="my-3 italic">
-                            <div>34 S Etna Avenue</div>
-                            <div>Montauk, NY</div>
-                        </div>
-                        <div>We understand that your pilates and juice routine might not jive with a full weekend of burger & booze binging, so swing by Joni's
-                            for
-                            your
-                            sprouts fix. Open from early morning until mid-afternoon, this cute place serves eggs, veggies and yummy sandwiches. The Thai Me Up
-                            wrap
-                            is
-                            what
-                            we come for, but it's hard to go wrong.
-                        </div>
-                    </div>
-                    <div class="bg-white p-4">
-                        <div class="font-bold">Gulf Coast Kitchen</div>
-                        <div class="my-3 italic">
-                            <div>32 Star Island Rd</div>
-                            <div>Montauk, NY</div>
-                        </div>
-                        <div>Housed in the Montauk Yacht Club on Star Island, it doesn't get much more radical (rad + nautical) than GCK. Views of Lake Montauk
-                            rival
-                            most
-                            on the East End and their wine & dine vibes give you another opportunity to kick up your vacation casual a notch.
-                        </div>
-                    </div>
-                    <div class="bg-white p-4">
-                        <div class="font-bold">Joni's</div>
-                        <div class="my-3 italic">
-                            <div>34 S Etna Avenue</div>
-                            <div>Montauk, NY</div>
-                        </div>
-                        <div>
-                            We understand that your pilates and juice routine might not jive with a full weekend of burger & booze binging, so swing by Joni’s
-                            for
-                            your
-                            sprouts fix. Open from early morning until mid-afternoon, this cute place serves eggs, veggies and yummy sandwiches. The Thai Me Up
-                            wrap
-                            is
-                            what
-                            we come for, but it's hard to go wrong.
-                        </div>
-                    </div>
-                    <div class="bg-white p-4">
-                        <div class="font-bold">Joni's</div>
-                        <div class="mt-3 italic">
-                            <div>34 S Etna Avenue</div>
-                            <div>Montauk, NY</div>
-                        </div>
-                        <div>
-                            We understand that your pilates and juice routine might not jive with a full weekend of burger & booze binging, so swing by Joni’s
-                            for
-                            your
-                            sprouts fix. Open from early morning until mid-afternoon, this cute place serves eggs, veggies and yummy sandwiches. The Thai Me Up
-                            wrap
-                            is
-                            what
-                            we come for, but it's hard to go wrong.
-                        </div>
-                    </div>
-                    <div class="col-span-2 bg-white">
-                        <img class="w-full" src="https://placehold.co/400x200" />
-                        <div class="p-4">
-                            <div class="font-bold">Navy Beach</div>
-                            <div class="my-3 italic">
-                                <div>16 Navy Rd</div>
-                                <div>Montauk, NY</div>
-                            </div>
-                            <div>For us, Montauk is synonymous with shellfish. Lobster, in particular. And Navy Beach serves theirs right - warm on a buttered
-                                bun.
-                                No
-                                shirt, no
-                                shorts, no problem? they don't mind if you stay in your bikini. You're on an island in June, so take full advantage.
-                            </div>
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-3 rounded text-sm">View on Map</button>
+                            <div class="font-bold">Attire</div>
+                            <div>Cocktail Attire - Purple Encouraged</div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="section bg-white s-six mb-5" id="rsvp">
-        <div class="content  m-auto">
+        <div class="section fixed top-20 w-full bg-white z-20 md:min-h-screen shadow-2xl">
+            <div class="border-b-2 w-80 mx-auto mt-5 md:mt-24 border-black"></div>
+            <div class="text-center text-3xl md:text-3xl mt-5 tracking-widest">Registry</div>
+            <div class="max-w-screen-md m-auto text-lg">
+                <div class="p-2.5 md:my-10 md:p-0">
+                    We are beyond grateful to be celebrating our wedding with you. We appreciate you coming from far and wide - city friends, we know that
+                    traveling the Las Vegas feels like crossing the country - to be with us this Memorial weekend. Your attendance is as good a gift as any, but
+                    for those who
+                    would like, we have thoughtfully put together our registry with items to help us start this next chapter in our lives.
+                </div>
+                <div class="p-2.5 md:my-7 md:p-0">
+                    We have so much to look forward to and have included cash gift options if you would like to contribute to our future plans. Thank you from
+                    the bottom of our hearts.
+                </div>
+                <div class="p-2.5 md:my-7 md:p-0">You can find out registry here at <a href="http://www.amazon.com" target="_blank"
+                        class="text-cyan-600">Amazon</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section fixed top-20 w-full bg-stone-700 z-10 s-five text-sm tracking-normal shadow-2xl hidden">
+            <img class="w-3/8 mx-auto mt-20" src="https://placehold.co/600x400" />
+            <div class="text-5xl text-center my-10 text-white">LAS VEGAS, NEVADA</div>
+            <div class="w-1/4 my-20 mx-auto border-2 border-white"></div>
+            <div class="flex align-center justify-center text-white text-lg my-5 cursor-pointer">
+                <div class="mx-3" [class.place-selected]="place === 'eat'" (click)="selectPlace('eat')">Eat</div> /
+                <div class="mx-3" [class.place-selected]="place === 'drink'" (click)="selectPlace('drink')">Drink</div> /
+                <div class="mx-3" [class.place-selected]="place === 'shop'" (click)="selectPlace('shop')">Shop</div> /
+                <div class="mx-3" [class.place-selected]="place === 'do'" (click)="selectPlace('do')">Do</div>
+            </div>
+            <div class="mb-20">
+                <div class="flex justify-center place-content" [class.place-content-selected]="place === 'eat'">
+                    <div class="s-five-grid ">
+                        <div class="bg-white p-4">
+                            <div class="font-bold">Joni's</div>
+                            <div class="my-3 italic">
+                                <div>34 S Etna Avenue</div>
+                                <div>Montauk, NY</div>
+                            </div>
+                            <div>We understand that your pilates and juice routine might not jive with a full weekend of burger & booze binging, so swing by
+                                Joni's
+                                for
+                                your
+                                sprouts fix. Open from early morning until mid-afternoon, this cute place serves eggs, veggies and yummy sandwiches. The Thai Me
+                                Up
+                                wrap
+                                is
+                                what
+                                we come for, but it's hard to go wrong.
+                            </div>
+                        </div>
+                        <div class="col-span-2 bg-white">
+                            <img class="w-full" src="https://placehold.co/400x200" />
+                            <div class="p-4">
+                                <div class="font-bold">Navy Beach</div>
+
+                                <div class="my-3 italic">
+                                    <div>16 Navy Rd</div>
+                                    <div>Montauk, NY</div>
+                                </div>
+                                <div>For us, Montauk is synonymous with shellfish. Lobster, in particular. And Navy Beach serves theirs right - warm on a
+                                    buttered
+                                    bun.
+                                    No
+                                    shirt, no
+                                    shorts, no problem? they don't mind if you stay in your bikini. You're on an island in June, so take full advantage.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4">
+                            <div class="font-bold">Gulf Coast Kitchen</div>
+                            <div class="my-3 italic">
+                                <div>32 Star Island Rd</div>
+                                <div>Montauk, NY</div>
+                            </div>
+                            <div>Housed in the Montauk Yacht Club on Star Island, it doesn't get much more radical (rad + nautical) than GCK. Views of Lake
+                                Montauk
+                                rival
+                                most
+                                on the East End and their wine & dine vibes give you another opportunity to kick up your vacation casual a notch.
+                            </div>
+                        </div>
+                        <div class="bg-white p-4">
+                            <div class="font-bold">Joni's</div>
+                            <div class="my-3 italic">
+                                <div>34 S Etna Avenue</div>
+                                <div>Montauk, NY</div>
+                            </div>
+                            <div>
+                                We understand that your pilates and juice routine might not jive with a full weekend of burger & booze binging, so swing by
+                                Joni’s
+                                for
+                                your
+                                sprouts fix. Open from early morning until mid-afternoon, this cute place serves eggs, veggies and yummy sandwiches. The Thai Me
+                                Up
+                                wrap
+                                is
+                                what
+                                we come for, but it's hard to go wrong.
+                            </div>
+                        </div>
+                        <div class="bg-white p-4">
+                            <div class="font-bold">Joni's</div>
+                            <div class="mt-3 italic">
+                                <div>34 S Etna Avenue</div>
+                                <div>Montauk, NY</div>
+                            </div>
+                            <div>
+                                We understand that your pilates and juice routine might not jive with a full weekend of burger & booze binging, so swing by
+                                Joni’s
+                                for
+                                your
+                                sprouts fix. Open from early morning until mid-afternoon, this cute place serves eggs, veggies and yummy sandwiches. The Thai Me
+                                Up
+                                wrap
+                                is
+                                what
+                                we come for, but it's hard to go wrong.
+                            </div>
+                        </div>
+                        <div class="col-span-2 bg-white">
+                            <img class="w-full" src="https://placehold.co/400x200" />
+                            <div class="p-4">
+                                <div class="font-bold">Navy Beach</div>
+                                <div class="my-3 italic">
+                                    <div>16 Navy Rd</div>
+                                    <div>Montauk, NY</div>
+                                </div>
+                                <div>For us, Montauk is synonymous with shellfish. Lobster, in particular. And Navy Beach serves theirs right - warm on a
+                                    buttered
+                                    bun.
+                                    No
+                                    shirt, no
+                                    shorts, no problem? they don't mind if you stay in your bikini. You're on an island in June, so take full advantage.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center place-content" [class.place-content-selected]="place === 'drink'">
+                    <div class="s-five-grid">
+                        <div class="bg-white p-4">
+                            <div class="font-bold">Joni's</div>
+                            <div class="my-3 italic">
+                                <div>34 S Etna Avenue</div>
+                                <div>Montauk, NY</div>
+                            </div>
+                            <div>We understand that your pilates and juice routine might not jive with a full weekend of burger & booze binging, so swing by
+                                Joni's
+                                for
+                                your
+                                sprouts fix. Open from early morning until mid-afternoon, this cute place serves eggs, veggies and yummy sandwiches. The Thai Me
+                                Up
+                                wrap
+                                is
+                                what
+                                we come for, but it's hard to go wrong.
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-4">
+                            <div class="font-bold">Gulf Coast Kitchen</div>
+                            <div class="my-3 italic">
+                                <div>32 Star Island Rd</div>
+                                <div>Montauk, NY</div>
+                            </div>
+                            <div>Housed in the Montauk Yacht Club on Star Island, it doesn't get much more radical (rad + nautical) than GCK. Views of Lake
+                                Montauk
+                                rival
+                                most
+                                on the East End and their wine & dine vibes give you another opportunity to kick up your vacation casual a notch.
+                            </div>
+                        </div>
+                        <div class="col-span-2 bg-white">
+                            <img class="w-full" src="https://placehold.co/400x200" />
+                            <div class="p-4">
+                                <div class="font-bold">Navy Beach</div>
+
+                                <div class="my-3 italic">
+                                    <div>16 Navy Rd</div>
+                                    <div>Montauk, NY</div>
+                                </div>
+                                <div>For us, Montauk is synonymous with shellfish. Lobster, in particular. And Navy Beach serves theirs right - warm on a
+                                    buttered
+                                    bun.
+                                    No
+                                    shirt, no
+                                    shorts, no problem? they don't mind if you stay in your bikini. You're on an island in June, so take full advantage.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-span-2 bg-white">
+                            <img class="w-full" src="https://placehold.co/400x200" />
+                            <div class="p-4">
+                                <div class="font-bold">Navy Beach</div>
+                                <div class="my-3 italic">
+                                    <div>16 Navy Rd</div>
+                                    <div>Montauk, NY</div>
+                                </div>
+                                <div>For us, Montauk is synonymous with shellfish. Lobster, in particular. And Navy Beach serves theirs right - warm on a
+                                    buttered
+                                    bun.
+                                    No
+                                    shirt, no
+                                    shorts, no problem? they don't mind if you stay in your bikini. You're on an island in June, so take full advantage.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4">
+                            <div class="font-bold">Joni's</div>
+                            <div class="my-3 italic">
+                                <div>34 S Etna Avenue</div>
+                                <div>Montauk, NY</div>
+                            </div>
+                            <div>
+                                We understand that your pilates and juice routine might not jive with a full weekend of burger & booze binging, so swing by
+                                Joni’s
+                                for
+                                your
+                                sprouts fix. Open from early morning until mid-afternoon, this cute place serves eggs, veggies and yummy sandwiches. The Thai Me
+                                Up
+                                wrap
+                                is
+                                what
+                                we come for, but it's hard to go wrong.
+                            </div>
+                        </div>
+                        <div class="bg-white p-4">
+                            <div class="font-bold">Joni's</div>
+                            <div class="mt-3 italic">
+                                <div>34 S Etna Avenue</div>
+                                <div>Montauk, NY</div>
+                            </div>
+                            <div>
+                                We understand that your pilates and juice routine might not jive with a full weekend of burger & booze binging, so swing by
+                                Joni’s
+                                for
+                                your
+                                sprouts fix. Open from early morning until mid-afternoon, this cute place serves eggs, veggies and yummy sandwiches. The Thai Me
+                                Up
+                                wrap
+                                is
+                                what
+                                we come for, but it's hard to go wrong.
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="flex justify-center place-content" [class.place-content-selected]="place === 'shop'">
+                    <div class="s-five-grid">
+                        <div class="bg-white p-4">
+                            <div class="font-bold">Joni's</div>
+                            <div class="my-3 italic">
+                                <div>34 S Etna Avenue</div>
+                                <div>Montauk, NY</div>
+                            </div>
+                            <div>We understand that your pilates and juice routine might not jive with a full weekend of burger & booze binging, so swing by
+                                Joni's
+                                for
+                                your
+                                sprouts fix. Open from early morning until mid-afternoon, this cute place serves eggs, veggies and yummy sandwiches. The Thai Me
+                                Up
+                                wrap
+                                is
+                                what
+                                we come for, but it's hard to go wrong.
+                            </div>
+                        </div>
+                        <div class="col-span-2 bg-white">
+                            <img class="w-full" src="https://placehold.co/400x200" />
+                            <div class="p-4">
+                                <div class="font-bold">Navy Beach</div>
+
+                                <div class="my-3 italic">
+                                    <div>16 Navy Rd</div>
+                                    <div>Montauk, NY</div>
+                                </div>
+                                <div>For us, Montauk is synonymous with shellfish. Lobster, in particular. And Navy Beach serves theirs right - warm on a
+                                    buttered
+                                    bun.
+                                    No
+                                    shirt, no
+                                    shorts, no problem? they don't mind if you stay in your bikini. You're on an island in June, so take full advantage.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4">
+                            <div class="font-bold">Gulf Coast Kitchen</div>
+                            <div class="my-3 italic">
+                                <div>32 Star Island Rd</div>
+                                <div>Montauk, NY</div>
+                            </div>
+                            <div>Housed in the Montauk Yacht Club on Star Island, it doesn't get much more radical (rad + nautical) than GCK. Views of Lake
+                                Montauk
+                                rival
+                                most
+                                on the East End and their wine & dine vibes give you another opportunity to kick up your vacation casual a notch.
+                            </div>
+                        </div>
+                        <div class="bg-white p-4">
+                            <div class="font-bold">Joni's</div>
+                            <div class="my-3 italic">
+                                <div>34 S Etna Avenue</div>
+                                <div>Montauk, NY</div>
+                            </div>
+                            <div>
+                                We understand that your pilates and juice routine might not jive with a full weekend of burger & booze binging, so swing by
+                                Joni’s
+                                for
+                                your
+                                sprouts fix. Open from early morning until mid-afternoon, this cute place serves eggs, veggies and yummy sandwiches. The Thai Me
+                                Up
+                                wrap
+                                is
+                                what
+                                we come for, but it's hard to go wrong.
+                            </div>
+                        </div>
+                        <div class="col-span-2 bg-white">
+                            <img class="w-full" src="https://placehold.co/400x200" />
+                            <div class="p-4">
+                                <div class="font-bold">Navy Beach</div>
+                                <div class="my-3 italic">
+                                    <div>16 Navy Rd</div>
+                                    <div>Montauk, NY</div>
+                                </div>
+                                <div>For us, Montauk is synonymous with shellfish. Lobster, in particular. And Navy Beach serves theirs right - warm on a
+                                    buttered
+                                    bun.
+                                    No
+                                    shirt, no
+                                    shorts, no problem? they don't mind if you stay in your bikini. You're on an island in June, so take full advantage.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4">
+                            <div class="font-bold">Joni's</div>
+                            <div class="mt-3 italic">
+                                <div>34 S Etna Avenue</div>
+                                <div>Montauk, NY</div>
+                            </div>
+                            <div>
+                                We understand that your pilates and juice routine might not jive with a full weekend of burger & booze binging, so swing by
+                                Joni’s
+                                for
+                                your
+                                sprouts fix. Open from early morning until mid-afternoon, this cute place serves eggs, veggies and yummy sandwiches. The Thai Me
+                                Up
+                                wrap
+                                is
+                                what
+                                we come for, but it's hard to go wrong.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center place-content" [class.place-content-selected]="place === 'do'">
+                    <div class="s-five-grid">
+                        <div class="col-span-2 bg-white">
+                            <img class="w-full" src="https://placehold.co/400x200" />
+                            <div class="p-4">
+                                <div class="font-bold">Navy Beach</div>
+
+                                <div class="my-3 italic">
+                                    <div>16 Navy Rd</div>
+                                    <div>Montauk, NY</div>
+                                </div>
+                                <div>For us, Montauk is synonymous with shellfish. Lobster, in particular. And Navy Beach serves theirs right - warm on a
+                                    buttered
+                                    bun.
+                                    No
+                                    shirt, no
+                                    shorts, no problem? they don't mind if you stay in your bikini. You're on an island in June, so take full advantage.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4">
+                            <div class="font-bold">Joni's</div>
+                            <div class="my-3 italic">
+                                <div>34 S Etna Avenue</div>
+                                <div>Montauk, NY</div>
+                            </div>
+                            <div>We understand that your pilates and juice routine might not jive with a full weekend of burger & booze binging, so swing by
+                                Joni's
+                                for
+                                your
+                                sprouts fix. Open from early morning until mid-afternoon, this cute place serves eggs, veggies and yummy sandwiches. The Thai Me
+                                Up
+                                wrap
+                                is
+                                what
+                                we come for, but it's hard to go wrong.
+                            </div>
+                        </div>
+                        <div class="bg-white p-4">
+                            <div class="font-bold">Gulf Coast Kitchen</div>
+                            <div class="my-3 italic">
+                                <div>32 Star Island Rd</div>
+                                <div>Montauk, NY</div>
+                            </div>
+                            <div>Housed in the Montauk Yacht Club on Star Island, it doesn't get much more radical (rad + nautical) than GCK. Views of Lake
+                                Montauk
+                                rival
+                                most
+                                on the East End and their wine & dine vibes give you another opportunity to kick up your vacation casual a notch.
+                            </div>
+                        </div>
+                        <div class="bg-white p-4">
+                            <div class="font-bold">Joni's</div>
+                            <div class="my-3 italic">
+                                <div>34 S Etna Avenue</div>
+                                <div>Montauk, NY</div>
+                            </div>
+                            <div>
+                                We understand that your pilates and juice routine might not jive with a full weekend of burger & booze binging, so swing by
+                                Joni’s
+                                for
+                                your
+                                sprouts fix. Open from early morning until mid-afternoon, this cute place serves eggs, veggies and yummy sandwiches. The Thai Me
+                                Up
+                                wrap
+                                is
+                                what
+                                we come for, but it's hard to go wrong.
+                            </div>
+                        </div>
+                        <div class="bg-white p-4">
+                            <div class="font-bold">Joni's</div>
+                            <div class="mt-3 italic">
+                                <div>34 S Etna Avenue</div>
+                                <div>Montauk, NY</div>
+                            </div>
+                            <div>
+                                We understand that your pilates and juice routine might not jive with a full weekend of burger & booze binging, so swing by
+                                Joni’s
+                                for
+                                your
+                                sprouts fix. Open from early morning until mid-afternoon, this cute place serves eggs, veggies and yummy sandwiches. The Thai Me
+                                Up
+                                wrap
+                                is
+                                what
+                                we come for, but it's hard to go wrong.
+                            </div>
+                        </div>
+                        <div class="col-span-2 bg-white">
+                            <img class="w-full" src="https://placehold.co/400x200" />
+                            <div class="p-4">
+                                <div class="font-bold">Navy Beach</div>
+                                <div class="my-3 italic">
+                                    <div>16 Navy Rd</div>
+                                    <div>Montauk, NY</div>
+                                </div>
+                                <div>For us, Montauk is synonymous with shellfish. Lobster, in particular. And Navy Beach serves theirs right - warm on a
+                                    buttered
+                                    bun.
+                                    No
+                                    shirt, no
+                                    shorts, no problem? they don't mind if you stay in your bikini. You're on an island in June, so take full advantage.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section fixed top-20 w-full bg-white s-six z-0 mb-5 min-h-screen m-auto">
             <div class="border-b-2 w-80 mx-auto mt-5 border-black"></div>
-            <div class="text-center text-5xl mt-5 mb-20 tracking-widest">Répondez S'il Vous Plaît (RSVP)</div>
+            <div class="text-center text-2xl md:text-5xl mt-5 mb-20 tracking-widest">Répondez S'il Vous Plaît (RSVP)</div>
 
-            <form class="max-xl">
+            <form class="max-w-screen-md m-auto text-lg p-5">
                 <div class="mb-5">
                     <label for="familyLastName" class="block mb-2 text-sm font-medium text-gray-900">Invited Person's Addresse Name</label>
                     <input type="text" id="familyLastName" [(ngModel)]="familyLastName" name="familyLastName"

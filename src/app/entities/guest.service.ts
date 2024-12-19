@@ -5,7 +5,7 @@ import { Observable, of, switchMap } from "rxjs";
 
 @Injectable({ providedIn: 'root' })
 export class GuestService {
-    private baseApi = 'https://localhost:7185/api'
+    private baseApi = 'https://weddding-api-g8f8hnaxbqg5cwbe.eastus-01.azurewebsites.net/api'
     guests = Array<FamilyGuest>();
 
     constructor(private http: HttpClient) { }
