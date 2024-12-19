@@ -26,7 +26,7 @@ export class HomeComponent implements AfterViewInit {
   plusOneAttendingShow = false;
 
   families = new Array<FamilyGuest>();
-  family: FamilyGuest | null | undefined;
+  family = new FamilyGuest();
   submissionComplete = false;
   isSearchForFamilyName = false;
   familySearchError = '';
@@ -34,40 +34,52 @@ export class HomeComponent implements AfterViewInit {
   constructor(private renderer: Renderer2, private guestService: GuestService) { }
 
   ngAfterViewInit() {
-    this.maxScrollHeight = 0;
-
     this.calculatePageHeight();
+    fromEvent(window, 'scroll').subscribe((x) => this.scroll(window.scrollY));
+  }
 
+  scroll(scrollY: number) {
+    if (this.sections) {
+      let rollingSumOfClientHeights = 0;
 
-    fromEvent(window, 'scroll')
-      .subscribe((x) => {
-        if (this.sections) {
-          let rollingSumOfClientHeights = 0;
+      for (let i = 0; i < this.sections.length; ++i) {
+        const section = this.sections[i];
 
-          for (let i = 0; i < this.sections.length; ++i) {
-            const section = this.sections[i];
+        if (scrollY > rollingSumOfClientHeights + this.maxScrollBuffer + section.clientHeight + 800) {
+          this.renderer.setStyle(section, 'transform', `translateY(-1000vh)`);
+        } else if (i == 0
+          || scrollY > rollingSumOfClientHeights + this.maxScrollBuffer * i
+          || i === this.sections?.length - 1 && scrollY > rollingSumOfClientHeights
+        ) {
 
-            if (window.scrollY > rollingSumOfClientHeights + this.maxScrollBuffer * i + section.clientHeight) {
-              this.renderer.setStyle(section, 'transform', `translateY(-200vh)`);
-            } else if (i == 0
-              || window.scrollY > rollingSumOfClientHeights + this.maxScrollBuffer * i
-              || i === this.sections?.length - 1 && window.scrollY > rollingSumOfClientHeights
-            ) {
-
-              let diff = Math.abs(rollingSumOfClientHeights - window.scrollY);
-              if (i !== 0) {
-                diff -= (this.maxScrollBuffer * i);
-              }
-
-              this.renderer.setStyle(section, 'transform', `translateY(-${diff / section.clientHeight * 100}%)`);
-            } else {
-              this.renderer.setStyle(section, 'transform', `translateY(0vh)`);
-            }
-
-            rollingSumOfClientHeights += section.clientHeight;
+          let diff = Math.abs(rollingSumOfClientHeights - scrollY);
+          if (i !== 0) {
+            diff -= (this.maxScrollBuffer * i);
           }
+
+          this.renderer.setStyle(section, 'transform', `translateY(-${diff / section.clientHeight * 100}%)`);
+        } else {
+          this.renderer.setStyle(section, 'transform', `translateY(0vh)`);
         }
-      });
+
+        rollingSumOfClientHeights += section.clientHeight;
+      }
+    }
+  }
+
+  goToPage(index: number) {
+    let scroll = 0;
+
+    if (this.sections) {
+      for (let i = 0; i < index; ++i) {
+        scroll += this.sections[i].clientHeight + this.maxScrollBuffer * i;
+        if (i >= 3) {
+          scroll -= (200 * i);
+        }
+      }
+    }
+
+    window.scrollTo(0, scroll);
   }
 
   calculatePageHeight() {

@@ -1,47 +1,43 @@
 <div class="names fixed top-0 left-0 right-0 h-10 text-3xl text-white font-bold">JOHN & VERONICA</div>
 
-<div class="nav fixed top-50">
-    <div>Home</div>
-    <div>About</div>
-    <div>Itinerary</div>
-    <div>Registry</div>
-    <div>Place</div>
-    <div>RSVP</div>
+<div class="nav fixed top-50 hidden md:flex align-center justify-center">
+    <div (click)="goToPage(0)">Home</div>
+    <div (click)="goToPage(1)">About</div>
+    <div (click)="goToPage(2)">Itinerary</div>
+    <div (click)="goToPage(3)">Registry</div>
+    <div (click)="goToPage(4)">Place</div>
+    <div (click)="goToPage(5)">RSVP</div>
 </div>
 
-<div class="scroll-background" #scrollbackground>
-    <div class="section bg-white s-one" #section>
-        <img class="m-auto w-1/2" src="/assets/images/JohnAndVeronica.jpg" />
-
+<div #scrollbackground>
+    <div class="section bg-white s-one md:min-h-screen z-50 pb-5">
+        <img class="m-auto w-full md:w-1/2" src="/assets/images/JohnAndVeronica.jpg" />
     </div>
 
-    <div class="section bg-white s-two" #section id="about">
-        <div class="content">
-            <div class="header-line line"></div>
-            <div class="description">
-                <div class="description-top">
-                    <div class="w">W</div>
-                    <div>e are thrilled to invite you to our Las Vegas Wedding! We encourage all of you to take this opportunity and make this
-                        into a small getaway or a
-                        full blown vacation.
-                    </div>
-                </div>
-                <br />Since we will not have a wedding party, we decided to have our guests show up in style and be the “wedding party”. Choose any shade of
-                purple
-                for any piece of clothing or accessory. Feel free to show up decked out in purple as well :)
-                <br />
-                <br />Hope you're as excited as we are to make lasting memories!
-                <br />
-                <br />XOXO
-                <br />
-                <br />John & Veronica
+    <div class="section bg-white s-two md:min-h-screen z-40 px-5 pb-8">
+        <div class="content m-auto text-neutral-700 leading-6 max-w-full md:max-w-4xl md:text-3xl">
+            <div class="border-b-2 w-80 mx-auto mt-5 border-black"></div>
+            <div class="flex items-center mt-5 md:mt-24">
+                <div class="text-6xl md:text-9xl relative md:top-0 w">W</div>
+                <div>e are thrilled to invite you to our Las Vegas Wedding! </div>
             </div>
+            <div>We encourage all of you to take this opportunity and make this
+                into a small getaway or a full blown vacation.
+            </div>
+            <br />There will not be a wedding party and instead we invite our guests show up in style and be the "wedding party". Choose any shade of
+            purple for any piece of clothing or accessory. Feel free to show up decked out in purple as well :)
+            <br />
+            <br />Hope you're as excited as we are to make lasting memories!
+            <br />
+            <br />XOXO
+            <br />
+            <br />John & Veronica
         </div>
     </div>
 
-    <div class="section bg-white s-three" #section>
-        <div class="line header-line"></div>
-        <div class="text-center text-5xl mt-5 tracking-widest">ITINERARY</div>
+    <div class="section bg-white s-three">
+        <div class="border-b-2 w-80 mx-auto mt-5 border-black"></div>
+        <div class="text-center text-3xl md:text-3xl mt-5 tracking-widest">ITINERARY</div>
         <div class="itinerary-content">
             <div class="itinerary-box">
                 <div>
@@ -148,7 +144,7 @@
 
     <div class="section bg-white s-four">
         <div class="content">
-            <div class="header-line line"></div>
+            <div class="border-b-2 w-80 mx-auto mt-5 border-black"></div>
             <div class="text-center text-5xl mt-5 tracking-widest">Registry</div>
             <div class="max-w-screen-md m-auto text-lg">
 
@@ -167,7 +163,7 @@
         </div>
     </div>
 
-    <div class="section bg-stone-700 s-five text-sm tracking-normal" #section>
+    <div class="section bg-stone-700 s-five text-sm tracking-normal">
         <img class="w-3/8 mx-auto mt-20" src="https://placehold.co/600x400" />
         <div class="text-5xl text-center my-10 text-white">LAS VEGAS, NEVADA</div>
         <div class="w-1/4 my-20 mx-auto border-2 border-white"></div>
@@ -579,9 +575,9 @@
         </div>
     </div>
 
-    <div class="section bg-white s-six mb-5" #section id="rsvp">
+    <div class="section bg-white s-six mb-5" id="rsvp">
         <div class="content  m-auto">
-            <div class="line header-line"></div>
+            <div class="border-b-2 w-80 mx-auto mt-5 border-black"></div>
             <div class="text-center text-5xl mt-5 mb-20 tracking-widest">Répondez S'il Vous Plaît (RSVP)</div>
 
             <form class="max-xl">
@@ -598,7 +594,7 @@
                     <div class="mt-3" *ngIf="familySearchError">{{familySearchError}}</div>
                 </div>
 
-                <div class="mb-5" *ngIf="family">
+                <div class="mb-5" *ngIf="family && family.familyName">
                     <label class="h-5 text-sm font-medium text-gray-900">Are you attending?</label>
                     <div class="flex align-center">
                         <div>
@@ -617,7 +613,7 @@
                     </div>
                 </div>
 
-                <div *ngIf="family && family.isAttending">
+                <div *ngIf="family.isAttending">
                     <div *ngFor="let guest of family.guests; let i = index">
                         <div class="mb-5">
                             <label for="guest-{{i}}" class="block mb-2 text-sm font-medium text-gray-900">{{guest.isAdult ? 'Adult' : 'Child'}}</label>
@@ -628,7 +624,7 @@
                     </div>
                 </div>
 
-                <div class="guest-questions my-10 text-center" *ngIf="family && family.isAttending">
+                <div class="guest-questions my-10 text-center" *ngIf="family.isAttending">
                     <div></div>
                     <div>Ceremony</div>
                     <div>Reception</div>
@@ -678,7 +674,7 @@
                     </ng-container>
                 </div>
 
-                <button type="submit" *ngIf="family" (click)="submitRsvp()"
+                <button type="submit" *ngIf="family && family.familyName" (click)="submitRsvp()"
                     class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
                 <div class="mt-3" *ngIf="submissionComplete">Submit complete. You may come back here to review your submission.</div>
             </form>
