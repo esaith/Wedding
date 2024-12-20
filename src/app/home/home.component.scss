@@ -136,28 +136,24 @@
 }
 
 .s-six {
-  .content {
-    .disabled {
-      label {
-        color: gray;
-      }
-
-      input {
-        cursor: not-allowed;
-        background-color: gray;
-        pointer-events: none;
-      }
+  .disabled {
+    label {
+      color: gray;
     }
 
-    .guest-questions {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 20px;
+    input {
+      cursor: not-allowed;
+      background-color: gray;
+      pointer-events: none;
+    }
+  }
 
-      input[type="checkbox"].disabled {
-        accent-color: #888;
-        pointer-events: none;
-      }
+  .guest-questions {
+    grid-template-columns: repeat(5, 1fr);
+
+    input[type="checkbox"].disabled {
+      accent-color: #888;
+      pointer-events: none;
     }
   }
 }

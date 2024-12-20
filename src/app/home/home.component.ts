@@ -1,5 +1,5 @@
-import { AfterViewInit, Component, ElementRef, QueryList, Renderer2, ViewChild } from '@angular/core';
-import { debounceTime, fromEvent, lastValueFrom } from 'rxjs';
+import { AfterViewInit, Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
+import { fromEvent, lastValueFrom } from 'rxjs';
 import { FamilyGuest } from '../entities/family-guest';
 import { Guest } from '../entities/guest';
 import { GuestService } from '../entities/guest.service';
@@ -22,16 +22,21 @@ export class HomeComponent implements AfterViewInit {
   isGuestNotAttending = false;
 
   familyLastName = '';
-
-  plusOneAttendingShow = false;
-
   families = new Array<FamilyGuest>();
   family = new FamilyGuest();
   submissionComplete = false;
   isSearchForFamilyName = false;
   familySearchError = '';
 
-  constructor(private renderer: Renderer2, private guestService: GuestService) { }
+  constructor(private renderer: Renderer2, private guestService: GuestService) {
+    this.startServer();
+  }
+
+  startServer() {
+    try {
+      this.guestService.getGuestByName("a").subscribe();
+    } catch (e) { }
+  }
 
   ngAfterViewInit() {
     this.calculatePageHeight();

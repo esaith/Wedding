@@ -668,7 +668,7 @@
                     </div>
                 </div>
 
-                <div class="guest-questions my-10 text-center" *ngIf="family.isAttending">
+                <div class="guest-questions my-3 md:my-10 text-center grid gap-2 md:gap-5 text-xs" *ngIf="family.isAttending">
                     <div></div>
                     <div>Ceremony</div>
                     <div>Reception</div>
@@ -694,24 +694,24 @@
                             <div>
                                 <input type="checkbox" id="guestattendingCeremony-{{i}}" name="guestattendingCeremony-{{i}}"
                                     [(ngModel)]="guest.attendingCeremony" (ngModelChange)="updateCeremonyAttendence(guest)"
-                                    class="w-4 h-4 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 m-auto"
+                                    class="w-4 h-4 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 m-auto"
                                     disabled="{{guest.isUnderFive || !guest.attendingCeremony && (guest.isAdult && family.atMaxCeremonyAdult || !guest.isAdult && family.atMaxCeremonyKid)}}" />
                             </div>
                             <div>
                                 <input type="checkbox" id="guestattendingReception-{{i}}" name="guestattendingReception-{{i}}"
                                     [(ngModel)]="guest.attendingReception"
-                                    class="w-4 h-4 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 m-auto" />
+                                    class="w-4 h-4 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 m-auto" />
                             </div>
                             <div>
                                 <input type="checkbox" id="guestattendingShow-{{i}}" name="guestattendingShow-{{i}}" [(ngModel)]="guest.attendingShow"
-                                    class="w-4 h-4 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 m-auto"
+                                    class="w-4 h-4 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 m-auto"
                                     (ngModelChange)="updateCeremonyShow()" disabled="{{guest.isUnderFive || !guest.attendingShow && family.atMaxShow}}" />
                             </div>
                             <div *ngIf="!family.allowExtraTicket"></div>
                             <div *ngIf="family.allowExtraTicket">
                                 <input type="checkbox" id="guestattendingShowExtraTicket-{{i}}" name="guestattendingShowExtraTicket-{{i}}"
                                     [(ngModel)]="guest.attendingShowExtraTicket"
-                                    class="w-4 h-4 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 m-auto"
+                                    class="w-4 h-4 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 m-auto"
                                     disabled="{{guest.isUnderFive || guest.attendingShow}}" />
                             </div>
                         </ng-container>
