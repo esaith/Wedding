@@ -72,6 +72,30 @@ export class HomeComponent implements AfterViewInit {
     }
   }
 
+  viewOnMap(place: string) {
+    switch (place) {
+      case 'WynnHotel':
+        this.goToMapByLatLong(36.1262011, -115.1620662);
+        break;
+      case 'MonAmi':
+        this.goToMapByLatLong(36.1128337, -115.1724719);
+        break;
+      case 'show':
+        this.goToMapByLatLong(36.1032569, -115.1702386);
+        break;
+    }
+  }
+
+  goToMapByLatLong(lat: number, long: number) {
+    // If it's an iPhone..
+    if ((navigator.platform.indexOf("iPhone") != -1)
+      || (navigator.platform.indexOf("iPod") != -1)
+      || (navigator.platform.indexOf("iPad") != -1))
+      window.open(`maps://www.google.com/maps/dir/?api=1&travelmode=driving&layer=traffic&destination=${lat},${long}`);
+    else
+      window.open(`https://www.google.com/maps/dir/?api=1&travelmode=driving&layer=traffic&destination=${lat},${long}`);
+  }
+
   goToPage(index: number) {
     let scroll = 0;
 
