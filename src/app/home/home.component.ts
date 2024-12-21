@@ -75,13 +75,13 @@ export class HomeComponent implements AfterViewInit {
   viewOnMap(place: string) {
     switch (place) {
       case 'WynnHotel':
-        this.goToMapByLatLong(36.1262011, -115.1620662);
+        window.open('https://www.google.com/maps/dir//The+Wedding+Salons+at+Wynn+Las+Vegas,+3131+S+Las+Vegas+Blvd,+Las+Vegas,+NV+89109/@36.1255085,-115.1676305,18z/data=!3m1!5s0x80c8c46a63457f99:0x39f304ea80cf1f10!4m17!1m7!3m6!1s0x80c8c2cc6478404b:0xa56d3c9469c46f2c!2sThe+Wedding+Salons+at+Wynn+Las+Vegas!8m2!3d36.12577!4d-115.1657002!16s%2Fg%2F113hdx836!4m8!1m0!1m5!1m1!1s0x80c8c2cc6478404b:0xa56d3c9469c46f2c!2m2!1d-115.1657002!2d36.12577!3e2?entry=ttu&amp;g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D')
         break;
       case 'MonAmi':
-        this.goToMapByLatLong(36.1128337, -115.1724719);
+        window.open('https://www.google.com/maps/dir/The+Wedding+Salons+at+Wynn+Las+Vegas,+South+Las+Vegas+Boulevard,+Las+Vegas,+NV/3655+S+Las+Vegas+Blvd+South,+Las+Vegas,+NV+89109/@36.1174777,-115.1798365,15z/data=!3m2!4b1!5s0x80c8c43094c4819d:0x498c25bd56550acb!4m13!4m12!1m5!1m1!1s0x80c8c2cc6478404b:0xa56d3c9469c46f2c!2m2!1d-115.1657002!2d36.12577!1m5!1m1!1s0x80c8c4375b2e62dd:0xc249a313f7e029dc!2m2!1d-115.1724846!2d36.1128631?entry=ttu&amp;g_ep=EgoyMDI0MTAyOS4wIKXMDSoASAFQAw%3D%3D')
         break;
       case 'show':
-        this.goToMapByLatLong(36.1032569, -115.1702386);
+        window.open('https://www.google.com/maps/dir/Mon+Ami+Gabi,+South+Las+Vegas+Boulevard,+Las+Vegas,+NV/K%C3%80+by+Cirque+du+Soleil,+MGM+Grand,+South+Las+Vegas+Boulevard,+Las+Vegas,+NV/@36.1082845,-115.1764577,16z/data=!3m2!4b1!5s0x80c8c5cc93820bd3:0x6c1168e3473cbd5b!4m13!4m12!1m5!1m1!1s0x80c8c4375b2e62dd:0xc249a313f7e029dc!2m2!1d-115.1724846!2d36.1128631!1m5!1m1!1s0x80c8c433370be08d:0x487d2ebb69e733c5!2m2!1d-115.1701311!2d36.1030917?entry=ttu&amp;g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D')
         break;
     }
   }

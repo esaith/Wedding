@@ -11,28 +11,28 @@
     </div>
 
     <div #scrollbackground>
-        <div class="section fixed top-20 w-full bg-white s-one md:min-h-screen z-50 pb-5 shadow-2xl">
+        <div class="section fixed top-20 w-full bg-white s-one min-h-screen z-50 pb-5 shadow-2xl">
             <img class="m-auto w-full md:w-1/2" src="/assets/images/JohnAndVeronica.jpg" />
         </div>
 
-        <div class="section fixed top-20 w-full bg-white s-two md:min-h-screen z-40 px-5 pb-8 shadow-2xl">
-            <div class="content m-auto text-neutral-700 leading-6 max-w-full md:max-w-4xl md:text-3xl">
+        <div class="section fixed top-20 w-full bg-white s-two min-h-screen z-40 px-5 pb-8 shadow-2xl">
+            <div class="content m-auto text-neutral-700 leading-6 max-w-full md:max-w-4xl text-xs md:text-2xl">
                 <div class="border-b-2 w-80 mx-auto mt-5 md:mt-24 border-black"></div>
-                <div class="flex items-center mt-5">
-                    <div class="text-6xl md:text-9xl relative md:top-0 w">W</div>
-                    <div>e are thrilled to invite you to our Las Vegas Wedding! </div>
+                <div class="flex items-center mt-10">
+                    <div class="text-xl md:text-9xl relative md:top-0 w">W</div>
+                    <div>e are thrilled to invite you to our Las Vegas Wedding! We encourage all of you to take this opportunity and make this
+                        into a small getaway or a full blown vacation.
+                    </div>
                 </div>
-                <div>We encourage all of you to take this opportunity and make this
-                    into a small getaway or a full blown vacation.
-                </div>
+
                 <br />There will not be a wedding party and instead we invite our guests show up in style and be the "wedding party". Choose any shade of
                 purple for any piece of clothing or accessory. Feel free to show up decked out in purple as well :)
                 <br />
                 <br />Hope you're as excited as we are to make lasting memories!
                 <br />
-                <br />XOXO
                 <br />
-                <br />John & Veronica
+                <div>xoxo</div>
+                <div>John & Veronica</div>
             </div>
         </div>
 
@@ -44,20 +44,20 @@
                 p-2.5 md:text-lg md:border md:border-solid md:border-slate-500">
                     <div class="hidden md:flex">
                         <div class="circle-1 cursor-pointer" [class.fill]="itineraryTab === 1" (click)="selectItineraryTab(1)">
-                            <div class="absolute top-5 -left-7 text-center text-sm tracking-normal">
+                            <div class="absolute w-20 top-5 -left-8 text-center text-sm tracking-normal">
                                 <div class="font-bold">Ceremony</div>
                                 <div>1:00pm</div>
                             </div>
                         </div>
                         <div class="circle-2 cursor-pointer" [class.fill]="itineraryTab === 2" (click)="selectItineraryTab(2)">
-                            <div class="absolute top-5 -left-4 text-center text-sm tracking-normal">
+                            <div class="absolute w-20 top-5 -left-8 text-center text-sm tracking-normal">
                                 <div class="font-bold">Dinner</div>
                                 <div class="font-bold text-nowrap" *ngIf="!clickMeClicked">(Click Me)</div>
                                 <div>2:45pm</div>
                             </div>
                         </div>
                         <div class="circle-3 cursor-pointer" [class.fill]="itineraryTab === 3" (click)="selectItineraryTab(3)">
-                            <div class="absolute top-5 -left-4 text-center text-sm tracking-normal">
+                            <div class="absolute w-20 top-5 -left-8 text-center text-sm tracking-normal">
                                 <div class="font-bold">Show</div>
                                 <div class="font-bold text-nowrap" *ngIf="!clickMeClicked">(Click Me)</div>
                                 <div>7:00pm</div>
@@ -65,20 +65,28 @@
                         </div>
                     </div>
                     <div class="md:items-center md:h-96 block md:hidden tab" [class.showtab]="itineraryTab === 1">
-                        <img class="m-auto w-60 md:mx-2 md:w-52 h-96" src="https://placehold.co/100x200" />
-                        <div class="itinerary-description md:">
+                        <img class="m-auto w-60 md:mx-2 md:w-52 h-auto" src="/assets/images/ceremony.jpg" />
+                        <div class="itinerary-description">
                             <div class="itinerary-description-title text-2xl md:text-4xl font-bold">Ceremony</div>
-                            <div class="py-6">Although the courthouse will have our signatures on the dotted line, we know it won't be real in our eyes until
-                                you
-                                help us make the commitment.
+                            <div class="py-6">Although the courthouse will have our signatures on the dotted line, we know it won't be
+                                real in our eyes until you help us make the commitment.
                             </div>
-                            <div class="pb-5 font-bold">Ceremony: 1:00pm - 1:30pm</div>
-                            <div>Arrive 10-15 minutes early to grab a seat.</div>
-                            <div>Ceremony is outdoors but shaded, in the event of inclement weather we will proceed indoors.</div>
-                            <div>We will continue with photography until 2:45pm.</div>
+                            <div class="pb-5 font-bold">Ceremony: 1:00pm - 2:00pm</div>
+                            <ul class="list-disc ml-5">
+                                <li>Arrive 10-15 minutes early to grab a seat. Doors will promptly close at 12:59pm, late arrivals can join us once the
+                                    ceremony
+                                    has concluded.</li>
+                                <li>If arriving by Uber, have them drop you off at the South Entrance.
+                                    <a class="text-blue-900 underline" href="https://www.smartervegas.com/images/resortmaps/225.jpg" target="_blank">
+                                        View Map</a>
+                                </li>
+                                <li>Ceremony is outdoors and shaded, but in the event of inclement weather we will proceed indoors.</li>
+                                <li>We will be providing transportation from the Wynn Hotel to Mon Ami Gabi at 2:00pm for photos then food.</li>
+                            </ul>
                         </div>
-                        <div class="itinerary-details p-2.5">
-                            <div class="font-bold">The Wedding Salons at the Wynn Hotel</div>
+                        <div class="itinerary-details p-2.5 md:w-1/3">
+                            <div class="font-bold">The Wedding Salons</div>
+                            <div class="font-bold">at the Wynn Hotel</div>
                             <div class="text-sm hidden md:block">
                                 <div>Sunday</div>
                                 <div>May 25</div>
@@ -92,19 +100,21 @@
                     </div>
                     <div class="border-b-2 w-80 mx-auto my-5 border-black md:hidden"></div>
                     <div class="md:items-center md:h-96 block md:hidden tab" [class.showtab]="itineraryTab === 2">
-                        <img class="m-auto md:mx-2 w-52 h-96" src="https://placehold.co/100x200" />
+                        <img class="m-auto md:mx-2 w-52 h-auto" src="/assets/images/dinner.jpg" />
                         <div class="itinerary-description">
                             <div class="itinerary-description-title text-2xl md:text-4xl font-bold">Dinner</div>
-                            <div class="py-6">No need to front, this is what we all have been waiting for - food! Enjoy a margarita or glass of prosecco with a
-                                family style dinner.
+                            <div class="py-6">Our love of French cuisine began on our vacation to Washington D.C. and since then we knew we had
+                                to find the perfect French bistro for our special day!
                             </div>
-                            <div class="pb-5 font-bold">Dinner: 2:45pm - 5:45pm</div>
-                            <div>We will be providing transportation from the Wynn Hotel to Mon Ami Gabi at 3:15pm.</div>
-                            <div>CSelect your entrée when seated, choices include: Chicken, Steak, or House Burger</div>
-                            <div>Please enjoy the open bar.</div>
+                            <div class="pb-5 font-bold">Early Dinner: 2:45pm - 5:45pm</div>
+                            <ul class="list-disc ml-5">
+                                <li>You will be able to select your entrée when seated.</li>
+                                <li>We will be providing transportation from Mon Ami Gabi to MGM Grand at 5:45pm. Doors open at 6:30pm</li>
+                            </ul>
                         </div>
-                        <div class="itinerary-details">
-                            <div class="font-bold">Mon Ami Gabi</div>
+                        <div class="itinerary-details p-2.5 md:w-1/3">
+                            <div class="font-bold"> Mon Ami Gabi</div>
+                            <div class="font-bold"> French Bistro</div>
                             <div class="text-sm hidden md:block">
                                 <div>Sunday</div>
                                 <div>May 25</div>
@@ -112,34 +122,31 @@
                             </div>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-3 rounded text-sm" (click)="viewOnMap('MonAmi')">View
                                 on Map</button>
-                            <div class="font-bold">Attire</div>
-                            <div>Cocktail Attire - Purple Encouraged</div>
                         </div>
                     </div>
                     <div class="border-b-2 w-80 mx-auto my-5 border-black md:hidden"></div>
                     <div class="md:items-center md:h-96 block md:hidden tab" [class.showtab]="itineraryTab === 3">
-                        <img class="m-auto md:mx-2 w-52 h-96" src="https://placehold.co/100x200" />
+                        <img class="m-auto md:mx-2 w-52 h-auto" src="/assets/images/show.jpg" />
                         <div class="itinerary-description">
                             <div class="itinerary-description-title text-xl md:text-4xl font-bold">Show</div>
-                            <div class="py-6">We'd like to treat you to a Vegas show and see a water-themed "O" Cirque du Soleil production.
+                            <div class="py-6">We'd like to treat you to a Vegas show and what better way than to witness a Cirque du Soleil production.
                             </div>
-                            <div class="font-bold">Show: 7:00pm - 8:30pm</div>
-                            <div>90 minutes without an intermission</div>
-                            <div class="text-sm pt-5">No shopping bags, luggage, or backpacks will be permitted into the O Theatre except for small personal
-                                bags or
-                                purses (9″ x 5″x 2″
-                                max)</div>
-                            <div class="text-sm">No photography or video recording devices, including devices such as Google Glass, are permitted into the
-                                theater.
-                            </div>
-                            <div class="text-sm"> For more info:
-                                <a href="https://bellagio.mgmresorts.com/en/entertainment/faq-o-by-cirque-du-soleil.html" class="text-blue-500">
-                                    https://bellagio.mgmresorts.com/en/entertainment/faq-o-by-cirque-du-soleil.html
-                                </a>
-                            </div>
+                            <div class="pb-5 font-bold">Show: 7:00pm - 8:30pm</div>
+                            <ul class="list-disc ml-5">
+                                <li>No bags larger than 14”x14”x6” are allowed in the theater</li>
+                                <li>Photos and videos during the performance are strictly prohibited.</li>
+                                <li>Must be at least 5 years old to attend</li>
+                                <li><a class="text-blue-900"
+                                        href="https://mgmgrand.mgmresorts.com/en/entertainment/faq-ka-by-cirque-du-soleil.html#are-bags-allowed-in-the-theater"
+                                        target="_blank">For more info click here</a>
+                                </li>
+                            </ul>
+
+
                         </div>
-                        <div class="itinerary-details">
-                            <div class="font-bold"> "O" by Cirque du Soleil at the Bellagio Hotel</div>
+                        <div class="itinerary-details p-2.5 md:w-1/3">
+                            <div class="font-bold"> KÀ by Cirque du Soleil </div>
+                            <div class="font-bold">at MGM Grand</div>
                             <div class="text-sm hidden md:block">
                                 <div>Sunday</div>
                                 <div>May 25</div>
@@ -147,31 +154,29 @@
                             </div>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-3 rounded text-sm" (click)="viewOnMap('show')">View
                                 on Map</button>
-                            <div class="font-bold">Attire</div>
-                            <div>Cocktail Attire - Purple Encouraged</div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="section fixed top-20 w-full bg-white z-20 md:min-h-screen shadow-2xl">
+        <div class="section fixed top-20 w-full bg-white z-20 min-h-screen shadow-2xl">
             <div class="border-b-2 w-80 mx-auto mt-5 md:mt-24 border-black"></div>
             <div class="text-center text-3xl md:text-3xl mt-5 tracking-widest">Registry</div>
-            <div class="max-w-screen-md m-auto text-lg">
-                <div class="p-2.5 md:my-10 md:p-0">
-                    We are beyond grateful to be celebrating our wedding with you. We appreciate you coming from far and wide - city friends, we know that
-                    traveling the Las Vegas feels like crossing the country - to be with us this Memorial weekend. Your attendance is as good a gift as any, but
-                    for those who
-                    would like, we have thoughtfully put together our registry with items to help us start this next chapter in our lives.
+            <div class="max-w-screen-md p-5 m-auto text-lg">
+                <div class="py-2.5 md:my-10 md:p-0">
+                    We are beyond grateful to be celebrating our wedding with you. We appreciate you coming from far and wide to be with us this summer. Your
+                    attendance is as good a gift as any, but for those who would like, we have thoughtfully put together our registry with items to help us
+                    start this next chapter in our lives.
                 </div>
-                <div class="p-2.5 md:my-7 md:p-0">
+                <div class="py-2.5 md:my-7 md:p-0">
                     We have so much to look forward to and have included cash gift options if you would like to contribute to our future plans. Thank you from
                     the bottom of our hearts.
                 </div>
-                <div class="p-2.5 md:my-7 md:p-0">You can find out registry here at <a href="http://www.amazon.com" target="_blank"
-                        class="text-cyan-600">Amazon</a>
+                <div class="py-2.5 md:my-7 md:p-0">You can find out registry here at <a href="https://www.amazon.com/wedding/registry/38UOAQG8FOISD"
+                        target="_blank" class="text-cyan-600">Amazon</a>
                 </div>
+                <div class="py-2.5"> CashApp: $BeMyVanidestine </div>
             </div>
         </div>
 
@@ -624,7 +629,7 @@
         </div>
 
         <div class="section fixed top-20 w-full bg-white s-six z-0 mb-5 min-h-screen m-auto">
-            <div class="border-b-2 w-80 mx-auto mt-5 border-black"></div>
+            <div class="border-b-2 w-80 mx-auto mt-10 md:mt-20 border-black"></div>
             <div class="text-center text-2xl md:text-5xl mt-5 mb-20 tracking-widest">Répondez S'il Vous Plaît (RSVP)</div>
 
             <form class="max-w-screen-md m-auto text-lg p-5">

@@ -59,14 +59,9 @@
       box-sizing: content-box;
 
       .itinerary-description {
-        flex: 1 1 auto;
-        padding: 10px 30px 10px 10px;
+        padding: 10px;
         letter-spacing: 0em;
         line-height: 1.5em;
-      }
-
-      .itinerary-details {
-        flex: 1 0 auto;
       }
 
       .tab {
