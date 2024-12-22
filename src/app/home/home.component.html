@@ -11,17 +11,29 @@
     </div>
 
     <div #scrollbackground>
-        <div class="section fixed top-20 w-full bg-white s-one min-h-screen z-50 pb-5 shadow-2xl">
+        <div class="section fixed top-20 w-full bg-white s-one md:min-h-screen z-50 pb-5 shadow-2xl">
             <img class="m-auto w-full md:w-1/2" src="/assets/images/JohnAndVeronica.jpg" />
         </div>
 
-        <div class="section fixed top-20 w-full bg-white s-two min-h-screen z-40 px-5 pb-8 shadow-2xl">
-            <div class="content m-auto text-neutral-700 leading-6 max-w-full md:max-w-4xl text-xs md:text-2xl">
+        <div class="section fixed top-20 w-full bg-white s-two min-h-screen z-40 px-7 pb-8 shadow-2xl">
+            <div class="content m-auto text-neutral-700 leading-6 max-w-full md:max-w-4xl md:text-2xl">
                 <div class="border-b-2 w-80 mx-auto mt-5 md:mt-24 border-black"></div>
-                <div class="flex items-center mt-10">
-                    <div class="text-xl md:text-9xl relative md:top-0 w">W</div>
-                    <div>e are thrilled to invite you to our Las Vegas Wedding! We encourage all of you to take this opportunity and make this
+
+                <div class="md:hidden">
+                    <div class="flex items-center mt-24 md:mt-10">
+                        <div class="text-xl md:text-9xl relative md:top-0 w">W</div>
+                        <div>e are thrilled to invite you to our Las Vegas Wedding! </div>
+                    </div>
+                    <div class="mt-5">We encourage all of you to take this opportunity and make this
                         into a small getaway or a full blown vacation.
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="flex items-center mt-24 md:mt-10">
+                        <div class="text-xl md:text-9xl relative md:top-0 w">W</div>
+                        <div>e are thrilled to invite you to our Las Vegas Wedding! We encourage all of you to take this opportunity and make this
+                            into a small getaway or a full blown vacation.
+                        </div>
                     </div>
                 </div>
 
@@ -36,7 +48,7 @@
             </div>
         </div>
 
-        <div class="section fixed top-20 w-full bg-white s-three z-30 tracking-normal shadow-2xl">
+        <div class="section fixed top-20 w-full bg-white s-three z-30 shadow-2xl">
             <div class="border-b-2 w-80 mx-auto mt-5 md:mt-24 border-black"></div>
             <div class="text-center text-3xl md:text-3xl mt-5 tracking-widest">ITINERARY</div>
             <div class="itinerary-content">
@@ -44,20 +56,20 @@
                 p-2.5 md:text-lg md:border md:border-solid md:border-slate-500">
                     <div class="hidden md:flex">
                         <div class="circle-1 cursor-pointer" [class.fill]="itineraryTab === 1" (click)="selectItineraryTab(1)">
-                            <div class="absolute w-20 top-5 -left-8 text-center text-sm tracking-normal">
+                            <div class="absolute w-20 top-5 -left-8 text-center text-sm">
                                 <div class="font-bold">Ceremony</div>
                                 <div>1:00pm</div>
                             </div>
                         </div>
                         <div class="circle-2 cursor-pointer" [class.fill]="itineraryTab === 2" (click)="selectItineraryTab(2)">
-                            <div class="absolute w-20 top-5 -left-8 text-center text-sm tracking-normal">
+                            <div class="absolute w-20 top-5 -left-8 text-center text-sm">
                                 <div class="font-bold">Dinner</div>
                                 <div class="font-bold text-nowrap" *ngIf="!clickMeClicked">(Click Me)</div>
                                 <div>2:45pm</div>
                             </div>
                         </div>
                         <div class="circle-3 cursor-pointer" [class.fill]="itineraryTab === 3" (click)="selectItineraryTab(3)">
-                            <div class="absolute w-20 top-5 -left-8 text-center text-sm tracking-normal">
+                            <div class="absolute w-20 top-5 -left-8 text-center text-sm">
                                 <div class="font-bold">Show</div>
                                 <div class="font-bold text-nowrap" *ngIf="!clickMeClicked">(Click Me)</div>
                                 <div>7:00pm</div>
@@ -72,7 +84,7 @@
                                 real in our eyes until you help us make the commitment.
                             </div>
                             <div class="pb-5 font-bold">Ceremony: 1:00pm - 2:00pm</div>
-                            <ul class="list-disc ml-5">
+                            <ul class="list-disc ml-5 tracking-normal">
                                 <li>Arrive 10-15 minutes early to grab a seat. Doors will promptly close at 12:59pm, late arrivals can join us once the
                                     ceremony
                                     has concluded.</li>
@@ -85,14 +97,15 @@
                             </ul>
                         </div>
                         <div class="itinerary-details p-2.5 md:w-1/3">
-                            <div class="font-bold">The Wedding Salons</div>
-                            <div class="font-bold">at the Wynn Hotel</div>
+                            <div class="font-bold" hidden md:block>The Wedding Salons</div>
+                            <div class="font-bold" hidden md:block>at the Wynn Hotel</div>
+                            <div class="font-bold" block md:hidden>The Wedding Salons at the Wynn Hotel</div>
                             <div class="text-sm hidden md:block">
                                 <div>Sunday</div>
                                 <div>May 25</div>
                                 <div>1:00pm</div>
                             </div>
-                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-3 rounded text-sm"
+                            <button class="bg-violet-700 hover:bg-violet-700 text-white font-bold py-2 px-4 my-3 rounded text-sm"
                                 (click)="viewOnMap('WynnHotel')">View on Map</button>
                             <div class="font-bold">Attire</div>
                             <div>Cocktail Attire - Purple Encouraged</div>
@@ -107,20 +120,22 @@
                                 to find the perfect French bistro for our special day!
                             </div>
                             <div class="pb-5 font-bold">Early Dinner: 2:45pm - 5:45pm</div>
-                            <ul class="list-disc ml-5">
+                            <ul class="list-disc ml-5 tracking-normal">
                                 <li>You will be able to select your entrée when seated.</li>
                                 <li>We will be providing transportation from Mon Ami Gabi to MGM Grand at 5:45pm. Doors open at 6:30pm</li>
                             </ul>
                         </div>
                         <div class="itinerary-details p-2.5 md:w-1/3">
-                            <div class="font-bold"> Mon Ami Gabi</div>
-                            <div class="font-bold"> French Bistro</div>
+                            <div class="font-bold" hidden md:block> Mon Ami Gabi</div>
+                            <div class="font-bold" hidden md:block> French Bistro</div>
+                            <div class="font-bold" md:hidden> Mon Ami Gabi French Bistro</div>
                             <div class="text-sm hidden md:block">
                                 <div>Sunday</div>
                                 <div>May 25</div>
                                 <div>2:45pm</div>
                             </div>
-                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-3 rounded text-sm" (click)="viewOnMap('MonAmi')">View
+                            <button class="bg-violet-700 hover:bg-violet-700 text-white font-bold py-2 px-4 my-3 rounded text-sm"
+                                (click)="viewOnMap('MonAmi')">View
                                 on Map</button>
                         </div>
                     </div>
@@ -128,11 +143,11 @@
                     <div class="md:items-center md:h-96 block md:hidden tab" [class.showtab]="itineraryTab === 3">
                         <img class="m-auto md:mx-2 w-52 h-auto" src="/assets/images/show.jpg" />
                         <div class="itinerary-description">
-                            <div class="itinerary-description-title text-xl md:text-4xl font-bold">Show</div>
+                            <div class="itinerary-description-title text-2xl md:text-4xl font-bold">Show</div>
                             <div class="py-6">We'd like to treat you to a Vegas show and what better way than to witness a Cirque du Soleil production.
                             </div>
                             <div class="pb-5 font-bold">Show: 7:00pm - 8:30pm</div>
-                            <ul class="list-disc ml-5">
+                            <ul class="list-disc ml-5 tracking-normal">
                                 <li>No bags larger than 14”x14”x6” are allowed in the theater</li>
                                 <li>Photos and videos during the performance are strictly prohibited.</li>
                                 <li>Must be at least 5 years old to attend</li>
@@ -145,14 +160,16 @@
 
                         </div>
                         <div class="itinerary-details p-2.5 md:w-1/3">
-                            <div class="font-bold"> KÀ by Cirque du Soleil </div>
-                            <div class="font-bold">at MGM Grand</div>
+                            <div class="font-bold" hidden md:block> KÀ by Cirque du Soleil </div>
+                            <div class="font-bold" hidden md:block>at MGM Grand</div>
+                            <div class="font-bold" md:hidden>KÀ by Cirque du Soleil at MGM Grand</div>
                             <div class="text-sm hidden md:block">
                                 <div>Sunday</div>
                                 <div>May 25</div>
                                 <div>7:00pm</div>
                             </div>
-                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-3 rounded text-sm" (click)="viewOnMap('show')">View
+                            <button class="bg-violet-700 hover:bg-violet-700 text-white font-bold py-2 px-4 my-3 rounded text-sm"
+                                (click)="viewOnMap('show')">View
                                 on Map</button>
                         </div>
                     </div>
@@ -163,7 +180,7 @@
         <div class="section fixed top-20 w-full bg-white z-20 min-h-screen shadow-2xl">
             <div class="border-b-2 w-80 mx-auto mt-5 md:mt-24 border-black"></div>
             <div class="text-center text-3xl md:text-3xl mt-5 tracking-widest">Registry</div>
-            <div class="max-w-screen-md p-5 m-auto text-lg">
+            <div class="max-w-screen-md p-5 m-auto text-base">
                 <div class="py-2.5 md:my-10 md:p-0">
                     We are beyond grateful to be celebrating our wedding with you. We appreciate you coming from far and wide to be with us this summer. Your
                     attendance is as good a gift as any, but for those who would like, we have thoughtfully put together our registry with items to help us
@@ -639,7 +656,7 @@
                         class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required />
                     <div class="flex align-center mt-5">
                         <button
-                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                            class="text-white bg-violet-700 hover:bg-violet-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-violet-600 dark:hover:bg-violet-700 dark:focus:ring-blue-800"
                             (click)="searchByName()">Search</button>
                         <img class="h-6 ml-3" *ngIf="isSearchForFamilyName" src="/assets/images/search.gif" />
                     </div>
@@ -727,7 +744,7 @@
                 </div>
 
                 <button type="submit" *ngIf="family && family.familyName" (click)="submitRsvp()"
-                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+                    class="text-white bg-violet-700 hover:bg-violet-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-violet-600 dark:hover:bg-violet-700 dark:focus:ring-blue-800">Submit</button>
                 <div class="mt-3" *ngIf="submissionComplete">Submit complete. You may come back here to review your submission.</div>
             </form>
         </div>
