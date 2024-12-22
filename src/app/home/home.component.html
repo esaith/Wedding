@@ -652,7 +652,7 @@
             <div class="border-b-2 w-80 mx-auto mt-10 md:mt-20 border-black"></div>
             <div class="text-center text-2xl md:text-5xl mt-5 mb-20 tracking-widest">Répondez S'il Vous Plaît (RSVP)</div>
 
-            <form class="max-w-screen-md m-auto text-lg p-5">
+            <form class="max-w-screen-md m-auto text-lg p-5 pb-20">
                 <div class="mb-5">
                     <div class="flex align-center">
                         <label for="familyLastName" class="block text-sm font-medium text-gray-900">Invited Person's Addressee Name</label>
@@ -666,7 +666,7 @@
                             (click)="searchByName()">Search</button>
                         <img class="h-6 ml-3" *ngIf="isSearchForFamilyName" src="/assets/images/search.gif" />
                     </div>
-                    <div class="mt-3" *ngIf="familySearchError">{{familySearchError}}</div>
+                    <div class="mt-3 text-xs" *ngIf="familySearchError">{{familySearchError}}</div>
                 </div>
 
                 <div class="mb-5" *ngIf="family && family.familyName">
@@ -749,9 +749,16 @@
                     </ng-container>
                 </div>
 
+                <div *ngIf="family.isAttending" class="mt-5 text-xs">
+                    <div class="my-2">Please list any food allergies or dietary restrictions.</div>
+                    <textarea class="border-solid border-2 w-full h-48 text-sm" (input)="updateFamilyComment($event)" id="comments" name="comments"
+                        [ngModel]="family.comments"></textarea>
+                    <div class="my-4">All other questions or concerns you can ping me, ring me, or bring me more info at: 863-899-4799</div>
+                </div>
+
                 <button type="submit" *ngIf="family && family.familyName" (click)="submitRsvp()"
                     class="text-white bg-violet-700 hover:bg-violet-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-violet-600 dark:hover:bg-violet-700 dark:focus:ring-blue-800">Submit</button>
-                <div class="mt-3" *ngIf="submissionComplete">Submit complete. You may come back here to review your submission.</div>
+                <div class="mt-3 text-xs" *ngIf="submissionComplete">Submit complete. You may come back here to review your submission.</div>
             </form>
 
             <div class="fixed top-0 bottom-0 left-0 right-0 z-90 flex align-center justify-center" *ngIf="whereIsThisIsOpen">
@@ -766,6 +773,6 @@
                 </div>
             </div>
         </div>
-        <div class="absolute bottom-1 left-5 text-center text-sm">eSaith Production. 2024 - 2025™</div>
+        <div class="absolute bottom-1 left-5 text-center text-xs">eSaith Production. 2024 - 2025™</div>
     </div>
 </div>

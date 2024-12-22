@@ -150,7 +150,7 @@ export class HomeComponent implements AfterViewInit {
     try {
       const family = await lastValueFrom(this.guestService.getGuestByName(this.familyLastName));
 
-      if (family) {
+      if (family && family.familyName) {
         this.family = family;
         this.familySearchError = "";
         this.isSearchForFamilyName = false;
@@ -166,7 +166,9 @@ export class HomeComponent implements AfterViewInit {
         this.updateCeremonyShow();
         this.calculatePageHeight();
       } else {
-        this.familySearchError = "Unable to find family. Please check the family name on the postal envelope."
+        this.familySearchError = `Unable to find the reservation. Click
+         "Where is this?" to see an example of where to find the addressee's name.`;
+        this.isSearchForFamilyName = false;
       }
     } catch (error) {
       this.isSearchForFamilyName = false;
@@ -190,6 +192,7 @@ export class HomeComponent implements AfterViewInit {
       this.calculatePageHeight();
     }
   }
+
   toggleIsGuestAttendingNo() {
     if (!this.family)
       return;
@@ -220,6 +223,12 @@ export class HomeComponent implements AfterViewInit {
       return;
 
     this.family.atMaxShow = this.family.guests.filter(x => x.attendingShow).length === this.family.maxShowTickets
+  }
+
+  updateFamilyComment(event: any) {
+    if (this.family && event.target) {
+      this.family.comments = event.target.value;
+    }
   }
 
   async submitRsvp() {

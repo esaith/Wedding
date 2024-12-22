@@ -4,6 +4,7 @@ export class FamilyGuest {
     familyGuestId = -1;
     familyName = '';
     isAttending = false;
+    comments = '';
     guests = new Array<Guest>();
 
     maxAdults = 0;
@@ -40,6 +41,7 @@ export class FamilyGuestDTO {
     familyGuestId = -1
     familyName = '';
     isAttending = false;
+    comments = '';
 
     maxAdults = 0;
     maxKids = 0;
@@ -59,6 +61,7 @@ export class FamilyGuestDTO {
             this.familyGuestId = familyGuest.familyGuestId;
             this.familyName = familyGuest.familyName;
             this.isAttending = familyGuest.isAttending;
+            this.comments = familyGuest.comments;
 
             if (familyGuest.guests) {
                 this.guests = familyGuest.guests.map(x => new GuestDTO(x));
