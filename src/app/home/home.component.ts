@@ -136,6 +136,8 @@ export class HomeComponent implements AfterViewInit {
 
   async searchByName() {
     this.isSearchForFamilyName = true;
+    this.submissionComplete = false;
+
     try {
       const family = await lastValueFrom(this.guestService.getGuestByName(this.familyLastName));
 
