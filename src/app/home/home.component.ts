@@ -27,6 +27,7 @@ export class HomeComponent implements AfterViewInit {
   submissionComplete = false;
   isSearchForFamilyName = false;
   familySearchError = '';
+  whereIsThisIsOpen = false;
 
   constructor(private renderer: Renderer2, private guestService: GuestService) {
     this.startServer();
@@ -132,6 +133,14 @@ export class HomeComponent implements AfterViewInit {
   selectItineraryTab(index: number) {
     this.itineraryTab = index;
     this.clickMeClicked = true;
+  }
+
+  openWhereIsThis() {
+    this.whereIsThisIsOpen = true;
+  }
+
+  closewhereIsThis() {
+    this.whereIsThisIsOpen = false;
   }
 
   async searchByName() {

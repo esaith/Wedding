@@ -1,7 +1,7 @@
 <div class="bg-white box-border">
     <div class="names fixed top-0 left-0 right-0 h-10 text-3xl text-white font-bold">
         <div>JOHN & VERONICA</div>
-        <div class="font-xxs -mt-3.5">A LAS VEGAS WEDDING</div>
+        <div class="font-xxs -mt-3.5">VIVA LAS VEGAS WITH THE VANIDESTINE'S</div>
     </div>
 
     <div class="nav fixed top-50 hidden md:flex align-center justify-center">
@@ -92,7 +92,7 @@
                                     ceremony
                                     has concluded.</li>
                                 <li>If arriving by Uber, have them drop you off at the South Entrance.
-                                    <a class="text-blue-900 underline" href="/assets/images/wynnmap.jpg" target="_blank">
+                                    <a class="underline decoration-solid text-violet-700" href="/assets/images/wynnmap.jpg" target="_blank">
                                         View Map</a>
                                 </li>
                                 <li>Ceremony is outdoors and shaded, but in the event of inclement weather we will proceed indoors.</li>
@@ -116,7 +116,7 @@
                     </div>
                     <div class="border-b-2 w-80 mx-auto my-5 border-black md:hidden"></div>
                     <div class="md:items-center md:h-96 block md:hidden tab" [class.showtab]="itineraryTab === 2">
-                        <img class="m-auto md:mx-2 w-52 h-auto" src="/assets/images/dinner.jpg" />
+                        <img class="m-auto md:mx-2 w-52 h-auto" src="/assets/images/blackwhitelook.jpg" />
                         <div class="itinerary-description">
                             <div class="itinerary-description-title text-2xl md:text-4xl font-bold">Dinner</div>
                             <div class="py-6">Our love of French cuisine began on our vacation to Washington D.C. and since then we knew we had
@@ -144,7 +144,7 @@
                     </div>
                     <div class="border-b-2 w-80 mx-auto my-5 border-black md:hidden"></div>
                     <div class="md:items-center md:h-96 block md:hidden tab" [class.showtab]="itineraryTab === 3">
-                        <img class="m-auto md:mx-2 w-52 h-auto" src="/assets/images/show.jpg" />
+                        <img class="m-auto md:mx-2 w-52 h-auto" src="/assets/images/redtree.jpg" />
                         <div class="itinerary-description">
                             <div class="itinerary-description-title text-2xl md:text-4xl font-bold">Show</div>
                             <div class="py-6">We'd like to treat you to a Vegas show and what better way than to witness a Cirque du Soleil production.
@@ -154,7 +154,7 @@
                                 <li>No bags larger than 14”x14”x6” are allowed in the theater</li>
                                 <li>Photos and videos during the performance are strictly prohibited.</li>
                                 <li>Must be at least 5 years old to attend</li>
-                                <li><a class="text-blue-900"
+                                <li><a class="underline decoration-solid text-violet-700"
                                         href="https://mgmgrand.mgmresorts.com/en/entertainment/faq-ka-by-cirque-du-soleil.html#are-bags-allowed-in-the-theater"
                                         target="_blank">For more info click here</a>
                                 </li>
@@ -194,7 +194,7 @@
                     the bottom of our hearts.
                 </div>
                 <div class="py-2.5 md:my-7 md:p-0">You can find out registry here at <a href="https://www.amazon.com/wedding/registry/38UOAQG8FOISD"
-                        target="_blank" class="text-cyan-600">Amazon</a>
+                        target="_blank" class="underline decoration-solid text-violet-700">Amazon</a>
                 </div>
                 <div class="py-2.5"> CashApp: $BeMyVanidestine </div>
             </div>
@@ -654,7 +654,10 @@
 
             <form class="max-w-screen-md m-auto text-lg p-5">
                 <div class="mb-5">
-                    <label for="familyLastName" class="block mb-2 text-sm font-medium text-gray-900">Invited Person's Addresse Name</label>
+                    <div class="flex align-center">
+                        <label for="familyLastName" class="block text-sm font-medium text-gray-900">Invited Person's Addressee Name</label>
+                    </div>
+                    <div class="text-sm underline decoration-dotted text-violet-700 mb-2" (click)="openWhereIsThis()">Where is this?</div>
                     <input type="text" id="familyLastName" [(ngModel)]="familyLastName" name="familyLastName"
                         class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required />
                     <div class="flex align-center mt-5">
@@ -750,6 +753,18 @@
                     class="text-white bg-violet-700 hover:bg-violet-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-violet-600 dark:hover:bg-violet-700 dark:focus:ring-blue-800">Submit</button>
                 <div class="mt-3" *ngIf="submissionComplete">Submit complete. You may come back here to review your submission.</div>
             </form>
+
+            <div class="fixed top-0 bottom-0 left-0 right-0 z-90 flex align-center justify-center" *ngIf="whereIsThisIsOpen">
+                <div class="fixed top-0 bottom-0 left-0 right-0 opacity-90 bg-slate-600 pointer-events-none"></div>
+                <div class="relative m-auto">
+                    <div class="absolute top-0 right-0 md:top-1 md:-right-0 h-7 w-7" (click)="closewhereIsThis()">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="fill-white">
+                            <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                        </svg>
+                    </div>
+                    <img src="/assets/images/instructions.png" />
+                </div>
+            </div>
         </div>
     </div>
 </div>
