@@ -104,7 +104,7 @@ export class HomeComponent implements AfterViewInit {
       for (let i = 0; i < index; ++i) {
         scroll += this.sections[i].clientHeight + this.maxScrollBuffer * i;
         if (i >= 3) {
-          scroll -= (200 * i);
+          scroll -= (150 * i);
         }
       }
     }

@@ -9,16 +9,17 @@
         <div (click)="goToPage(1)">About</div>
         <div (click)="goToPage(2)">Itinerary</div>
         <div (click)="goToPage(3)">Registry</div>
+        <div (click)="goToPage(4)">Accomodations</div>
         <!-- <div (click)="goToPage(4)">Place</div> -->
-        <div (click)="goToPage(4)">RSVP</div>
+        <div (click)="goToPage(5)">RSVP</div>
     </div>
 
     <div class="relative" #scrollbackground>
-        <div class="section fixed top-20 w-full bg-white s-one md:min-h-screen z-50 pb-5 shadow-2xl">
+        <div class="section fixed top-20 w-full bg-white s-one md:min-h-screen z-[10] pb-5 shadow-2xl">
             <img class="m-auto w-full md:w-1/2" src="/assets/images/JohnAndVeronica.jpg" />
         </div>
 
-        <div class="section fixed top-20 w-full bg-white s-two min-h-screen z-40 px-7 pb-8 shadow-2xl">
+        <div class="section fixed top-20 w-full bg-white s-two min-h-screen z-[9] px-7 pb-8 shadow-2xl">
             <div class="content m-auto text-neutral-700 leading-6 max-w-full md:max-w-4xl md:text-2xl">
                 <div class="border-b-2 w-80 mx-auto mt-5 md:mt-24 border-black"></div>
 
@@ -51,7 +52,7 @@
             </div>
         </div>
 
-        <div class="section fixed top-20 w-full bg-white s-three z-30 shadow-2xl">
+        <div class="section fixed top-20 w-full bg-white s-three z-[8] shadow-2xl">
             <div class="border-b-2 w-80 mx-auto mt-5 md:mt-24 border-black"></div>
             <div class="text-center text-3xl md:text-3xl mt-5 tracking-widest">ITINERARY</div>
             <div class="itinerary-content">
@@ -180,7 +181,7 @@
             </div>
         </div>
 
-        <div class="section fixed top-20 w-full bg-white z-20 min-h-screen shadow-2xl">
+        <div class="section fixed top-20 w-full bg-white z-[7] min-h-screen shadow-2xl">
             <div class="border-b-2 w-80 mx-auto mt-5 md:mt-24 border-black"></div>
             <div class="text-center text-3xl md:text-3xl mt-5 tracking-widest">Registry</div>
             <div class="max-w-screen-md p-5 m-auto text-base">
@@ -200,7 +201,39 @@
             </div>
         </div>
 
-        <div class="section fixed top-20 w-full bg-stone-700 z-10 s-five text-sm tracking-normal shadow-2xl hidden">
+        <div class="section fixed top-20 w-full bg-white z-[6] min-h-screen shadow-2xl">
+            <div class="border-b-2 w-80 mx-auto mt-5 md:mt-24 border-black"></div>
+            <div class="text-center text-3xl md:text-3xl p-5 tracking-widest">Accomodations</div>
+            <div class="px-5 text-sm text-center md:max-w-screen-md m-auto">Guests are expected to make their own reservations. There are numerous hotels,
+                Airbnbs, and
+                other
+                accommodations
+                available in
+                Las Vegas. We recommend that you find the option that best suits your needs and the duration of your stay. The following
+                information
+                was forwarded to us by the Wynn Hotel where our wedding ceremony will be held. If you have already chosen to stay there you might want to use
+                the rate code provided.
+            </div>
+            <div class="p-5 text-sm md:max-w-screen-md m-auto">
+                <div class="font-bold text-lg">The Wynn Hotel Info</div>
+                <ul class="list-disc ml-5 tracking-normal">
+                    <li>Rate (Promo) Code: <span class="font-bold">WYNNWED</span></li>
+                    <li class="underline">This code cannot be used online</li>
+                    <li>In order to use this code, you must call the Small Groups Departments at 702-777-2223 between
+                        7:30am-6pm (Mountain Standard Time) or 9:30am-8pm (Eastern time)</li>
+                    <li>Provide the staff with "Colon-Lopez and Vanidestine", the WYNNWED rate code and the dates you will be staying.</li>
+                    <li>A deposit will be required at the time of confirming the reservation (the first night + tax).</li>
+                    <li>A 48-hour cancellation policy will apply.</li>
+                    <li><span class="italic">Wynn Deluxe Resort Kings</span> and <span class="italic">Encore Resort Suite Kings</span> are the only room types
+                        offered under this rate
+                        code.
+                        Any other room type will be offered at the regular rate: <a class="underline decoration-solid text-violet-700"
+                            href="https://www.wynnlasvegas.com/wynn-rewards">https://www.wynnlasvegas.com/wynn-rewards</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section fixed top-20 w-full bg-stone-700 z-[5] s-five text-sm tracking-normal shadow-2xl hidden">
             <img class="w-3/8 mx-auto mt-20" src="https://placehold.co/600x400" />
             <div class="text-5xl text-center my-10 text-white">LAS VEGAS, NEVADA</div>
             <div class="w-1/4 my-20 mx-auto border-2 border-white"></div>
@@ -648,7 +681,7 @@
             </div>
         </div>
 
-        <div class="section fixed top-20 w-full bg-white s-six z-0 mb-5 min-h-screen m-auto">
+        <div class="section fixed top-20 w-full bg-white s-six z-[4] mb-5 min-h-screen m-auto">
             <div class="border-b-2 w-80 mx-auto mt-10 md:mt-20 border-black"></div>
             <div class="text-center text-2xl md:text-5xl mt-5 mb-20 tracking-widest">Répondez S'il Vous Plaît (RSVP)</div>
 
