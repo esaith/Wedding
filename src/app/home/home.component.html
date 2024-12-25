@@ -1,5 +1,5 @@
 <div class="bg-white box-border">
-    <div class="names fixed top-0 left-0 right-0 h-10 text-3xl text-white font-bold">
+    <div class="names fixed top-0 left-0 right-0 h-10 text-3xl text-white font-bold box-content">
         <div>JOHN & VERONICA</div>
         <div class="font-xxs -mt-3.5">VIVA LAS VEGAS WITH THE VANIDESTINE'S</div>
     </div>
@@ -10,21 +10,21 @@
         <div (click)="goToPage(2)">Itinerary</div>
         <div (click)="goToPage(3)">Registry</div>
         <div (click)="goToPage(4)">Accomodations</div>
-        <!-- <div (click)="goToPage(4)">Place</div> -->
-        <div (click)="goToPage(5)">RSVP</div>
+        <div (click)="goToPage(5)">Schedule</div>
+        <div (click)="goToPage(6)">RSVP</div>
     </div>
 
     <div class="relative" #scrollbackground>
-        <div class="section fixed top-20 w-full bg-white s-one md:min-h-screen z-[10] pb-5 shadow-2xl">
+        <div class="section fixed top-14 w-full bg-white s-one md:min-h-screen z-[10] pb-5 shadow-2xl hidden">
             <img class="m-auto w-full md:w-1/2" src="/assets/images/JohnAndVeronica.jpg" />
         </div>
 
-        <div class="section fixed top-20 w-full bg-white s-two min-h-screen z-[9] px-7 pb-8 shadow-2xl">
+        <div class="section fixed top-14 w-full bg-white s-two min-h-screen z-[9] px-7 pb-8 shadow-2xl hidden">
             <div class="content m-auto text-neutral-700 leading-6 max-w-full md:max-w-4xl md:text-2xl">
                 <div class="border-b-2 w-80 mx-auto mt-5 md:mt-24 border-black"></div>
 
-                <div class="md:hidden">
-                    <div class="flex items-center mt-24 md:mt-10">
+                <div class="p-5 md:hidden md:mt-5">
+                    <div class="flex items-center ">
                         <div class="text-xl md:text-9xl relative md:top-0 w">W</div>
                         <div>e are thrilled to invite you to our Las Vegas Wedding! </div>
                     </div>
@@ -52,7 +52,7 @@
             </div>
         </div>
 
-        <div class="section fixed top-20 w-full bg-white s-three z-[8] shadow-2xl">
+        <div class="section fixed top-14 w-full bg-white s-three z-[8] shadow-2xl hidden">
             <div class="border-b-2 w-80 mx-auto mt-5 md:mt-24 border-black"></div>
             <div class="text-center text-3xl md:text-3xl mt-5 tracking-widest">ITINERARY</div>
             <div class="itinerary-content">
@@ -79,8 +79,14 @@
                                 <div>7:00pm</div>
                             </div>
                         </div>
+                        <div class="circle-4 cursor-pointer" [class.fill]="itineraryTab === 4" (click)="selectItineraryTab(4)">
+                            <div class="absolute w-20 top-5 -left-8 text-center text-sm">
+                                <div class="font-bold">After Party</div>
+                                <div class="font-bold text-nowrap" *ngIf="!clickMeClicked">(Click Me)</div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="md:items-center md:h-96 block md:hidden tab" [class.showtab]="itineraryTab === 1">
+                    <div class="md:items-center md:min-h-96 block md:hidden tab" [class.showtab]="itineraryTab === 1">
                         <img class="m-auto w-60 md:mx-2 md:w-52 h-auto" src="/assets/images/ceremony.jpg" />
                         <div class="itinerary-description">
                             <div class="itinerary-description-title text-2xl md:text-4xl font-bold">Ceremony</div>
@@ -89,15 +95,16 @@
                             </div>
                             <div class="pb-5 font-bold">Ceremony: 1:00pm - 2:00pm</div>
                             <ul class="list-disc ml-5 tracking-normal">
-                                <li>Arrive 10-15 minutes early to grab a seat. Doors will promptly close at 12:59pm, late arrivals can join us once the
-                                    ceremony
-                                    has concluded.</li>
+                                <li>Arrive 10-15 minutes early to grab a seat. Doors will promptly close at 12:59pm. Late arrivals may wait in the lobby of the
+                                    Wedding Salons until the ceremony has concluded.</li>
                                 <li>If arriving by Uber, have them drop you off at the South Entrance.
                                     <a class="underline decoration-solid text-violet-700" href="/assets/images/wynnmap.jpg" target="_blank">
                                         View Map</a>
                                 </li>
                                 <li>Ceremony is outdoors and shaded, but in the event of inclement weather we will proceed indoors.</li>
-                                <li>We will be providing transportation from the Wynn Hotel to Mon Ami Gabi at 2:00pm for photos then food.</li>
+                                <li>Make sure to silence your phones and turn off any alarms previously set.</li>
+                                <li>Please limit phone usage during the ceremony as we will have a professional photographer to capture the moments.</li>
+                                <li>We will be providing transportation from the Wynn Hotel to Mon Ami Gabi between 1:45pm - 2pm for photos then food.</li>
                             </ul>
                         </div>
                         <div class="itinerary-details p-2.5 md:w-1/3">
@@ -126,7 +133,7 @@
                             <div class="pb-5 font-bold">Early Dinner: 2:45pm - 5:45pm</div>
                             <ul class="list-disc ml-5 tracking-normal">
                                 <li>You will be able to select your entrée when seated.</li>
-                                <li>We will be providing transportation from Mon Ami Gabi to MGM Grand at 5:45pm. Doors open at 6:30pm</li>
+                                <li>We will be providing transportation from Mon Ami Gabi to MGM Grand at 5:45pm.</li>
                             </ul>
                         </div>
                         <div class="itinerary-details p-2.5 md:w-1/3">
@@ -152,12 +159,13 @@
                             </div>
                             <div class="pb-5 font-bold">Show: 7:00pm - 8:30pm</div>
                             <ul class="list-disc ml-5 tracking-normal">
-                                <li>No bags larger than 14”x14”x6” are allowed in the theater</li>
+                                <li>Doors open at 6:30pm.</li>
+                                <li>No bags larger than 14"x14"x6" are allowed in the theater.</li>
                                 <li>Photos and videos during the performance are strictly prohibited.</li>
-                                <li>Must be at least 5 years old to attend</li>
+                                <li>Must be at least 5 years old to attend.</li>
                                 <li><a class="underline decoration-solid text-violet-700"
-                                        href="https://mgmgrand.mgmresorts.com/en/entertainment/faq-ka-by-cirque-du-soleil.html#are-bags-allowed-in-the-theater"
-                                        target="_blank">For more info click here</a>
+                                        href="https://mgmgrand.mgmresorts.com/en/entertainment/faq-ka-by-cirque-du-soleil.html" target="_blank">For more info
+                                        click here</a>
                                 </li>
                             </ul>
 
@@ -177,11 +185,26 @@
                                 on Map</button>
                         </div>
                     </div>
+                    <div class="border-b-2 w-80 mx-auto my-5 border-black md:hidden"></div>
+                    <div class="md:items-center md:h-96 block md:hidden tab" [class.showtab]="itineraryTab === 4">
+                        <img class="m-auto md:mx-2 w-1/2 h-auto" src="https://www.viaggi-usa.it/wp-content/uploads/2018/10/opt1.jpg" />
+                        <div class="itinerary-description">
+                            <div class="itinerary-description-title text-2xl md:text-4xl font-bold">After Party</div>
+                            <div class="py-6">
+                            </div>
+                            <div class="pb-5 font-bold">Starts at: 10:00pm+/-</div>
+                            <ul class="list-disc ml-5 tracking-normal">
+                                <li>Only for those feeling up for it.</li>
+                                <li>Plenty of bars, outside entertainment, Freemont St., etc, whatever!</li>
+                                <li>We are open to any suggestions.</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="section fixed top-20 w-full bg-white z-[7] min-h-screen shadow-2xl">
+        <div class="section fixed top-14 w-full bg-white z-[7] min-h-screen shadow-2xl hidden">
             <div class="border-b-2 w-80 mx-auto mt-5 md:mt-24 border-black"></div>
             <div class="text-center text-3xl md:text-3xl mt-5 tracking-widest">Registry</div>
             <div class="max-w-screen-md p-5 m-auto text-base">
@@ -201,21 +224,20 @@
             </div>
         </div>
 
-        <div class="section fixed top-20 w-full bg-white z-[6] min-h-screen shadow-2xl">
+        <div class="section fixed top-14 w-full bg-white z-[6] min-h-screen shadow-2xl hidden">
             <div class="border-b-2 w-80 mx-auto mt-5 md:mt-24 border-black"></div>
             <div class="text-center text-3xl md:text-3xl p-5 tracking-widest">Accomodations</div>
-            <div class="px-5 text-sm text-center md:max-w-screen-md m-auto">Guests are expected to make their own reservations. There are numerous hotels,
-                Airbnbs, and other accommodations available in Las Vegas. We recommend that you find the option that best suits your needs and the duration of
-                your stay. Although we will not be staying at the Wynn Hotel, they have provided a promo code for our guests, as our ceremony will be held
+            <div class="px-5 md:max-w-screen-md m-auto">Guests are expected to make their own reservations. There are numerous hotels,
+                Airbnbs, and other accommodations available in Las Vegas. We recommend that you find the option that best suits your needs for the duration of
+                your stay. Although we will not be staying at the Wynn Hotel, they have provided a rate code for our guests, as our ceremony will be held
                 there.
             </div>
-            <div class="p-5 text-sm md:max-w-screen-md m-auto">
+            <div class="p-5 md:max-w-screen-md m-auto">
                 <div class="font-bold text-lg">The Wynn Hotel Info</div>
                 <ul class="list-disc ml-5 tracking-normal">
                     <li>Rate (Promo) Code: <span class="font-bold">WYNNWED</span></li>
-                    <li class="underline">This code cannot be used online</li>
-                    <li>In order to use this code, you must call the Small Groups Departments at 702-777-2223 between
-                        7:30am-6pm (PST) or 10:30am-9pm (EST)</li>
+                    <li class="underline">This code cannot be used online.</li>
+                    <li>You must call Small Groups Departments to use rate code at 702-777-2223 between 7:30am-6pm(PST), 10:30am-9pm(EST).</li>
                     <li>Provide the staff with "Colon-Lopez and Vanidestine", the WYNNWED rate code and the dates you will be staying.</li>
                     <li>A deposit will be required at the time of confirming the reservation (the first night + tax).</li>
                     <li>A 48-hour cancellation policy will apply.</li>
@@ -227,133 +249,96 @@
                 </ul>
             </div>
 
-            <div class="p-5 text-sm md:max-w-screen-md m-auto">
+
+            <div class="pt-3 pl-5 text-lg md:max-w-screen-md m-auto">Disclaimer</div>
+            <div class="p-2 pl-5 md:max-w-screen-md m-auto">
                 Please be aware that since this is a holiday weekend, there may be 'wellness checks' by hotel staff or police <span class="underline">at any
                     time</span> during your stay. You may want to inquire about this prior to booking. Memorial Day weekend is one of the busiest holidays,
-                and hotels are on higher alert for illegal activity, overconsumption of alcohol and drugs, or too much tomfoolery.
+                and hotels are on higher alert for illegal activity, overconsumption of alcohol and drugs, or too much tomfoolery. Additionally, it's worth
+                noting that
+                extended wait times for check-in are not uncommon (like, ridiculously long wait times).
             </div>
         </div>
 
-        <div class="section fixed top-20 w-full bg-stone-700 z-[5] s-five text-sm tracking-normal shadow-2xl hidden">
-            <img class="w-3/8 mx-auto mt-20" src="https://placehold.co/600x400" />
+        <div class="section fixed top-14 w-full bg-stone-700 s-five z-[5] min-h-screen text-sm tracking-normal shadow-2xl">
+            <img class="w-3/8 mx-auto mt-20" src="/assets/images/lasVegas.png" />
             <div class="text-5xl text-center my-10 text-white">LAS VEGAS, NEVADA</div>
-            <div class="w-1/4 my-20 mx-auto border-2 border-white"></div>
+            <div class="w-1/4 my-16 mx-auto border-2 border-white"></div>
             <div class="flex align-center justify-center text-white text-lg my-5 cursor-pointer">
-                <div class="mx-3" [class.place-selected]="place === 'eat'" (click)="selectPlace('eat')">Eat</div> /
-                <div class="mx-3" [class.place-selected]="place === 'drink'" (click)="selectPlace('drink')">Drink</div> /
-                <div class="mx-3" [class.place-selected]="place === 'shop'" (click)="selectPlace('shop')">Shop</div> /
-                <div class="mx-3" [class.place-selected]="place === 'do'" (click)="selectPlace('do')">Do</div>
+                <div class="mx-3" [class.place-selected]="place === 'thursday'" (click)="selectPlace('thursday')">Thursday</div> /
+                <div class="mx-3" [class.place-selected]="place === 'friday'" (click)="selectPlace('friday')">Friday</div> /
+                <div class="mx-3" [class.place-selected]="place === 'saturday'" (click)="selectPlace('saturday')">Saturday</div> /
+                <div class="mx-3" [class.place-selected]="place === 'monday'" (click)="selectPlace('monday')">Monday</div>
             </div>
             <div class="mb-20">
-                <div class="flex justify-center place-content" [class.place-content-selected]="place === 'eat'">
+                <div class="flex justify-center place-content" [class.place-content-selected]="place === 'thursday'">
                     <div class="s-five-grid ">
                         <div class="bg-white p-4">
-                            <div class="font-bold">Joni's</div>
+                            <div class="font-bold">Grimaldi's Pizzeria</div>
                             <div class="my-3 italic">
-                                <div>34 S Etna Avenue</div>
-                                <div>Montauk, NY</div>
+                                <div>Time: 3pm</div>
+                                <div>3327 Las Vegas Blvd Ste. 2710</div>
+                                <div>Las Vegas, NV 89109</div>
                             </div>
-                            <div>We understand that your pilates and juice routine might not jive with a full weekend of burger & booze binging, so swing by
-                                Joni's
-                                for
-                                your
-                                sprouts fix. Open from early morning until mid-afternoon, this cute place serves eggs, veggies and yummy sandwiches. The Thai Me
-                                Up
-                                wrap
-                                is
-                                what
-                                we come for, but it's hard to go wrong.
+                            <div>Grimaldi's Pizzeria is a renowned American pizzeria chain originating from the New York City area. Known for its coal-fired
+                                brick oven pizzas, Grimaldi's offers a variety of authentic Italian-American dishes, including fresh mozzarella, homemade dough,
+                                and a secret recipe pizza sauce.
+                            </div>
+                            <div class="mt-3"><span class="italic">Fun Fact:</span> We've been to the ones in Phoenix, AZ; Tampa, FL; Charleston, SC; and now
+                                Las Vegas, NV!!!
+                            </div>
+                            <div class="mt-3">
+                                <a href="https://www.grimaldispizzeria.com/location/palazzo/" target="_blank"
+                                    class="underline decoration-solid text-violet-700">Click for more info</a>
                             </div>
                         </div>
                         <div class="col-span-2 bg-white">
-                            <img class="w-full" src="https://placehold.co/400x200" />
+                            <img class="w-full" src="/assets/images/shin-lim.jpg" />
                             <div class="p-4">
-                                <div class="font-bold">Navy Beach</div>
+                                <div class="font-bold">Shin Lim</div>
 
                                 <div class="my-3 italic">
-                                    <div>16 Navy Rd</div>
-                                    <div>Montauk, NY</div>
+                                    <div>Time: 7:30pm - 9:30pm</div>
+                                    <div>The Palazzo Theatre</div>
+                                    <div>3325 S Las Vegas Blvd</div>
+                                    <div>Las Vegas, NV 89109</div>
                                 </div>
-                                <div>For us, Montauk is synonymous with shellfish. Lobster, in particular. And Navy Beach serves theirs right - warm on a
-                                    buttered
-                                    bun.
-                                    No
-                                    shirt, no
-                                    shorts, no problem? they don't mind if you stay in your bikini. You're on an island in June, so take full advantage.
+                                <div>Shin Lim's show, "Limitless," is a mesmerizing magic performance held at The Palazzo Theatre in Las Vegas. Shin Lim, a
+                                    renowned sleight-of-hand artist and two-time winner of "America's Got Talent," combines dexterity, precision, and grace to
+                                    create mind-blowing illusions and card tricks2. His performance is family-friendly and appeals to audiences of all ages,
+                                    featuring carefully choreographed routines that leave spectators in awe.
+                                </div>
+                                <div class="mt-3">
+                                    <a href="https://www.venetianlasvegas.com/entertainment/shin-lim.html" target="_blank"
+                                        class="underline decoration-solid text-violet-700">Click for more info</a>
+                                </div>
+                                <div class="mt-3">
+                                    <a href="https://www.ticketmaster.com/shin-lim-las-vegas-nevada-05-22-2025/event/1700615EDF7C4DCC" target="_blank"
+                                        class="underline decoration-solid text-violet-700">Purchase at Ticket Master</a>
                                 </div>
                             </div>
                         </div>
                         <div class="bg-white p-4">
-                            <div class="font-bold">Gulf Coast Kitchen</div>
+                            <div class="font-bold">Rosina Cocktail Lounge</div>
                             <div class="my-3 italic">
-                                <div>32 Star Island Rd</div>
-                                <div>Montauk, NY</div>
+                                <div>Time: 10pm</div>
+                                <div>3325 S Las Vegas Blvd</div>
+                                <div>Las Vegas, NV 89109</div>
                             </div>
-                            <div>Housed in the Montauk Yacht Club on Star Island, it doesn't get much more radical (rad + nautical) than GCK. Views of Lake
-                                Montauk
-                                rival
-                                most
-                                on the East End and their wine & dine vibes give you another opportunity to kick up your vacation casual a notch.
+                            <div>Rosina Cocktail Lounge is an elegant and intimate cocktail bar located on the casino floor of The Palazzo at The Venetian
+                                Resort in Las Vegas. Known for its luxurious ambiance and expertly-crafted cocktails, Rosina offers a sophisticated retreat from
+                                the bustling Las Vegas strip. The lounge features plush seating, crystal chandeliers, and a curated selection of classic and
+                                innovative cocktails. It was voted one of the "Best Bars in Las Vegas" by Condé Nast Traveler. Additionally, it has won a Bronze
+                                Award in the annual Best of Las Vegas awards from the Las Vegas Review-Journal.
                             </div>
-                        </div>
-                        <div class="bg-white p-4">
-                            <div class="font-bold">Joni's</div>
-                            <div class="my-3 italic">
-                                <div>34 S Etna Avenue</div>
-                                <div>Montauk, NY</div>
-                            </div>
-                            <div>
-                                We understand that your pilates and juice routine might not jive with a full weekend of burger & booze binging, so swing by
-                                Joni’s
-                                for
-                                your
-                                sprouts fix. Open from early morning until mid-afternoon, this cute place serves eggs, veggies and yummy sandwiches. The Thai Me
-                                Up
-                                wrap
-                                is
-                                what
-                                we come for, but it's hard to go wrong.
-                            </div>
-                        </div>
-                        <div class="bg-white p-4">
-                            <div class="font-bold">Joni's</div>
-                            <div class="mt-3 italic">
-                                <div>34 S Etna Avenue</div>
-                                <div>Montauk, NY</div>
-                            </div>
-                            <div>
-                                We understand that your pilates and juice routine might not jive with a full weekend of burger & booze binging, so swing by
-                                Joni’s
-                                for
-                                your
-                                sprouts fix. Open from early morning until mid-afternoon, this cute place serves eggs, veggies and yummy sandwiches. The Thai Me
-                                Up
-                                wrap
-                                is
-                                what
-                                we come for, but it's hard to go wrong.
-                            </div>
-                        </div>
-                        <div class="col-span-2 bg-white">
-                            <img class="w-full" src="https://placehold.co/400x200" />
-                            <div class="p-4">
-                                <div class="font-bold">Navy Beach</div>
-                                <div class="my-3 italic">
-                                    <div>16 Navy Rd</div>
-                                    <div>Montauk, NY</div>
-                                </div>
-                                <div>For us, Montauk is synonymous with shellfish. Lobster, in particular. And Navy Beach serves theirs right - warm on a
-                                    buttered
-                                    bun.
-                                    No
-                                    shirt, no
-                                    shorts, no problem? they don't mind if you stay in your bikini. You're on an island in June, so take full advantage.
-                                </div>
+                            <div class="mt-3">
+                                <a href="https://www.venetianlasvegas.com/dining/nightlife-bars/rosina-cocktail-lounge.html" target="_blank"
+                                    class="underline decoration-solid text-violet-700">Click for more info</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="flex justify-center place-content" [class.place-content-selected]="place === 'drink'">
+                <div class="flex justify-center place-content" [class.place-content-selected]="place === 'friday'">
                     <div class="s-five-grid">
                         <div class="bg-white p-4">
                             <div class="font-bold">Joni's</div>
@@ -463,7 +448,7 @@
 
                     </div>
                 </div>
-                <div class="flex justify-center place-content" [class.place-content-selected]="place === 'shop'">
+                <div class="flex justify-center place-content" [class.place-content-selected]="place === 'saturday'">
                     <div class="s-five-grid">
                         <div class="bg-white p-4">
                             <div class="font-bold">Joni's</div>
@@ -571,7 +556,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex justify-center place-content" [class.place-content-selected]="place === 'do'">
+                <div class="flex justify-center place-content" [class.place-content-selected]="place === 'monday'">
                     <div class="s-five-grid">
                         <div class="col-span-2 bg-white">
                             <img class="w-full" src="https://placehold.co/400x200" />
@@ -682,7 +667,7 @@
             </div>
         </div>
 
-        <div class="section fixed top-20 w-full bg-white s-six z-[4] mb-5 min-h-screen m-auto">
+        <div class="section fixed top-14 w-full bg-white s-six z-[4] mb-5 min-h-screen m-auto">
             <div class="border-b-2 w-80 mx-auto mt-10 md:mt-20 border-black"></div>
             <div class="text-center text-2xl md:text-5xl mt-5 mb-20 tracking-widest">Répondez S'il Vous Plaît (RSVP)</div>
 
@@ -807,6 +792,6 @@
                 </div>
             </div>
         </div>
-        <div class="absolute bottom-1 left-5 text-center text-xs">An eSaith Production. 2024 - 2025™</div>
+        <div class="absolute bottom-1 left-5 text-center text-xs">An eSaith Production. 2007 - 2025™</div>
     </div>
 </div>

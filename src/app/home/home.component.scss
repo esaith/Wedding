@@ -77,7 +77,8 @@
 
       .circle-1,
       .circle-2,
-      .circle-3 {
+      .circle-3,
+      .circle-4 {
         position: absolute;
         bottom: -8px;
         width: 15px;
@@ -92,23 +93,25 @@
       }
 
       .circle-1 {
-        left: 30%;
+        left: 20%;
       }
 
       .circle-2 {
-        left: 50%;
+        left: 40%;
       }
 
       .circle-3 {
-        left: 70%;
+        left: 60%;
+      }
+
+      .circle-4 {
+        left: 80%;
       }
     }
   }
 }
 
 .s-five {
-  z-index: 2;
-
   .s-five-grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 300px));

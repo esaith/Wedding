@@ -16,7 +16,7 @@ export class HomeComponent implements AfterViewInit {
   private maxScrollBuffer = 200;
   itineraryTab = 1;
   clickMeClicked = false;
-  place = 'eat'
+  place = 'thursday'
 
   isGuestAttending = true;
   isGuestNotAttending = false;
