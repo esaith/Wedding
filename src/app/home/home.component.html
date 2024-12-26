@@ -248,7 +248,7 @@
 
 
             <div class="pt-3 pl-5 text-lg md:max-w-screen-md m-auto">Disclaimer</div>
-            <div class="p-2 pl-5 md:max-w-screen-md m-auto">
+            <div class="p-2 mb-5 pl-5 md:max-w-screen-md m-auto">
                 Please be aware that since this is a holiday weekend, there may be 'wellness checks' by hotel staff or police <span class="underline">at any
                     time</span> during your stay. You may want to inquire about this prior to booking. Memorial Day weekend is one of the busiest holidays,
                 and hotels are on higher alert for illegal activity, overconsumption of alcohol and drugs, or too much tomfoolery. Additionally, it's worth
@@ -270,7 +270,7 @@
                 <div class="mx-3" [class.place-selected]="place === 'saturday'" (click)="selectPlace('saturday')">Saturday</div> /
                 <div class="mx-3" [class.place-selected]="place === 'monday'" (click)="selectPlace('monday')">Monday</div>
             </div>
-            <div class="mb-4 md:mb-20 tracking-normal">
+            <div class="md:mb-20 tracking-normal">
                 <div class="flex justify-center place-content" [class.place-content-selected]="place === 'thursday'">
                     <div class="s-five-grid md:grid md:gap-2.5">
                         <div class="bg-white p-4 border-black border-b">
@@ -294,28 +294,26 @@
                         </div>
                         <div class="col-span-2 p-4 bg-white border-black border-b">
                             <img class="w-full" src="/assets/images/shin-lim.jpg" />
-                            <div class="p-4">
-                                <div class="font-bold">Shin Lim</div>
 
-                                <div class="my-3 italic">
-                                    <div>Time: 7:30pm - 9:30pm</div>
-                                    <div>The Palazzo Theatre</div>
-                                    <div>3325 S Las Vegas Blvd</div>
-                                    <div>Las Vegas, NV 89109</div>
-                                </div>
-                                <div>Shin Lim's show, "Limitless," is a mesmerizing magic performance held at The Palazzo Theatre in Las Vegas. Shin Lim, a
-                                    renowned sleight-of-hand artist and two-time winner of "America's Got Talent," combines dexterity, precision, and grace to
-                                    create mind-blowing illusions and card tricks2. His performance is family-friendly and appeals to audiences of all ages,
-                                    featuring carefully choreographed routines that leave spectators in awe.
-                                </div>
-                                <div class="mt-3">
-                                    <a href="https://www.venetianlasvegas.com/entertainment/shin-lim.html" target="_blank"
-                                        class="underline decoration-solid text-violet-700">Click for more info</a>
-                                </div>
-                                <div class="mt-3">
-                                    <a href="https://www.ticketmaster.com/shin-lim-las-vegas-nevada-05-22-2025/event/1700615EDF7C4DCC" target="_blank"
-                                        class="underline decoration-solid text-violet-700">Purchase at Ticket Master</a>
-                                </div>
+                            <div class="font-bold mt-4">Shin Lim</div>
+                            <div class="my-3 italic">
+                                <div>Time: 7:30pm - 9:30pm</div>
+                                <div>The Palazzo Theatre</div>
+                                <div>3325 S Las Vegas Blvd</div>
+                                <div>Las Vegas, NV 89109</div>
+                            </div>
+                            <div>Shin Lim's show, "Limitless," is a mesmerizing magic performance held at The Palazzo Theatre in Las Vegas. Shin Lim, a
+                                renowned sleight-of-hand artist and two-time winner of "America's Got Talent," combines dexterity, precision, and grace to
+                                create mind-blowing illusions and card tricks2. His performance is family-friendly and appeals to audiences of all ages,
+                                featuring carefully choreographed routines that leave spectators in awe.
+                            </div>
+                            <div class="mt-3">
+                                <a href="https://www.venetianlasvegas.com/entertainment/shin-lim.html" target="_blank"
+                                    class="underline decoration-solid text-violet-700">Click for more info</a>
+                            </div>
+                            <div class="mt-3">
+                                <a href="https://www.ticketmaster.com/shin-lim-las-vegas-nevada-05-22-2025/event/1700615EDF7C4DCC" target="_blank"
+                                    class="underline decoration-solid text-violet-700">Purchase at Ticket Master</a>
                             </div>
                         </div>
                         <div class="bg-white p-4">
@@ -340,8 +338,9 @@
                     </div>
                 </div>
                 <div class="flex justify-center place-content" [class.place-content-selected]="place === 'friday'">
-                    <div class="s-five-grid md:grid md:gap-2.5">
-                        <div class="bg-white p-4 border-black border-b">
+                    <div class="relative s-five-grid md:grid md:gap-2.5 text-white">
+                        <div class="absolute top-0 bottom-0 right-0 left-0 friday z-0"></div>
+                        <div class="p-4 border-black border-b">
                             <div class="font-bold">Alexxa's</div>
                             <div class="my-3 italic">
                                 <div>Time: 10am</div>
@@ -355,11 +354,11 @@
                                 with stunning views.
                             </div>
                             <div class="mt-3">
-                                <a href="https://alexxaslasvegas.com/" target="_blank" class="underline decoration-solid text-violet-700">Click for more
+                                <a href="https://alexxaslasvegas.com/" target="_blank" class="underline decoration-solid text-violet-300">Click for more
                                     info</a>
                             </div>
                         </div>
-                        <div class="bg-white p-4 border-black border-b">
+                        <div class="p-4 border-black border-b">
                             <div class="font-bold">Pool Party</div>
                             <div class="my-3 italic">
                                 <div>Time: 1pm - 4:30pm</div>
@@ -367,7 +366,7 @@
                             </div>
                             <div>Hang with us at a rented house for a pool party. Non-alcoholic drinks and finger food will be supplied. BYOB</div>
                         </div>
-                        <div class="bg-white p-4 border-black border-b">
+                        <div class="p-4 border-black border-b">
                             <div class="font-bold">The Sphere Experience</div>
                             <div class="my-3 italic">
                                 <div>Time: 7pm</div>
@@ -380,11 +379,11 @@
                                 music performances, films, and other immersive experiences that engage all the senses.
                             </div>
                             <div class="mt-3">
-                                <a href="https://www.thesphere.com/" target="_blank" class="underline decoration-solid text-violet-700">Click for more
+                                <a href="https://www.thesphere.com/" target="_blank" class="underline decoration-solid text-violet-300">Click for more
                                     info</a>
                             </div>
                         </div>
-                        <div class="bg-white p-4">
+                        <div class="p-4">
                             <div class="font-bold">The Underground Speakeasy</div>
                             <div class="my-3 italic">
                                 <div>Closes at midnight</div>
@@ -397,7 +396,7 @@
                                 can explore the distillery, learn about bootleggers and rum runners, and enjoy a truly unique and educational night out.
                             </div>
                             <div class="mt-3">
-                                <a href="https://themobmuseum.org/underground/" target="_blank" class="underline decoration-solid text-violet-700">Click for
+                                <a href="https://themobmuseum.org/underground/" target="_blank" class="underline decoration-solid text-violet-300">Click for
                                     more
                                     info</a>
                             </div>
@@ -406,7 +405,7 @@
                 </div>
                 <div class="flex justify-center place-content" [class.place-content-selected]="place === 'saturday'">
                     <div class="s-five-grid md:grid md:gap-2.5">
-                        <div class="md:col-span-2 bg-white p-4 border-black border-b">
+                        <div class="bg-white p-4 border-black border-b">
                             <div class="font-bold">Yard House</div>
                             <div class="my-3 italic">
                                 <div>Time: 4pm</div>
@@ -425,7 +424,8 @@
                                     info</a>
                             </div>
                         </div>
-                        <div class="md:col-span-2 bg-white p-4 border-black border-b">
+                        <div class="md:col-span-3 bg-white p-4 border-black border-b">
+                            <img class="w-full" src="/assets/images/blackEyedPeas.png" />
                             <div class="font-bold">Black Eyed Peas</div>
                             <div class="my-3 italic">
                                 <div>Time: 8pm</div>
@@ -433,11 +433,6 @@
                                 <div>The Las Vegas Residency</div>
                                 <div>3667 Las Vegas Blvd S</div>
                                 <div>Las Vegas, NV 89109</div>
-                            </div>
-                            <div>The Black Eyed Peas are an American musical group from Los Angeles, formed in 1995. The group consists of rappers
-                                will.i.am, apl.de.ap, and Taboo. They gained mainstream success with their third album, Elephunk (2003), which featured the
-                                hit single "Where Is the Love?". The lineup was later joined by singer Fergie, and they became known for their pop-rap hits
-                                like "Boom Boom Pow" and "I Gotta Feeling." Fergie left the group in 2018, and J. Rey Soul joined as a touring member.
                             </div>
                             <div class="mt-3">
                                 <a href="https://www.ticketmaster.com/bepvegas?CAMEFROM=CFC_CAESARSENT_WEB_CCOM_BLACKEYEDPEAS" target="_blank"
