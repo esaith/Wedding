@@ -45,13 +45,21 @@
   font-size: 8px;
 }
 
-.s-two {
-  .content {
-    @media only screen and (max-width: 720px) {
+.about {
+  @media only screen and (max-width: 720px) {
+    min-height: 94vh;
+
+    .content {
       .w {
         font-size: 90px;
       }
     }
+  }
+}
+
+.registry {
+  @media only screen and (max-width: 720px) {
+    min-height: 94vh;
   }
 }
 
