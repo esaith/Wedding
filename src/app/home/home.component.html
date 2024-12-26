@@ -15,11 +15,11 @@
     </div>
 
     <div class="relative" #scrollbackground>
-        <div class="section fixed top-14 w-full bg-white s-one md:min-h-screen z-[10] pb-5 shadow-2xl hidden">
+        <div class="section fixed top-14 w-full bg-white s-one md:min-h-screen z-[10] pb-5 shadow-2xl">
             <img class="m-auto w-full md:w-1/2" src="/assets/images/JohnAndVeronica.jpg" />
         </div>
 
-        <div class="section fixed top-14 w-full bg-white s-two min-h-screen z-[9] px-7 pb-8 shadow-2xl hidden">
+        <div class="section fixed top-14 w-full bg-white s-two min-h-screen z-[9] px-7 pb-8 shadow-2xl">
             <div class="content m-auto text-neutral-700 leading-6 max-w-full md:max-w-4xl md:text-2xl">
                 <div class="border-b-2 w-80 mx-auto mt-5 md:mt-24 border-black"></div>
 
@@ -52,7 +52,7 @@
             </div>
         </div>
 
-        <div class="section fixed top-14 w-full bg-white s-three z-[8] shadow-2xl hidden">
+        <div class="section fixed top-14 w-full bg-white s-three z-[8] shadow-2xl">
             <div class="border-b-2 w-80 mx-auto mt-5 md:mt-24 border-black"></div>
             <div class="text-center text-3xl md:text-3xl mt-5 tracking-widest">ITINERARY</div>
             <div class="itinerary-content">
@@ -164,8 +164,8 @@
                                 <li>Photos and videos during the performance are strictly prohibited.</li>
                                 <li>Must be at least 5 years old to attend.</li>
                                 <li><a class="underline decoration-solid text-violet-700"
-                                        href="https://mgmgrand.mgmresorts.com/en/entertainment/faq-ka-by-cirque-du-soleil.html" target="_blank">For more info
-                                        click here</a>
+                                        href="https://mgmgrand.mgmresorts.com/en/entertainment/faq-ka-by-cirque-du-soleil.html" target="_blank">Click for more
+                                        info</a>
                                 </li>
                             </ul>
 
@@ -187,12 +187,10 @@
                     </div>
                     <div class="border-b-2 w-80 mx-auto my-5 border-black md:hidden"></div>
                     <div class="md:items-center md:h-96 block md:hidden tab" [class.showtab]="itineraryTab === 4">
-                        <img class="m-auto md:mx-2 w-1/2 h-auto" src="https://www.viaggi-usa.it/wp-content/uploads/2018/10/opt1.jpg" />
+                        <img class="m-auto md:mx-2 w-full md:w-1/2 h-auto" src="https://www.viaggi-usa.it/wp-content/uploads/2018/10/opt1.jpg" />
                         <div class="itinerary-description">
                             <div class="itinerary-description-title text-2xl md:text-4xl font-bold">After Party</div>
-                            <div class="py-6">
-                            </div>
-                            <div class="pb-5 font-bold">Starts at: 10:00pm+/-</div>
+                            <div class="py-3 font-bold">Starts at: 10:00pm+/-</div>
                             <ul class="list-disc ml-5 tracking-normal">
                                 <li>Only for those feeling up for it.</li>
                                 <li>Plenty of bars, outside entertainment, Freemont St., etc, whatever!</li>
@@ -204,7 +202,7 @@
             </div>
         </div>
 
-        <div class="section fixed top-14 w-full bg-white z-[7] min-h-screen shadow-2xl hidden">
+        <div class="section fixed top-14 w-full bg-white z-[7] min-h-screen shadow-2xl">
             <div class="border-b-2 w-80 mx-auto mt-5 md:mt-24 border-black"></div>
             <div class="text-center text-3xl md:text-3xl mt-5 tracking-widest">Registry</div>
             <div class="max-w-screen-md p-5 m-auto text-base">
@@ -224,7 +222,7 @@
             </div>
         </div>
 
-        <div class="section fixed top-14 w-full bg-white z-[6] min-h-screen shadow-2xl hidden">
+        <div class="section fixed top-14 w-full bg-white z-[6] min-h-screen shadow-2xl">
             <div class="border-b-2 w-80 mx-auto mt-5 md:mt-24 border-black"></div>
             <div class="text-center text-3xl md:text-3xl p-5 tracking-widest">Accomodations</div>
             <div class="px-5 md:max-w-screen-md m-auto">Guests are expected to make their own reservations. There are numerous hotels,
@@ -260,20 +258,23 @@
             </div>
         </div>
 
-        <div class="section fixed top-14 w-full bg-stone-700 s-five z-[5] min-h-screen text-sm tracking-normal shadow-2xl">
-            <img class="w-3/8 mx-auto mt-20" src="/assets/images/lasVegas.png" />
-            <div class="text-5xl text-center my-10 text-white">LAS VEGAS, NEVADA</div>
-            <div class="w-1/4 my-16 mx-auto border-2 border-white"></div>
-            <div class="flex align-center justify-center text-white text-lg my-5 cursor-pointer">
+        <div class="section fixed top-14 w-full bg-stone-700 s-five z-[5] min-h-screen text-sm shadow-2xl">
+            <img class="w-3/8 mx-auto mt-5 md:mt-20" src="/assets/images/lasVegas.png" />
+            <div class="text-3xl md:text-5xl text-center my-10 text-white">OUR SCHEDULE</div>
+            <div class="w-3/4 md:w-1/4 my-4 md:my-16 mx-auto border-2 border-white"></div>
+            <div class="p-4 text-center max-w-screen-lg text-white md:text-2xl m-auto">
+                We plan on experiencing more of what Vegas has to offer during our stay. Everyone is welcome to join us but don't feel obligated to do so.*
+            </div>
+            <div class="flex align-center justify-center text-white text-lg my-5 cursor-pointer tracking-normal">
                 <div class="mx-3" [class.place-selected]="place === 'thursday'" (click)="selectPlace('thursday')">Thursday</div> /
                 <div class="mx-3" [class.place-selected]="place === 'friday'" (click)="selectPlace('friday')">Friday</div> /
                 <div class="mx-3" [class.place-selected]="place === 'saturday'" (click)="selectPlace('saturday')">Saturday</div> /
                 <div class="mx-3" [class.place-selected]="place === 'monday'" (click)="selectPlace('monday')">Monday</div>
             </div>
-            <div class="mb-20">
+            <div class="mb-4 md:mb-20 tracking-normal">
                 <div class="flex justify-center place-content" [class.place-content-selected]="place === 'thursday'">
-                    <div class="s-five-grid ">
-                        <div class="bg-white p-4">
+                    <div class="s-five-grid md:grid md:gap-2.5">
+                        <div class="bg-white p-4 border-black border-b">
                             <div class="font-bold">Grimaldi's Pizzeria</div>
                             <div class="my-3 italic">
                                 <div>Time: 3pm</div>
@@ -292,7 +293,7 @@
                                     class="underline decoration-solid text-violet-700">Click for more info</a>
                             </div>
                         </div>
-                        <div class="col-span-2 bg-white">
+                        <div class="col-span-2 p-4 bg-white border-black border-b">
                             <img class="w-full" src="/assets/images/shin-lim.jpg" />
                             <div class="p-4">
                                 <div class="font-bold">Shin Lim</div>
@@ -321,7 +322,8 @@
                         <div class="bg-white p-4">
                             <div class="font-bold">Rosina Cocktail Lounge</div>
                             <div class="my-3 italic">
-                                <div>Time: 10pm</div>
+                                <div>Closes At: 2am</div>
+                                <div>The Palazzo Casino Floor</div>
                                 <div>3325 S Las Vegas Blvd</div>
                                 <div>Las Vegas, NV 89109</div>
                             </div>
@@ -339,331 +341,157 @@
                     </div>
                 </div>
                 <div class="flex justify-center place-content" [class.place-content-selected]="place === 'friday'">
-                    <div class="s-five-grid">
-                        <div class="bg-white p-4">
-                            <div class="font-bold">Joni's</div>
+                    <div class="s-five-grid md:grid md:gap-2.5">
+                        <div class="bg-white p-4 border-black border-b">
+                            <div class="font-bold">Alexxa's</div>
                             <div class="my-3 italic">
-                                <div>34 S Etna Avenue</div>
-                                <div>Montauk, NY</div>
+                                <div>Time: 10am</div>
+                                <div>Reservations required for brunch</div>
+                                <div>3655 S Las Vegas Blvd</div>
+                                <div>Las Vegas, NV 89109</div>
                             </div>
-                            <div>We understand that your pilates and juice routine might not jive with a full weekend of burger & booze binging, so swing by
-                                Joni's
-                                for
-                                your
-                                sprouts fix. Open from early morning until mid-afternoon, this cute place serves eggs, veggies and yummy sandwiches. The Thai Me
-                                Up
-                                wrap
-                                is
-                                what
-                                we come for, but it's hard to go wrong.
+                            <div>Alexxa's is a vibrant restaurant and cocktail lounge located at the Paris Las Vegas Hotel on the Las Vegas Strip. It offers
+                                elevated American cuisine, hand-crafted cocktails, and whimsical desserts. The venue features both indoor and outdoor seating,
+                                providing breathtaking views of the Bellagio Fountains. It's a perfect spot for brunch, dinner, or just enjoying a night out
+                                with stunning views.
+                            </div>
+                            <div class="mt-3">
+                                <a href="https://alexxaslasvegas.com/" target="_blank" class="underline decoration-solid text-violet-700">Click for more
+                                    info</a>
                             </div>
                         </div>
-
-                        <div class="bg-white p-4">
-                            <div class="font-bold">Gulf Coast Kitchen</div>
+                        <div class="bg-white p-4 border-black border-b">
+                            <div class="font-bold">Pool Party</div>
                             <div class="my-3 italic">
-                                <div>32 Star Island Rd</div>
-                                <div>Montauk, NY</div>
+                                <div>Time: 1pm - 4:30pm</div>
+                                <div>TBD</div>
                             </div>
-                            <div>Housed in the Montauk Yacht Club on Star Island, it doesn't get much more radical (rad + nautical) than GCK. Views of Lake
-                                Montauk
-                                rival
-                                most
-                                on the East End and their wine & dine vibes give you another opportunity to kick up your vacation casual a notch.
-                            </div>
+                            <div>Hang with us at a rented house for a pool party. Non-alcoholic drinks and finger food will be supplied. BYOB</div>
                         </div>
-                        <div class="col-span-2 bg-white">
-                            <img class="w-full" src="https://placehold.co/400x200" />
-                            <div class="p-4">
-                                <div class="font-bold">Navy Beach</div>
-
-                                <div class="my-3 italic">
-                                    <div>16 Navy Rd</div>
-                                    <div>Montauk, NY</div>
-                                </div>
-                                <div>For us, Montauk is synonymous with shellfish. Lobster, in particular. And Navy Beach serves theirs right - warm on a
-                                    buttered
-                                    bun.
-                                    No
-                                    shirt, no
-                                    shorts, no problem? they don't mind if you stay in your bikini. You're on an island in June, so take full advantage.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-span-2 bg-white">
-                            <img class="w-full" src="https://placehold.co/400x200" />
-                            <div class="p-4">
-                                <div class="font-bold">Navy Beach</div>
-                                <div class="my-3 italic">
-                                    <div>16 Navy Rd</div>
-                                    <div>Montauk, NY</div>
-                                </div>
-                                <div>For us, Montauk is synonymous with shellfish. Lobster, in particular. And Navy Beach serves theirs right - warm on a
-                                    buttered
-                                    bun.
-                                    No
-                                    shirt, no
-                                    shorts, no problem? they don't mind if you stay in your bikini. You're on an island in June, so take full advantage.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="bg-white p-4">
-                            <div class="font-bold">Joni's</div>
+                        <div class="bg-white p-4 border-black border-b">
+                            <div class="font-bold">The Sphere Experience</div>
                             <div class="my-3 italic">
-                                <div>34 S Etna Avenue</div>
-                                <div>Montauk, NY</div>
+                                <div>Time: 7pm</div>
+                                <div>Advanced ticket purchase recommended</div>
+                                <div>255 Sands Ave</div>
+                                <div>Las Vegas, NV 89169</div>
                             </div>
-                            <div>
-                                We understand that your pilates and juice routine might not jive with a full weekend of burger & booze binging, so swing by
-                                Joni’s
-                                for
-                                your
-                                sprouts fix. Open from early morning until mid-afternoon, this cute place serves eggs, veggies and yummy sandwiches. The Thai Me
-                                Up
-                                wrap
-                                is
-                                what
-                                we come for, but it's hard to go wrong.
+                            <div>The Sphere Experience in Las Vegas is a state-of-the-art entertainment venue that opened in September 2023. It features a
+                                360-foot-high, 516-foot-wide spherical structure with a 16K resolution wraparound LED screen inside. Visitors can enjoy live
+                                music performances, films, and other immersive experiences that engage all the senses.
+                            </div>
+                            <div class="mt-3">
+                                <a href="https://www.thesphere.com/" target="_blank" class="underline decoration-solid text-violet-700">Click for more
+                                    info</a>
                             </div>
                         </div>
                         <div class="bg-white p-4">
-                            <div class="font-bold">Joni's</div>
-                            <div class="mt-3 italic">
-                                <div>34 S Etna Avenue</div>
-                                <div>Montauk, NY</div>
+                            <div class="font-bold">The Underground Speakeasy</div>
+                            <div class="my-3 italic">
+                                <div>Closes at midnight</div>
+                                <div>Reservations required</div>
+                                <div>300 Stewart Ave</div>
+                                <div>Las Vegas, NV 89101</div>
                             </div>
-                            <div>
-                                We understand that your pilates and juice routine might not jive with a full weekend of burger & booze binging, so swing by
-                                Joni’s
-                                for
-                                your
-                                sprouts fix. Open from early morning until mid-afternoon, this cute place serves eggs, veggies and yummy sandwiches. The Thai Me
-                                Up
-                                wrap
-                                is
-                                what
-                                we come for, but it's hard to go wrong.
+                            <div>The Underground Speakeasy and Distillery is a hidden gem located inside The Mob Museum in Las Vegas. It offers an immersive
+                                Prohibition-era experience, complete with craft cocktails, live entertainment, and historical artifacts from the 1920s. You
+                                can explore the distillery, learn about bootleggers and rum runners, and enjoy a truly unique and educational night out.
+                            </div>
+                            <div class="mt-3">
+                                <a href="https://themobmuseum.org/underground/" target="_blank" class="underline decoration-solid text-violet-700">Click for
+                                    more
+                                    info</a>
                             </div>
                         </div>
-
                     </div>
                 </div>
                 <div class="flex justify-center place-content" [class.place-content-selected]="place === 'saturday'">
-                    <div class="s-five-grid">
-                        <div class="bg-white p-4">
-                            <div class="font-bold">Joni's</div>
+                    <div class="s-five-grid md:grid md:gap-2.5">
+                        <div class="md:col-span-2 bg-white p-4 border-black border-b">
+                            <div class="font-bold">Yard House</div>
                             <div class="my-3 italic">
-                                <div>34 S Etna Avenue</div>
-                                <div>Montauk, NY</div>
+                                <div>Time: 4pm</div>
+                                <div>Reservations recommended for dinner</div>
+                                <div>3545 S Las Vegas Blvd</div>
+                                <div>Las Vegas, NV 89109</div>
                             </div>
-                            <div>We understand that your pilates and juice routine might not jive with a full weekend of burger & booze binging, so swing by
-                                Joni's
-                                for
-                                your
-                                sprouts fix. Open from early morning until mid-afternoon, this cute place serves eggs, veggies and yummy sandwiches. The Thai Me
-                                Up
-                                wrap
-                                is
-                                what
-                                we come for, but it's hard to go wrong.
+                            <div>Yard House is a popular American restaurant chain known for its extensive selection of draft beers and a diverse menu featuring
+                                American cuisine with a twist. Founded in 1996 in Long Beach, California, Yard House offers a vibrant atmosphere with a focus on
+                                craft beer, live music, and a mouth-watering menu that includes everything from burgers to seafood and pasta. With over 100
+                                beers on tap at each location, it's a favorite spot for beer enthusiasts and food lovers alike.
                             </div>
-                        </div>
-                        <div class="col-span-2 bg-white">
-                            <img class="w-full" src="https://placehold.co/400x200" />
-                            <div class="p-4">
-                                <div class="font-bold">Navy Beach</div>
-
-                                <div class="my-3 italic">
-                                    <div>16 Navy Rd</div>
-                                    <div>Montauk, NY</div>
-                                </div>
-                                <div>For us, Montauk is synonymous with shellfish. Lobster, in particular. And Navy Beach serves theirs right - warm on a
-                                    buttered
-                                    bun.
-                                    No
-                                    shirt, no
-                                    shorts, no problem? they don't mind if you stay in your bikini. You're on an island in June, so take full advantage.
-                                </div>
+                            <div class="mt-3">
+                                <a href="https://www.yardhouse.com/locations/nv/las-vegas/las-vegas-the-linq/8353?cmpid=br:yh_ag:ie_ch:loc_ca:YHGMB_sn:gmb_gt:las-vegas-nv-8353_pl:locurl_rd:1050"
+                                    target="_blank" class="underline decoration-solid text-violet-700">Click for more
+                                    info</a>
                             </div>
                         </div>
-                        <div class="bg-white p-4">
-                            <div class="font-bold">Gulf Coast Kitchen</div>
+                        <div class="md:col-span-2 bg-white p-4 border-black border-b">
+                            <div class="font-bold">Black Eyed Peas</div>
                             <div class="my-3 italic">
-                                <div>32 Star Island Rd</div>
-                                <div>Montauk, NY</div>
+                                <div>Time: 8pm</div>
+                                <div>Planet Hollywood Las Vegas Resort & Casino</div>
+                                <div>The Las Vegas Residency</div>
+                                <div>3667 Las Vegas Blvd S</div>
+                                <div>Las Vegas, NV 89109</div>
                             </div>
-                            <div>Housed in the Montauk Yacht Club on Star Island, it doesn't get much more radical (rad + nautical) than GCK. Views of Lake
-                                Montauk
-                                rival
-                                most
-                                on the East End and their wine & dine vibes give you another opportunity to kick up your vacation casual a notch.
+                            <div>The Black Eyed Peas are an American musical group from Los Angeles, formed in 1995. The group consists of rappers
+                                will.i.am, apl.de.ap, and Taboo. They gained mainstream success with their third album, Elephunk (2003), which featured the
+                                hit single "Where Is the Love?". The lineup was later joined by singer Fergie, and they became known for their pop-rap hits
+                                like "Boom Boom Pow" and "I Gotta Feeling." Fergie left the group in 2018, and J. Rey Soul joined as a touring member.
                             </div>
-                        </div>
-                        <div class="bg-white p-4">
-                            <div class="font-bold">Joni's</div>
-                            <div class="my-3 italic">
-                                <div>34 S Etna Avenue</div>
-                                <div>Montauk, NY</div>
+                            <div class="mt-3">
+                                <a href="https://www.ticketmaster.com/bepvegas?CAMEFROM=CFC_CAESARSENT_WEB_CCOM_BLACKEYEDPEAS" target="_blank"
+                                    class="underline decoration-solid text-violet-700">Click for more
+                                    info</a>
                             </div>
-                            <div>
-                                We understand that your pilates and juice routine might not jive with a full weekend of burger & booze binging, so swing by
-                                Joni’s
-                                for
-                                your
-                                sprouts fix. Open from early morning until mid-afternoon, this cute place serves eggs, veggies and yummy sandwiches. The Thai Me
-                                Up
-                                wrap
-                                is
-                                what
-                                we come for, but it's hard to go wrong.
-                            </div>
-                        </div>
-                        <div class="col-span-2 bg-white">
-                            <img class="w-full" src="https://placehold.co/400x200" />
-                            <div class="p-4">
-                                <div class="font-bold">Navy Beach</div>
-                                <div class="my-3 italic">
-                                    <div>16 Navy Rd</div>
-                                    <div>Montauk, NY</div>
-                                </div>
-                                <div>For us, Montauk is synonymous with shellfish. Lobster, in particular. And Navy Beach serves theirs right - warm on a
-                                    buttered
-                                    bun.
-                                    No
-                                    shirt, no
-                                    shorts, no problem? they don't mind if you stay in your bikini. You're on an island in June, so take full advantage.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="bg-white p-4">
-                            <div class="font-bold">Joni's</div>
-                            <div class="mt-3 italic">
-                                <div>34 S Etna Avenue</div>
-                                <div>Montauk, NY</div>
-                            </div>
-                            <div>
-                                We understand that your pilates and juice routine might not jive with a full weekend of burger & booze binging, so swing by
-                                Joni’s
-                                for
-                                your
-                                sprouts fix. Open from early morning until mid-afternoon, this cute place serves eggs, veggies and yummy sandwiches. The Thai Me
-                                Up
-                                wrap
-                                is
-                                what
-                                we come for, but it's hard to go wrong.
+                            <div class="mt-3">
+                                <a href="https://www.ticketmaster.com/black-eyed-peas-3008-the-las-las-vegas-nevada-05-24-2025/event/390061269E583BAA"
+                                    target="_blank" class="underline decoration-solid text-violet-700">Purchase at Ticket Master</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="flex justify-center place-content" [class.place-content-selected]="place === 'monday'">
-                    <div class="s-five-grid">
-                        <div class="col-span-2 bg-white">
-                            <img class="w-full" src="https://placehold.co/400x200" />
-                            <div class="p-4">
-                                <div class="font-bold">Navy Beach</div>
-
-                                <div class="my-3 italic">
-                                    <div>16 Navy Rd</div>
-                                    <div>Montauk, NY</div>
-                                </div>
-                                <div>For us, Montauk is synonymous with shellfish. Lobster, in particular. And Navy Beach serves theirs right - warm on a
-                                    buttered
-                                    bun.
-                                    No
-                                    shirt, no
-                                    shorts, no problem? they don't mind if you stay in your bikini. You're on an island in June, so take full advantage.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="bg-white p-4">
-                            <div class="font-bold">Joni's</div>
+                    <div class="s-five-grid md:grid md:gap-2.5">
+                        <div class="md:col-span-2 bg-white p-4 border-black border-b">
+                            <div class="font-bold">Mon Ami Gabi French Bristro</div>
                             <div class="my-3 italic">
-                                <div>34 S Etna Avenue</div>
-                                <div>Montauk, NY</div>
+                                <div>Reservations required for brunch</div>
+                                <div>Time: 11am</div>
+                                <div>3655 S Las Vegas Blvd South</div>
+                                <div>Las Vegas, NV 89109</div>
                             </div>
-                            <div>We understand that your pilates and juice routine might not jive with a full weekend of burger & booze binging, so swing by
-                                Joni's
-                                for
-                                your
-                                sprouts fix. Open from early morning until mid-afternoon, this cute place serves eggs, veggies and yummy sandwiches. The Thai Me
-                                Up
-                                wrap
-                                is
-                                what
-                                we come for, but it's hard to go wrong.
+                            <div>Brunch for anyone that is still around and wants to hang out for the day before heading back home.
+                            </div>
+                            <div class="mt-3">
+                                <a href="https://www.monamigabi.com/las-vegas/?utm_source=google&utm_medium=social&utm_campaign=MAGLV-GBiz" target="_blank"
+                                    class="underline decoration-solid text-violet-700">Click for more
+                                    info</a>
                             </div>
                         </div>
-                        <div class="bg-white p-4">
-                            <div class="font-bold">Gulf Coast Kitchen</div>
+                        <div class="md:col-span-2 bg-white p-4">
+                            <div class="font-bold">Area 15</div>
                             <div class="my-3 italic">
-                                <div>32 Star Island Rd</div>
-                                <div>Montauk, NY</div>
+                                <div>Advanced ticket purchase recommended</div>
+                                <div>3215 S Rancho Dr</div>
+                                <div>Las Vegas, NV 89102</div>
                             </div>
-                            <div>Housed in the Montauk Yacht Club on Star Island, it doesn't get much more radical (rad + nautical) than GCK. Views of Lake
-                                Montauk
-                                rival
-                                most
-                                on the East End and their wine & dine vibes give you another opportunity to kick up your vacation casual a notch.
+                            <div>Area 15 is an immersive entertainment district located just minutes from the Las Vegas Strip. It offers a unique blend of
+                                attractions, experiences, art installations, food, and drinks.
                             </div>
-                        </div>
-                        <div class="bg-white p-4">
-                            <div class="font-bold">Joni's</div>
-                            <div class="my-3 italic">
-                                <div>34 S Etna Avenue</div>
-                                <div>Montauk, NY</div>
-                            </div>
-                            <div>
-                                We understand that your pilates and juice routine might not jive with a full weekend of burger & booze binging, so swing by
-                                Joni’s
-                                for
-                                your
-                                sprouts fix. Open from early morning until mid-afternoon, this cute place serves eggs, veggies and yummy sandwiches. The Thai Me
-                                Up
-                                wrap
-                                is
-                                what
-                                we come for, but it's hard to go wrong.
-                            </div>
-                        </div>
-                        <div class="bg-white p-4">
-                            <div class="font-bold">Joni's</div>
-                            <div class="mt-3 italic">
-                                <div>34 S Etna Avenue</div>
-                                <div>Montauk, NY</div>
-                            </div>
-                            <div>
-                                We understand that your pilates and juice routine might not jive with a full weekend of burger & booze binging, so swing by
-                                Joni’s
-                                for
-                                your
-                                sprouts fix. Open from early morning until mid-afternoon, this cute place serves eggs, veggies and yummy sandwiches. The Thai Me
-                                Up
-                                wrap
-                                is
-                                what
-                                we come for, but it's hard to go wrong.
-                            </div>
-                        </div>
-                        <div class="col-span-2 bg-white">
-                            <img class="w-full" src="https://placehold.co/400x200" />
-                            <div class="p-4">
-                                <div class="font-bold">Navy Beach</div>
-                                <div class="my-3 italic">
-                                    <div>16 Navy Rd</div>
-                                    <div>Montauk, NY</div>
-                                </div>
-                                <div>For us, Montauk is synonymous with shellfish. Lobster, in particular. And Navy Beach serves theirs right - warm on a
-                                    buttered
-                                    bun.
-                                    No
-                                    shirt, no
-                                    shorts, no problem? they don't mind if you stay in your bikini. You're on an island in June, so take full advantage.
-                                </div>
+                            <div class="mt-3">
+                                <a href="https://area15.com/" target="_blank" class="underline decoration-solid text-violet-700">Click for more
+                                    info</a>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="md:mt-10 p-4 md:p-4 text-center max-w-screen-lg text-white font-xxs m-auto tracking-normal">*The hosted pool party will be covered
+                at our expense. However, making reservations, travel costs, and cost of all other evenst will be the responsibility of each guest. The only
+                travel costs we will cover are
+                those from the ceremony to Mon Ami Gabi and to the show thereafter on the wedding day. Please check back here often as plans may change.
             </div>
         </div>
 

@@ -113,13 +113,15 @@
 
 .s-five {
   .s-five-grid {
-    display: grid;
     grid-template-columns: repeat(4, minmax(0, 300px));
-    gap: 10px;
+
+    @media only screen and (max-width: 720px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 
   .place-selected {
-    border-bottom: 2px solid white;
+    color: rgb(197 160 255);
   }
 
   .place-content {
