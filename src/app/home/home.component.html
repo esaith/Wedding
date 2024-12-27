@@ -4,7 +4,7 @@
         <div class="font-xxs -mt-3.5">VIVA LAS VEGAS WITH THE VANIDESTINE'S</div>
     </div>
 
-    <div class="nav fixed top-50 hidden md:flex align-center justify-center">
+    <div class="nav fixed top-50 hidden xl:flex align-center justify-center">
         <div (click)="goToPage(0)">Home</div>
         <div (click)="goToPage(1)">About</div>
         <div (click)="goToPage(2)">Itinerary</div>
@@ -15,49 +15,51 @@
     </div>
 
     <div class="relative" #scrollbackground>
-        <div class="section fixed top-16 w-full bg-white s-one md:min-h-screen z-[10] pb-5 shadow-2xl">
-            <img class="m-auto w-full md:w-1/2" src="/assets/images/JohnAndVeronica.jpg" />
+        <div class="section fixed top-16 w-full bg-white s-one xl:min-h-screen z-[10] pb-5 shadow-2xl">
+            <img class="m-auto w-full xl:w-1/2" src="/assets/images/JohnAndVeronica.jpg" />
         </div>
 
-        <div class="section about fixed top-14 w-full bg-white md:min-h-screen z-[9] px-7 pb-8 shadow-2xl">
-            <div class="content m-auto text-neutral-700 leading-6 max-w-full md:max-w-4xl md:text-2xl">
-                <div class="border-b-2 w-80 mx-auto mt-5 md:mt-24 border-black"></div>
+        <div class="section about fixed top-14 w-full bg-white xl:min-h-screen z-[9] px-7 pb-8 shadow-2xl">
+            <div class="content m-auto text-neutral-700 leading-6 max-w-full xl:max-w-4xl xl:text-2xl max-w-xl">
+                <div class="border-b-2 w-80 mx-auto mt-5 xl:mt-24 border-black"></div>
 
-                <div class="mt-10 md:hidden md:mt-5">
+                <div class="mt-10 sm:hidden m-auto">
                     <div class="flex items-center ">
-                        <div class="text-xl md:text-9xl relative md:top-0 w">W</div>
+                        <div class="text-8xl relative w">W</div>
                         <div>e are thrilled to invite you to our Las Vegas Wedding! </div>
                     </div>
-                    <div class="mt-5">We encourage all of you to take this opportunity and make this
+                    <div class="mt-1">We encourage all of you to take this opportunity and make this
                         into a small getaway or a full blown vacation.
                     </div>
                 </div>
-                <div class="hidden md:block">
-                    <div class="flex items-center mt-24 md:mt-10">
-                        <div class="text-xl md:text-9xl relative md:top-0 w">W</div>
+                <div class="hidden sm:block m-auto">
+                    <div class="flex items-center mt-24 mt-7">
+                        <div class="text-9xl relative top-0 w">W</div>
                         <div>e are thrilled to invite you to our Las Vegas Wedding! We encourage all of you to take this opportunity and make this
                             into a small getaway or a full blown vacation.
                         </div>
                     </div>
                 </div>
 
-                <div class="my-4">There will not be a wedding party and instead we invite our guests show up in style and be the "wedding party". Choose any
+                <div class="my-4 m-auto">There will not be a wedding party and instead we invite our guests show up in style and be the "wedding
+                    party".
+                    Choose any
                     shade of
                     purple for any piece of clothing or accessory. Feel free to show up decked out in purple as well :)
                 </div>
-                <div class="my-4">Hope you're as excited as we are to make lasting memories!</div>
-                <div>xoxo</div>
-                <div>John & Veronica</div>
+                <div class="my-4 m-auto">Hope you're as excited as we are to make lasting memories!</div>
+                <div class="my-2 m-auto">xoxo</div>
+                <div class="m-auto">John & Veronica</div>
             </div>
         </div>
 
         <div class="section fixed top-14 w-full bg-white s-three z-[8] shadow-2xl">
-            <div class="border-b-2 w-80 mx-auto mt-5 md:mt-24 border-black"></div>
-            <div class="text-center text-3xl md:text-3xl mt-5 tracking-widest">ITINERARY</div>
+            <div class="border-b-2 w-80 mx-auto mt-5 xl:mt-24 border-black"></div>
+            <div class="text-center text-3xl xl:text-3xl mt-5 tracking-widest">ITINERARY</div>
             <div class="itinerary-content">
-                <div class="relative itinerary-box md:max-w-7xl md:flex md:items-start md:mt-10 md:mx-auto md:mb-2.5 
-                p-2.5 md:text-lg md:border md:border-solid md:border-slate-500">
-                    <div class="hidden md:flex">
+                <div class="relative itinerary-box xl:max-w-7xl xl:flex xl:items-start xl:mt-10 xl:mx-auto xl:mb-2.5 
+                p-2.5 xl:border xl:border-solid xl:border-slate-500 xl:mb-20">
+                    <div class="hidden xl:flex">
                         <div class="circle-1 cursor-pointer" [class.fill]="itineraryTab === 1" (click)="selectItineraryTab(1)">
                             <div class="absolute w-20 top-5 -left-8 text-center text-sm">
                                 <div class="font-bold">Ceremony</div>
@@ -85,10 +87,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="md:items-center md:min-h-96 block md:hidden tab" [class.showtab]="itineraryTab === 1">
-                        <img class="m-auto w-60 md:mx-2 md:w-52 h-auto" src="/assets/images/ceremony.jpg" />
+                    <div class="xl:items-center xl:min-h-min block xl:hidden tab" [class.showtab]="itineraryTab === 1">
+                        <img class="m-auto w-60 xl:mx-2 xl:w-52 h-auto" src="/assets/images/ceremony.jpg" />
                         <div class="itinerary-description">
-                            <div class="itinerary-description-title text-2xl md:text-4xl font-bold">Ceremony</div>
+                            <div class="itinerary-description-title text-2xl xl:text-4xl font-bold">Ceremony</div>
                             <div class="py-6">Although the courthouse will have our signatures on the dotted line, we know it won't be
                                 real in our eyes until you help us make the commitment.
                             </div>
@@ -106,11 +108,11 @@
                                 <li>We will be providing transportation from the Wynn Hotel to Mon Ami Gabi between 1:45pm - 2pm for photos then food.</li>
                             </ul>
                         </div>
-                        <div class="itinerary-details p-2.5 md:w-1/3">
-                            <div class="font-bold" hidden md:block>The Wedding Salons</div>
-                            <div class="font-bold" hidden md:block>at the Wynn Hotel</div>
-                            <div class="font-bold" block md:hidden>The Wedding Salons at the Wynn Hotel</div>
-                            <div class="text-sm hidden md:block">
+                        <div class="itinerary-details p-2.5 xl:w-1/3">
+                            <div class="font-bold" hidden xl:block>The Wedding Salons</div>
+                            <div class="font-bold" hidden xl:block>at the Wynn Hotel</div>
+                            <div class="font-bold" block xl:hidden>The Wedding Salons at the Wynn Hotel</div>
+                            <div class="text-sm hidden xl:block">
                                 <div>Sunday</div>
                                 <div>May 25</div>
                                 <div>1:00pm</div>
@@ -121,11 +123,11 @@
                             <div>Cocktail Attire - Purple Encouraged</div>
                         </div>
                     </div>
-                    <div class="border-b-2 w-80 mx-auto my-5 border-black md:hidden"></div>
-                    <div class="md:items-center md:h-96 block md:hidden tab" [class.showtab]="itineraryTab === 2">
-                        <img class="m-auto md:mx-2 w-52 h-auto" src="/assets/images/blackwhitelook.jpg" />
+                    <div class="border-b-2 w-3/4 mx-auto my-5 border-black xl:hidden"></div>
+                    <div class="xl:items-center xl:min-h-96 block xl:hidden tab" [class.showtab]="itineraryTab === 2">
+                        <img class="m-auto w-60 xl:mx-2 xl:w-52 h-auto" src="/assets/images/blackwhitelook.jpg" />
                         <div class="itinerary-description">
-                            <div class="itinerary-description-title text-2xl md:text-4xl font-bold">Dinner</div>
+                            <div class="itinerary-description-title text-2xl xl:text-4xl font-bold">Dinner</div>
                             <div class="py-6">Our love of French cuisine began on our vacation to Washington D.C. and since then we knew we had
                                 to find the perfect French bistro for our special day!
                             </div>
@@ -135,11 +137,11 @@
                                 <li>We will be providing transportation from Mon Ami Gabi to MGM Grand at 5:45pm.</li>
                             </ul>
                         </div>
-                        <div class="itinerary-details p-2.5 md:w-1/3">
-                            <div class="font-bold" hidden md:block> Mon Ami Gabi</div>
-                            <div class="font-bold" hidden md:block> French Bistro</div>
-                            <div class="font-bold" md:hidden> Mon Ami Gabi French Bistro</div>
-                            <div class="text-sm hidden md:block">
+                        <div class="itinerary-details p-2.5 xl:w-1/3">
+                            <div class="font-bold" hidden xl:block> Mon Ami Gabi</div>
+                            <div class="font-bold" hidden xl:block> French Bistro</div>
+                            <div class="font-bold" xl:hidden> Mon Ami Gabi French Bistro</div>
+                            <div class="text-sm hidden xl:block">
                                 <div>Sunday</div>
                                 <div>May 25</div>
                                 <div>2:45pm</div>
@@ -149,11 +151,11 @@
                                 on Map</button>
                         </div>
                     </div>
-                    <div class="border-b-2 w-80 mx-auto my-5 border-black md:hidden"></div>
-                    <div class="md:items-center md:h-96 block md:hidden tab" [class.showtab]="itineraryTab === 3">
-                        <img class="m-auto md:mx-2 w-52 h-auto" src="/assets/images/redtree.jpg" />
+                    <div class="border-b-2 w-3/4 mx-auto my-5 border-black xl:hidden"></div>
+                    <div class="xl:items-center xl:min-h-96 block xl:hidden tab" [class.showtab]="itineraryTab === 3">
+                        <img class="m-auto xl:mx-2 w-52 h-auto" src="/assets/images/redtree.jpg" />
                         <div class="itinerary-description">
-                            <div class="itinerary-description-title text-2xl md:text-4xl font-bold">Show</div>
+                            <div class="itinerary-description-title text-2xl xl:text-4xl font-bold">Show</div>
                             <div class="py-6">We'd like to treat you to a Vegas show and what better way than to witness a Cirque du Soleil production.
                             </div>
                             <div class="pb-5 font-bold">Show: 7:00pm - 8:30pm</div>
@@ -170,11 +172,11 @@
 
 
                         </div>
-                        <div class="itinerary-details p-2.5 md:w-1/3">
-                            <div class="font-bold" hidden md:block> KÀ by Cirque du Soleil </div>
-                            <div class="font-bold" hidden md:block>at MGM Grand</div>
-                            <div class="font-bold" md:hidden>KÀ by Cirque du Soleil at MGM Grand</div>
-                            <div class="text-sm hidden md:block">
+                        <div class="itinerary-details p-2.5 xl:w-1/3">
+                            <div class="font-bold" hidden xl:block> KÀ by Cirque du Soleil </div>
+                            <div class="font-bold" hidden xl:block>at MGM Grand</div>
+                            <div class="font-bold" xl:hidden>KÀ by Cirque du Soleil at MGM Grand</div>
+                            <div class="text-sm hidden xl:block">
                                 <div>Sunday</div>
                                 <div>May 25</div>
                                 <div>7:00pm</div>
@@ -184,11 +186,11 @@
                                 on Map</button>
                         </div>
                     </div>
-                    <div class="border-b-2 w-80 mx-auto my-5 border-black md:hidden"></div>
-                    <div class="md:items-center mb-3 md:h-96 block md:hidden tab" [class.showtab]="itineraryTab === 4">
-                        <img class="m-auto md:mx-2 w-full md:w-1/2 h-auto" src="https://www.viaggi-usa.it/wp-content/uploads/2018/10/opt1.jpg" />
+                    <div class="border-b-2 w-3/4 mx-auto my-5 border-black xl:hidden"></div>
+                    <div class="xl:items-center mb-3 xl:min-h-96 block xl:hidden tab" [class.showtab]="itineraryTab === 4">
+                        <img class="m-auto xl:mx-2 w-full xl:w-1/2 h-auto" src="https://www.viaggi-usa.it/wp-content/uploads/2018/10/opt1.jpg" />
                         <div class="itinerary-description">
-                            <div class="itinerary-description-title text-2xl md:text-4xl font-bold">After Party</div>
+                            <div class="itinerary-description-title text-2xl xl:text-4xl font-bold">After Party</div>
                             <div class="py-3 font-bold">Starts at: 10:00pm+/-</div>
                             <ul class="list-disc ml-5 tracking-normal">
                                 <li>Only for those feeling up for it.</li>
@@ -202,20 +204,20 @@
         </div>
 
         <div class="section registry fixed top-14 w-full bg-white z-[7] min-h-screen shadow-2xl">
-            <div class="border-b-2 w-80 mx-auto mt-5 md:mt-24 border-black"></div>
-            <div class="text-center text-3xl md:text-3xl mt-5 tracking-widest">Registry</div>
-            <div class="max-w-screen-md p-5 m-auto text-base">
-                <div class="py-2.5 md:my-10 md:p-0">
+            <div class="border-b-2 w-80 mx-auto mt-5 xl:mt-24 border-black"></div>
+            <div class="text-center text-3xl xl:text-3xl mt-5 tracking-widest">Registry</div>
+            <div class="max-w-screen-md p-5 m-auto">
+                <div class="py-2.5 xl:my-10 xl:p-0">
                     We are beyond grateful to be celebrating our wedding with you. We appreciate you coming from far and wide to be with us this Memorial
                     weekend. Your
                     attendance is as good a gift as any, but for those who would like, we have thoughtfully put together our registry with items to help us
                     start this next chapter in our lives.
                 </div>
-                <div class="py-2.5 md:my-7 md:p-0">
+                <div class="py-2.5 xl:my-7 xl:p-0">
                     We have so much to look forward to and have included cash gift options if you would like to contribute to our future plans. Thank you from
                     the bottom of our hearts.
                 </div>
-                <div class="py-2.5 md:my-7 md:p-0">You can find our registry here at <a href="https://www.amazon.com/wedding/registry/38UOAQG8FOISD"
+                <div class="py-2.5 xl:my-7 xl:p-0">You can find our registry here at <a href="https://www.amazon.com/wedding/registry/38UOAQG8FOISD"
                         target="_blank" class="underline decoration-solid text-violet-700">Amazon</a>
                 </div>
                 <div class="py-2.5"> CashApp: $BeMyVanidestine </div>
@@ -223,15 +225,15 @@
         </div>
 
         <div class="section fixed top-14 w-full bg-white z-[6] min-h-screen shadow-2xl">
-            <div class="border-b-2 w-80 mx-auto mt-5 md:mt-24 border-black"></div>
-            <div class="text-center text-3xl md:text-3xl p-5 tracking-widest">Accomodations</div>
-            <div class="px-5 md:max-w-screen-md m-auto">There are numerous hotels,
+            <div class="border-b-2 w-80 mx-auto mt-5 xl:mt-24 border-black"></div>
+            <div class="text-center text-3xl xl:text-3xl p-5 tracking-widest">Accomodations</div>
+            <div class="px-5 xl:max-w-screen-md m-auto">There are numerous hotels,
                 Airbnbs, and other accommodations available in Las Vegas. We recommend that you find the option that best suits your needs for the duration of
                 your stay as guests are expected to make their own reservations. Although we will not be staying at the Wynn Hotel, they have provided a
                 rate code for our guests, as our ceremony will be held
                 there.
             </div>
-            <div class="p-5 md:max-w-screen-md m-auto">
+            <div class="p-5 xl:max-w-screen-md m-auto">
                 <div class="font-bold text-lg">The Wynn Hotel Info</div>
                 <ul class="list-disc ml-5 tracking-normal">
                     <li>Rate (Promo) Code: <span class="font-bold">WYNNWED</span></li>
@@ -249,8 +251,8 @@
             </div>
 
 
-            <div class="pt-3 pl-5 text-lg md:max-w-screen-md m-auto">Disclaimer</div>
-            <div class="p-2 mb-5 pl-5 md:max-w-screen-md m-auto">
+            <div class="pt-3 pl-5 text-lg xl:max-w-screen-md m-auto">Disclaimer</div>
+            <div class="p-2 mb-5 pl-5 xl:max-w-screen-md m-auto">
                 Please be aware that since this is a holiday weekend, there may be 'wellness checks' by hotel staff or police <span class="underline">at any
                     time</span> during your stay. You may want to inquire about this prior to booking. Memorial Day weekend is one of the busiest holidays,
                 and hotels are on high alert for illegal activity, overconsumption of alcohol and drugs, or too much tomfoolery. Additionally, it's worth
@@ -260,10 +262,10 @@
         </div>
 
         <div class="section fixed top-14 w-full bg-stone-700 s-five z-[5] min-h-screen text-sm shadow-2xl">
-            <img class="w-3/8 mx-auto mt-5 md:mt-20" src="/assets/images/lasVegas.png" />
-            <div class="text-3xl md:text-5xl text-center my-10 text-white">OUR SCHEDULE</div>
-            <div class="w-3/4 md:w-1/4 my-4 md:my-16 mx-auto border-2 border-white"></div>
-            <div class="p-4 text-center max-w-screen-lg text-white md:text-2xl m-auto">
+            <img class="w-3/8 mx-auto mt-5 xl:mt-20" src="/assets/images/lasVegas.png" />
+            <div class="text-3xl xl:text-5xl text-center my-10 text-white">OUR SCHEDULE</div>
+            <div class="w-3/4 xl:w-1/4 my-4 xl:my-16 mx-auto border-2 border-white"></div>
+            <div class="p-4 text-center max-w-screen-lg text-white xl:text-2xl m-auto">
                 We plan on experiencing more of what Vegas has to offer during our stay. Everyone is welcome to join us but don't feel obligated to do so.*
             </div>
             <div class="flex align-center justify-center text-white text-lg my-5 cursor-pointer tracking-normal">
@@ -272,9 +274,9 @@
                 <div class="mx-3" [class.place-selected]="place === 'saturday'" (click)="selectPlace('saturday')">Saturday</div> /
                 <div class="mx-3" [class.place-selected]="place === 'monday'" (click)="selectPlace('monday')">Monday</div>
             </div>
-            <div class="md:mb-20 tracking-normal">
+            <div class="xl:mb-20 tracking-normal">
                 <div class="flex justify-center place-content" [class.place-content-selected]="place === 'thursday'">
-                    <div class="s-five-grid md:grid md:gap-2.5">
+                    <div class="s-five-grid xl:grid xl:gap-2.5">
                         <div class="col-span-4 text-center text-white text-lg">Thursday May 22, 2025</div>
                         <div class="bg-white p-4 border-black border-b">
                             <div class="font-bold">Grimaldi's Pizzeria</div>
@@ -301,6 +303,7 @@
                             <div class="font-bold mt-4">Shin Lim</div>
                             <div class="my-3 italic">
                                 <div>Time: 7:30pm - 9:30pm</div>
+                                <div>SEC2, Row S, Seats 14 - 15</div>
                                 <div>The Palazzo Theatre</div>
                                 <div>3325 S Las Vegas Blvd</div>
                                 <div>Las Vegas, NV 89109</div>
@@ -341,7 +344,7 @@
                     </div>
                 </div>
                 <div class="flex justify-center place-content" [class.place-content-selected]="place === 'friday'">
-                    <div class="relative s-five-grid md:grid md:gap-2.5 text-white">
+                    <div class="relative s-five-grid xl:grid xl:gap-2.5 text-white">
                         <div class="col-span-4 text-center text-white text-lg">Friday May 23, 2025</div>
                         <div class="absolute top-0 bottom-0 right-0 left-0 friday z-0"></div>
                         <div class="p-4 border-black border-b">
@@ -408,7 +411,7 @@
                     </div>
                 </div>
                 <div class="flex justify-center place-content" [class.place-content-selected]="place === 'saturday'">
-                    <div class="s-five-grid md:grid md:gap-2.5">
+                    <div class="s-five-grid xl:grid xl:gap-2.5">
                         <div class="col-span-4 text-center text-white text-lg">Saturday May 24, 2025</div>
                         <div class="bg-white p-4 border-black border-b">
                             <div class="font-bold">Yard House</div>
@@ -429,9 +432,9 @@
                                     info</a>
                             </div>
                         </div>
-                        <div class="md:col-span-3 bg-white p-4 border-black border-b">
+                        <div class="xl:col-span-3 bg-white p-4 border-black border-b">
                             <img class="w-full" src="/assets/images/blackEyedPeas.png" />
-                            <div class="font-bold">Black Eyed Peas</div>
+                            <div class="font-bold mt-4">Black Eyed Peas</div>
                             <div class="my-3 italic">
                                 <div>Time: 8pm</div>
                                 <div>Advanced ticket purchase recommended</div>
@@ -456,9 +459,9 @@
                     </div>
                 </div>
                 <div class="flex justify-center place-content" [class.place-content-selected]="place === 'monday'">
-                    <div class="s-five-grid md:grid md:gap-2.5">
+                    <div class="s-five-grid xl:grid xl:gap-2.5">
                         <div class="col-span-4 text-center text-white text-lg">Monday May 26, 2025</div>
-                        <div class="md:col-span-2 bg-white p-4 border-black border-b">
+                        <div class="xl:col-span-2 bg-white p-4 border-black border-b">
                             <div class="font-bold">Mon Ami Gabi French Bistro</div>
                             <div class="my-3 italic">
                                 <div>Reservations required for brunch</div>
@@ -474,7 +477,7 @@
                                     info</a>
                             </div>
                         </div>
-                        <div class="md:col-span-2 bg-white p-4">
+                        <div class="xl:col-span-2 bg-white p-4">
                             <div class="font-bold">Area15</div>
                             <div class="my-3 italic">
                                 <div>Advanced ticket purchase recommended</div>
@@ -492,7 +495,7 @@
                     </div>
                 </div>
             </div>
-            <div class="md:mt-10 p-4 md:p-4 text-center max-w-screen-lg text-white font-xxs m-auto tracking-normal">*The hosted pool party will be covered
+            <div class="xl:mt-10 p-4 xl:p-4 text-center max-w-screen-lg text-white font-xxs m-auto tracking-normal">*The hosted pool party will be covered
                 at our expense. However, making reservations, travel costs, and cost of all other events will be the responsibility of each guest. The only
                 travel costs we will cover are
                 those from the ceremony to Mon Ami Gabi and to the show thereafter on the wedding day. Please check back here often as plans may change.
@@ -500,8 +503,8 @@
         </div>
 
         <div class="section fixed top-14 w-full bg-white s-six z-[4] mb-5 min-h-screen m-auto">
-            <div class="border-b-2 w-80 mx-auto mt-10 md:mt-20 border-black"></div>
-            <div class="text-center text-2xl md:text-5xl mt-5 mb-20 tracking-widest">Répondez S'il Vous Plaît (RSVP)</div>
+            <div class="border-b-2 w-80 mx-auto mt-10 xl:mt-20 border-black"></div>
+            <div class="text-center text-2xl xl:text-5xl mt-5 mb-20 tracking-widest">Répondez S'il Vous Plaît (RSVP)</div>
 
             <form class="max-w-screen-md m-auto text-lg p-5 pb-20">
                 <div class="mb-5">
@@ -550,7 +553,7 @@
                     </div>
                 </div>
 
-                <div class="guest-questions my-3 md:my-10 text-center grid gap-2 md:gap-5 text-xs" *ngIf="family.isAttending">
+                <div class="guest-questions my-3 xl:my-10 text-center grid gap-2 xl:gap-5 text-xs" *ngIf="family.isAttending">
                     <div></div>
                     <div>Ceremony</div>
                     <div>Reception</div>
@@ -615,7 +618,7 @@
             <div class="fixed top-0 bottom-0 left-0 right-0 z-90 flex align-center justify-center" *ngIf="whereIsThisIsOpen">
                 <div class="fixed top-0 bottom-0 left-0 right-0 opacity-90 bg-slate-600 pointer-events-none"></div>
                 <div class="relative m-auto">
-                    <div class="absolute top-0 right-0 md:top-1 md:-right-0 h-7 w-7" (click)="closewhereIsThis()">
+                    <div class="absolute top-0 right-0 xl:top-1 xl:-right-0 h-7 w-7" (click)="closewhereIsThis()">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="fill-white">
                             <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
                         </svg>
