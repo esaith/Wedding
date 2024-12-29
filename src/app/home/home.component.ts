@@ -164,6 +164,7 @@ export class HomeComponent implements AfterViewInit {
         }
 
         this.updateCeremonyShow();
+        this.updateArrivalDepartureDates();
         this.calculatePageHeight();
       } else {
         this.familySearchError = `Unable to find the reservation. Click
@@ -174,6 +175,39 @@ export class HomeComponent implements AfterViewInit {
       this.isSearchForFamilyName = false;
       this.familySearchError = "Issue contacting the server. Please try again later or give us a call so we can fix it!";
     }
+  }
+
+  updateArrivalDepartureDates() {
+    setTimeout(() => {
+      if (this.family.arrivalDate) {
+        const dateElement = document.querySelector('#arrivalDate') as HTMLInputElement;
+        if (dateElement) {
+          dateElement.value = this.convertDateToString(this.family.arrivalDate);
+        }
+      }
+
+      if (this.family.departureDate) {
+        const dateElement = document.querySelector('#departureDate') as HTMLInputElement;
+        if (dateElement) {
+          dateElement.value = this.convertDateToString(this.family.departureDate);
+        }
+      }
+    }, 0)
+  }
+
+  convertDateToString(date: Date): string {
+    let month = (date.getUTCMonth() + 1).toString();
+    if (month.length < 2) {
+      month = `0${month}`;
+    }
+
+    let day = date.getUTCDate().toString();
+    if (day.length < 2) {
+      day = '0' + day;
+    }
+
+    const result = `${date.getUTCFullYear()}-${month}-${day}`
+    return result;
   }
 
   selectPlace(place: string) {
