@@ -526,7 +526,7 @@
                 </div>
 
                 <div class="mb-5" *ngIf="family && family.familyName">
-                    <label class="h-5 text-sm font-medium text-gray-900">Are you attending?</label>
+                    <label class="h-5 text-sm font-medium text-gray-900">Are you attending?<span class="text-red-900">*</span></label>
                     <div class="flex align-center">
                         <div>
                             <input id="guestAttendingYes" type="checkbox"
@@ -554,9 +554,10 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="my-3" *ngIf="family.isAttending">
+                <div class="border-b-2 w-full mx-auto my-10 border-black" *ngIf="family.isAttending"></div>
+                <div class="my-7" *ngIf="family.isAttending">
                     <div class="h-5 text-lg font-medium text-gray-900 mb-3">Flight Arrival Info</div>
+                    <div class="font-xxs">(Optional. You can come back and fill this out at a later date)</div>
                     <div class="mb-5">
                         <label for="arrivalAirlines" class="block mb-2 text-sm font-medium text-gray-900">Arrival Airlines</label>
                         <input type="text" id="arrivalAirlines" [(ngModel)]="family.arrivalAirlines" name="arrivalAirlines"
@@ -574,6 +575,7 @@
                     </div>
 
                     <div class="h-5 text-lg font-medium text-gray-900 mb-3">Flight Departure Info</div>
+                    <div class="font-xxs">(Optional. You can come back and fill this out at a later date)</div>
                     <div class="mb-5">
                         <label for="departureAirlines" class="block mb-2 text-sm font-medium text-gray-900">Departure Airlines</label>
                         <input type="text" id="departureAirlines" [(ngModel)]="family.departureAirlines" name="departureAirlines"
@@ -589,7 +591,7 @@
                         <input type="date" id="departureDate" name="departureDate" min="2025-05-01" [(ngModel)]="family.departureDate" />
                     </div>
                 </div>
-
+                <div class="border-b-2 w-full mx-auto my-10 border-black" *ngIf="family.isAttending"></div>
                 <div class="guest-questions my-3 xl:my-10 text-center grid gap-2 xl:gap-5 text-xs" *ngIf="family.isAttending">
                     <div></div>
                     <div>Ceremony</div>
@@ -644,7 +646,9 @@
                     <div class="my-2">Please list any food allergies or dietary restrictions.</div>
                     <textarea class="border-solid border-2 w-full h-48 text-sm" (input)="updateFamilyComment($event)" id="comments" name="comments"
                         [ngModel]="family.comments"></textarea>
-                    <div class="my-4">All other questions or concerns you can ping me, ring me, or bring me more info at: 863-899-4799</div>
+                    <div class="mt-4">All other questions or concerns you can ping me, ring me, or bring me more info at:</div>
+                    <div class="mt-2 mb-4">863-899-4799</div>
+
                 </div>
 
                 <button type="submit" *ngIf="family && family.familyName" (click)="submitRsvp()"
