@@ -42,6 +42,7 @@ export class HomeComponent implements AfterViewInit {
   ngAfterViewInit() {
     this.calculatePageHeight();
     fromEvent(window, 'scroll').subscribe((x) => this.scroll(window.scrollY));
+    fromEvent(window, 'resize').subscribe(() => this.calculatePageHeight())
   }
 
   scroll(scrollY: number) {
