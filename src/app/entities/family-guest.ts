@@ -5,6 +5,7 @@ export class FamilyGuest {
     familyName = '';
     isAttending = false;
     comments = '';
+    accomodations = '';
     guests = new Array<Guest>();
 
     maxAdults = 0;
@@ -58,6 +59,7 @@ export class FamilyGuestDTO {
     familyName = '';
     isAttending = false;
     comments = '';
+    accomodations = '';
 
     maxAdults = 0;
     maxKids = 0;
@@ -86,6 +88,7 @@ export class FamilyGuestDTO {
             this.familyName = familyGuest.familyName;
             this.isAttending = familyGuest.isAttending;
             this.comments = familyGuest.comments;
+            this.accomodations = familyGuest.accomodations;
 
             this.arrivalAirlines = familyGuest.arrivalAirlines;
             this.arrivalFlight = familyGuest.arrivalFlight;

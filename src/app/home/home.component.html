@@ -208,7 +208,7 @@
             <div class="text-center text-3xl xl:text-3xl mt-5 tracking-widest">Registry</div>
             <div class="max-w-screen-md p-5 m-auto">
                 <div class="py-2.5 xl:my-10 xl:p-0">
-                    We are beyond grateful to be celebrating our wedding with you. We appreciate you coming from far and wide to be with us this Memorial
+                    We are beyond grateful to be celebrating our wedding with you. We appreciate you coming from far and wide to be with us this Memorial Day
                     weekend. Your
                     attendance is as good a gift as any, but for those who would like, we have thoughtfully put together our registry with items to help us
                     start this next chapter in our lives.
@@ -446,7 +446,7 @@
                                 <div>Las Vegas, NV 89109</div>
                             </div>
                             <div>
-                                Two hour music concert
+                                Two hour music concert.
                             </div>
                             <div class="mt-3">
                                 <a href="https://www.ticketmaster.com/bepvegas?CAMEFROM=CFC_CAESARSENT_WEB_CCOM_BLACKEYEDPEAS" target="_blank"
@@ -506,7 +506,8 @@
 
         <div class="section fixed top-14 w-full bg-white s-six z-[4] mb-5 min-h-screen m-auto">
             <div class="border-b-2 w-80 mx-auto mt-10 xl:mt-20 border-black"></div>
-            <div class="text-center text-2xl xl:text-5xl mt-5 mb-20 tracking-widest">Répondez S'il Vous Plaît (RSVP)</div>
+            <div class="text-center text-2xl xl:text-5xl mt-5 mb-2 tracking-widest">Répondez S'il Vous Plaît (RSVP)</div>
+            <div class="text-center text-xs mb-20">Please RSVP by Feb 1, 2025</div>
 
             <form class="max-w-screen-md m-auto text-lg p-5 pb-20">
                 <div class="mb-5">
@@ -544,112 +545,121 @@
                     </div>
                 </div>
 
-                <div *ngIf="family.isAttending">
-                    <div *ngFor="let guest of family.guests; let i = index">
-                        <div class="mb-5">
-                            <label for="guest-{{i}}" class="block mb-2 text-sm font-medium text-gray-900">{{guest.isAdult ? 'Adult' : 'Child'}}</label>
-                            <input type="text" id="guest-{{i}}" [(ngModel)]="guest.name" name="guest-{{i}}"
-                                class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                required disabled="{{!guest.allowNameModification}}" />
+                <ng-container *ngIf="family.isAttending">
+                    <div>
+                        <div *ngFor="let guest of family.guests; let i = index">
+                            <div class="mb-5">
+                                <label for="guest-{{i}}" class="block mb-2 text-sm font-medium text-gray-900">{{guest.isAdult ? 'Adult' : 'Child'}}</label>
+                                <input type="text" id="guest-{{i}}" [(ngModel)]="guest.name" name="guest-{{i}}"
+                                    class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                                    required disabled="{{!guest.allowNameModification}}" />
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="border-b-2 w-full mx-auto my-10 border-black" *ngIf="family.isAttending"></div>
-                <div class="my-7" *ngIf="family.isAttending">
-                    <div class="h-5 text-lg font-medium text-gray-900 mb-3">Flight Arrival Info</div>
-                    <div class="font-xxs">(Optional. You can come back and fill this out at a later date)</div>
-                    <div class="mb-5">
-                        <label for="arrivalAirlines" class="block mb-2 text-sm font-medium text-gray-900">Arrival Airlines</label>
-                        <input type="text" id="arrivalAirlines" [(ngModel)]="family.arrivalAirlines" name="arrivalAirlines"
-                            class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
-                    </div>
-                    <div class="mb-5">
-                        <label for="arrivalFlight" class="block mb-2 text-sm font-medium text-gray-900">Arrival Flight #</label>
-                        <input type="text" id="arrivalFlight" [(ngModel)]="family.arrivalFlight" name="arrivalFlight"
-                            class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
-                    </div>
-                    <div class="mb-5">
-                        <label for="arrivalDate" class="block mb-2 text-sm font-medium text-gray-900">Arrival Date</label>
-                        <input type="date" id="arrivalDate" name="arrivalDate" min="2025-05-01" [(ngModel)]="family.arrivalDate" />
+                    <div class="border-b-2 w-full mx-auto my-10 border-black"></div>
+                    <div class="my-7">
+                        <div class="h-5 text-lg font-medium text-gray-900">Flight Arrival Info</div>
+                        <div class="font-xxs">(Optional. You can come back and fill this out at a later date)</div>
+                        <div class="my-5">
+                            <label for="arrivalAirlines" class="block mb-2 text-sm font-medium text-gray-900">Arrival Airlines</label>
+                            <input type="text" id="arrivalAirlines" [(ngModel)]="family.arrivalAirlines" name="arrivalAirlines"
+                                class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                        </div>
+                        <div class="mb-5">
+                            <label for="arrivalFlight" class="block mb-2 text-sm font-medium text-gray-900">Arrival Flight #</label>
+                            <input type="text" id="arrivalFlight" [(ngModel)]="family.arrivalFlight" name="arrivalFlight"
+                                class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                        </div>
+                        <div class="mb-5">
+                            <label for="arrivalDate" class="block mb-2 text-sm font-medium text-gray-900">Arrival Date</label>
+                            <input type="date" id="arrivalDate" name="arrivalDate" min="2025-05-01" [(ngModel)]="family.arrivalDate" />
 
-                    </div>
+                        </div>
 
-                    <div class="h-5 text-lg font-medium text-gray-900 mb-3">Flight Departure Info</div>
-                    <div class="font-xxs">(Optional. You can come back and fill this out at a later date)</div>
-                    <div class="mb-5">
-                        <label for="departureAirlines" class="block mb-2 text-sm font-medium text-gray-900">Departure Airlines</label>
-                        <input type="text" id="departureAirlines" [(ngModel)]="family.departureAirlines" name="departureAirlines"
+                        <div class="h-5 text-lg font-medium text-gray-900">Flight Departure Info</div>
+                        <div class="font-xxs">(Optional. You can come back and fill this out at a later date)</div>
+                        <div class="my-5">
+                            <label for="departureAirlines" class="block mb-2 text-sm font-medium text-gray-900">Departure Airlines</label>
+                            <input type="text" id="departureAirlines" [(ngModel)]="family.departureAirlines" name="departureAirlines"
+                                class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                        </div>
+                        <div class="mb-5">
+                            <label for="departureFlight" class="block mb-2 text-sm font-medium text-gray-900">Departure Flight #</label>
+                            <input type="text" id="departureFlight" [(ngModel)]="family.departureFlight" name="departureFlight"
+                                class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                        </div>
+                        <div class="mb-5">
+                            <label for="departureDate" class="block mb-2 text-sm font-medium text-gray-900">Departure Date</label>
+                            <input type="date" id="departureDate" name="departureDate" min="2025-05-01" [(ngModel)]="family.departureDate" />
+                        </div>
+                    </div>
+                    <div class="border-b-2 w-full mx-auto my-10 border-black"></div>
+                    <div class="my-5">
+                        <label for="accomodations" class="block text-sm font-medium text-gray-900">Accomodations (Hotel location, AirBnb address)</label>
+                        <div class="font-xxs">(Optional. You can come back and fill this
+                            out
+                            at a later date)</div>
+                        <input type="text" id="accomodations" [(ngModel)]="family.accomodations" name="accomodations"
                             class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
                     </div>
-                    <div class="mb-5">
-                        <label for="departureFlight" class="block mb-2 text-sm font-medium text-gray-900">Departure Flight #</label>
-                        <input type="text" id="departureFlight" [(ngModel)]="family.departureFlight" name="departureFlight"
-                            class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
-                    </div>
-                    <div class="mb-5">
-                        <label for="departureDate" class="block mb-2 text-sm font-medium text-gray-900">Departure Date</label>
-                        <input type="date" id="departureDate" name="departureDate" min="2025-05-01" [(ngModel)]="family.departureDate" />
-                    </div>
-                </div>
-                <div class="border-b-2 w-full mx-auto my-10 border-black" *ngIf="family.isAttending"></div>
-                <div class="guest-questions my-3 xl:my-10 text-center grid gap-2 xl:gap-5 text-xs" *ngIf="family.isAttending">
-                    <div></div>
-                    <div>Ceremony</div>
-                    <div>Reception</div>
-                    <div>Show</div>
-                    <div *ngIf="!family.allowExtraTicket"></div>
-                    <div *ngIf="family.allowExtraTicket">Extra Show ticket</div>
-                    <div></div>
-                    <div class="font-xxs">Max {{family.maxAdultsToCeremony}} Adults
-                        <span *ngIf="family.maxKidsToCeremony === 1"><br>& {{family.maxKidsToCeremony}} Child</span>
-                        <span *ngIf="family.maxKidsToCeremony > 1"><br>& {{family.maxKidsToCeremony}} Children</span>
-                        <br *ngIf="family.maxKidsToCeremony > 0"> <span *ngIf="family.maxKidsToCeremony > 0">(5+ yrs old)</span>
-                    </div>
-                    <div class="font-xxs">Max {{family.maxAdults}} Adults <span *ngIf="family.maxKids > 0">& {{family.maxKids}} Children</span></div>
-                    <div class="font-xxs">Max {{family.maxShowTickets}} tickets
-                        <span *ngIf="family.maxKids > 0"><br>(5+ yrs old)</span>
-                        <span *ngIf="family.maxShowTickets < family.maxAdults"></span>
-                    </div>
-                    <div class="font-xxs" *ngIf="!family.allowExtraTicket"></div>
-                    <div class="font-xxs" *ngIf="family.allowExtraTicket">(If available)</div>
-                    <ng-container *ngFor="let guest of family.guests; let i = index">
-                        <ng-container *ngIf="guest.name && guest.name.trim().length > 0">
-                            <div>{{guest.name}}</div>
-                            <div>
-                                <input type="checkbox" id="guestattendingCeremony-{{i}}" name="guestattendingCeremony-{{i}}"
-                                    [(ngModel)]="guest.attendingCeremony" (ngModelChange)="updateCeremonyAttendence(guest)"
-                                    class="w-4 h-4 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 m-auto"
-                                    disabled="{{guest.isUnderFive || !guest.attendingCeremony && (guest.isAdult && family.atMaxCeremonyAdult || !guest.isAdult && family.atMaxCeremonyKid)}}" />
-                            </div>
-                            <div>
-                                <input type="checkbox" id="guestattendingReception-{{i}}" name="guestattendingReception-{{i}}"
-                                    [(ngModel)]="guest.attendingReception"
-                                    class="w-4 h-4 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 m-auto" />
-                            </div>
-                            <div>
-                                <input type="checkbox" id="guestattendingShow-{{i}}" name="guestattendingShow-{{i}}" [(ngModel)]="guest.attendingShow"
-                                    class="w-4 h-4 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 m-auto"
-                                    (ngModelChange)="updateCeremonyShow()" disabled="{{guest.isUnderFive || !guest.attendingShow && family.atMaxShow}}" />
-                            </div>
-                            <div *ngIf="!family.allowExtraTicket"></div>
-                            <div *ngIf="family.allowExtraTicket">
-                                <input type="checkbox" id="guestattendingShowExtraTicket-{{i}}" name="guestattendingShowExtraTicket-{{i}}"
-                                    [(ngModel)]="guest.attendingShowExtraTicket"
-                                    class="w-4 h-4 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 m-auto"
-                                    disabled="{{guest.isUnderFive || guest.attendingShow}}" />
-                            </div>
+                    <div class="border-b-2 w-full mx-auto my-10 border-black"></div>
+                    <div class="guest-questions my-3 xl:my-10 text-center grid gap-2 xl:gap-5 text-xs">
+                        <div></div>
+                        <div>Ceremony</div>
+                        <div>Reception</div>
+                        <div>Show</div>
+                        <div *ngIf="!family.allowExtraTicket"></div>
+                        <div *ngIf="family.allowExtraTicket">Extra Show ticket</div>
+                        <div></div>
+                        <div class="font-xxs">Max {{family.maxAdultsToCeremony}} Adults
+                            <span *ngIf="family.maxKidsToCeremony === 1"><br>& {{family.maxKidsToCeremony}} Child</span>
+                            <span *ngIf="family.maxKidsToCeremony > 1"><br>& {{family.maxKidsToCeremony}} Children</span>
+                            <br *ngIf="family.maxKidsToCeremony > 0"> <span *ngIf="family.maxKidsToCeremony > 0">(5+ yrs old)</span>
+                        </div>
+                        <div class="font-xxs">Max {{family.maxAdults}} Adults <span *ngIf="family.maxKids > 0">& {{family.maxKids}} Children</span></div>
+                        <div class="font-xxs">Max {{family.maxShowTickets}} tickets
+                            <span *ngIf="family.maxKids > 0"><br>(5+ yrs old)</span>
+                            <span *ngIf="family.maxShowTickets < family.maxAdults"></span>
+                        </div>
+                        <div class="font-xxs" *ngIf="!family.allowExtraTicket"></div>
+                        <div class="font-xxs" *ngIf="family.allowExtraTicket">(If available)</div>
+                        <ng-container *ngFor="let guest of family.guests; let i = index">
+                            <ng-container *ngIf="guest.name && guest.name.trim().length > 0">
+                                <div>{{guest.name}}</div>
+                                <div>
+                                    <input type="checkbox" id="guestattendingCeremony-{{i}}" name="guestattendingCeremony-{{i}}"
+                                        [(ngModel)]="guest.attendingCeremony" (ngModelChange)="updateCeremonyAttendence(guest)"
+                                        class="w-4 h-4 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 m-auto"
+                                        disabled="{{guest.isUnderFive || !guest.attendingCeremony && (guest.isAdult && family.atMaxCeremonyAdult || !guest.isAdult && family.atMaxCeremonyKid)}}" />
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="guestattendingReception-{{i}}" name="guestattendingReception-{{i}}"
+                                        [(ngModel)]="guest.attendingReception"
+                                        class="w-4 h-4 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 m-auto" />
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="guestattendingShow-{{i}}" name="guestattendingShow-{{i}}" [(ngModel)]="guest.attendingShow"
+                                        class="w-4 h-4 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 m-auto"
+                                        (ngModelChange)="updateCeremonyShow()" disabled="{{guest.isUnderFive || !guest.attendingShow && family.atMaxShow}}" />
+                                </div>
+                                <div *ngIf="!family.allowExtraTicket"></div>
+                                <div *ngIf="family.allowExtraTicket">
+                                    <input type="checkbox" id="guestattendingShowExtraTicket-{{i}}" name="guestattendingShowExtraTicket-{{i}}"
+                                        [(ngModel)]="guest.attendingShowExtraTicket"
+                                        class="w-4 h-4 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 m-auto"
+                                        disabled="{{guest.isUnderFive || guest.attendingShow}}" />
+                                </div>
+                            </ng-container>
                         </ng-container>
-                    </ng-container>
-                </div>
-
-                <div *ngIf="family.isAttending" class="mt-5 text-xs">
-                    <div class="my-2">Please list any food allergies or dietary restrictions.</div>
-                    <textarea class="border-solid border-2 w-full h-48 text-sm" (input)="updateFamilyComment($event)" id="comments" name="comments"
-                        [ngModel]="family.comments"></textarea>
-                    <div class="mt-4">All other questions or concerns you can ping me, ring me, or bring me more info at:</div>
-                    <div class="mt-2 mb-4">863-899-4799</div>
-
-                </div>
+                    </div>
+                    <div class="mt-5 text-xs">
+                        <div class="my-2">Please list any food allergies or dietary restrictions.</div>
+                        <textarea class="border-solid border-2 w-full h-48 text-sm" (input)="updateFamilyComment($event)" id="comments" name="comments"
+                            [ngModel]="family.comments"></textarea>
+                        <div class="mt-4">All other questions or concerns you can ping me, ring me, or bring me more info at:</div>
+                        <div class="mt-2 mb-4">863-899-4799</div>
+                    </div>
+                </ng-container>
 
                 <button type="submit" *ngIf="family && family.familyName" (click)="submitRsvp()"
                     class="text-white bg-violet-700 hover:bg-violet-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-violet-600 dark:hover:bg-violet-700 dark:focus:ring-blue-800">Submit</button>
