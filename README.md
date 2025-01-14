@@ -5,4 +5,8 @@
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Inspiration
-The number of wedding websites out there are basic enough but buggy. My fiance and I wanted something where we could modify all the aspects of the pages and include logic when inviting different parties the ceremony, reception and show. The front-end is created using Angular 15+ with extensive use of TailwindCSS. No routing required as page has a smooth forward-motion effect on page scroll, both on mobile and desktop. There are API calls made to save each of the RSVP's. The RSVP names are predetermined and sent out to each guest and only they know their login. The data is pulled and save in SQL on a hidden Wedding API project. 
+There are many wedding websites out there, but they tend to be basic and often buggy. My fiancée and I wanted something more customizable, allowing us to modify all aspects of the pages and include logic for inviting different parties to the ceremony, reception, and show.
+
+The front-end is built using Angular 15+ with extensive use of TailwindCSS. The page features a smooth forward-motion effect on scroll, both on mobile and desktop, eliminating the need for routing. API calls are made to save each RSVP, with names predetermined and sent to each guest, who can log in securely.
+
+The data is pulled and saved in SQL on a hidden Wedding API project.
