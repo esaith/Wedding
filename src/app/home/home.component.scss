@@ -122,20 +122,6 @@ $maxWidth: 1280px;
     @media only screen and (max-width: $maxWidth) {
       grid-template-columns: repeat(1, 1fr);
     }
-
-    .friday {
-      background-image: url(/assets/images/sphere.jpg);
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 100%;
-      z-index: -1;
-      opacity: 0.1;
-      filter: grayscale(1);
-
-      @media only screen and (max-width: $maxWidth) {
-        background-size: auto 100%;
-      }
-    }
   }
 
   .place-selected {

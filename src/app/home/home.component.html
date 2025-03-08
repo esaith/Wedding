@@ -272,6 +272,7 @@
                 <div class="mx-3" [class.place-selected]="place === 'thursday'" (click)="selectPlace('thursday')">Thursday</div> /
                 <div class="mx-3" [class.place-selected]="place === 'friday'" (click)="selectPlace('friday')">Friday</div> /
                 <div class="mx-3" [class.place-selected]="place === 'saturday'" (click)="selectPlace('saturday')">Saturday</div> /
+                <div class="mx-3" [class.place-selected]="place === 'sunday'" (click)="selectPlace('sunday')">Sunday</div> /
                 <div class="mx-3" [class.place-selected]="place === 'monday'" (click)="selectPlace('monday')">Monday</div>
             </div>
             <div class="xl:mb-20 tracking-normal">
@@ -297,9 +298,8 @@
                                     class="underline decoration-solid text-violet-700">Click for more info</a>
                             </div>
                         </div>
-                        <div class="col-span-2 p-4 bg-white border-black border-b">
+                        <div class="col-span-3 p-4 bg-white border-black border-b">
                             <img class="w-full" src="/assets/images/shin-lim.jpg" />
-
                             <div class="font-bold mt-4">Shin Lim</div>
                             <div class="my-3 italic">
                                 <div>Time: 7:30pm - 9:30pm</div>
@@ -323,73 +323,39 @@
                                     class="underline decoration-solid text-violet-700">Purchase at Ticket Master</a>
                             </div>
                         </div>
-                        <div class="bg-white p-4">
-                            <div class="font-bold">Rosina Cocktail Lounge</div>
-                            <div class="my-3 italic">
-                                <div>Closes At: 2am</div>
-                                <div>The Palazzo Casino Floor</div>
-                                <div>3325 S Las Vegas Blvd</div>
-                                <div>Las Vegas, NV 89109</div>
-                            </div>
-                            <div>Rosina Cocktail Lounge is an elegant and intimate cocktail bar located on the casino floor of The Palazzo at The Venetian
-                                Resort in Las Vegas. Known for its luxurious ambiance and expertly-crafted cocktails, Rosina offers a sophisticated retreat from
-                                the bustling Las Vegas strip. The lounge features plush seating, crystal chandeliers, and a curated selection of classic and
-                                innovative cocktails. It was voted one of the "Best Bars in Las Vegas" by Condé Nast Traveler. Additionally, it has won a Bronze
-                                Award in the annual Best of Las Vegas awards from the Las Vegas Review-Journal.
-                            </div>
-                            <div class="mt-3">
-                                <a href="https://www.venetianlasvegas.com/dining/nightlife-bars/rosina-cocktail-lounge.html" target="_blank"
-                                    class="underline decoration-solid text-violet-700">Click for more info</a>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="flex justify-center place-content" [class.place-content-selected]="place === 'friday'">
-                    <div class="relative s-five-grid xl:grid xl:gap-2.5 text-white">
+                    <div class="relative s-five-grid xl:grid xl:gap-2.5">
                         <div class="col-span-4 text-center text-white text-lg">Friday May 23, 2025</div>
-                        <div class="absolute top-0 bottom-0 right-0 left-0 friday z-0"></div>
-                        <div class="p-4 border-black border-b">
-                            <div class="font-bold">Alexxa's</div>
+                        <div class="xl:col-span-3 p-4 bg-white border-black border-b">
+                            <img class="w-full" src="/assets/images/murder.png" />
+                            <div class="font-bold">Marriage Can Be Murder</div>
                             <div class="my-3 italic">
-                                <div>Time: 10am</div>
-                                <div>Reservations required for brunch</div>
-                                <div>3655 S Las Vegas Blvd</div>
-                                <div>Las Vegas, NV 89109</div>
+                                <div>7 - 9pm</div>
+                                <div>Reservations required</div>
+                                <div>The Venue</div>
+                                <div>4500 W Tropicana Ave</div>
+                                <div>Las Vegas, NV 89101</div>
                             </div>
-                            <div>Alexxa's is a vibrant restaurant and cocktail lounge located at the Paris Las Vegas Hotel on the Las Vegas Strip. It offers
-                                elevated American cuisine, hand-crafted cocktails, and whimsical desserts. The venue features both indoor and outdoor seating,
-                                providing breathtaking views of the Bellagio Fountains. It's a perfect spot for brunch, dinner, or just enjoying a night out
-                                with stunning views.
+                            <div>
+                                "Marriage Can Be Murder" is an interactive comedy and murder mystery dinner show in Las Vegas. The show is known for its blend
+                                of humor, suspense, and audience participation. A three-course meal included, and you'll be immersed in a thrilling "whodunit"
+                                experience where actors are planted among the guests, and anyone could be a suspect.
                             </div>
+                            <div class="my-3">Recommended to arrive early as seating is first come, first served.</div>
                             <div class="mt-3">
-                                <a href="https://alexxaslasvegas.com/" target="_blank" class="underline decoration-solid text-violet-300">Click for more
-                                    info</a>
+                                <a href="https://thevenue.showare.com/ordertickets.asp?p=11738&src=eventperformances" target="_blank"
+                                    class="underline decoration-solid text-violet-300">Click for
+                                    more
+                                    info.</a>
+                                <div class="my-2">Click the link then select 1 of the 3 images at the bottom of the page.</div>
+                                <div>Regular seating - enjoy the show</div>
+                                <div>VIP seating - chance of participation in the show</div>
+                                <div>RIP seating - guaranteed participation in the show</div>
                             </div>
                         </div>
-                        <div class="p-4 border-black border-b">
-                            <div class="font-bold">Pool Party</div>
-                            <div class="my-3 italic">
-                                <div>Time: 1pm - 4:30pm</div>
-                                <div>TBD</div>
-                            </div>
-                            <div>Hang with us at a rented house for a pool party. Non-alcoholic drinks and finger food will be supplied. BYOB</div>
-                        </div>
-                        <div class="p-4 border-black border-b">
-                            <div class="font-bold">The Sphere Experience</div>
-                            <div class="my-3 italic">
-                                <div>Time: 7pm</div>
-                                <div>Advanced ticket purchase recommended</div>
-                                <div>255 Sands Ave</div>
-                                <div>Las Vegas, NV 89169</div>
-                            </div>
-                            <div class="text-orange-200">Event cancelled. TBD on next event to replace this one.
-                            </div>
-                            <div class="mt-3">
-                                <a href="https://www.thesphere.com/" target="_blank" class="underline decoration-solid text-violet-300">Click for more
-                                    info</a>
-                            </div>
-                        </div>
-                        <div class="p-4">
+                        <div class="p-4 bg-white border-black border-b">
                             <div class="font-bold">The Underground Speakeasy</div>
                             <div class="my-3 italic">
                                 <div>Closes at midnight</div>
@@ -412,10 +378,31 @@
                 <div class="flex justify-center place-content" [class.place-content-selected]="place === 'saturday'">
                     <div class="s-five-grid xl:grid xl:gap-2.5">
                         <div class="col-span-4 text-center text-white text-lg">Saturday May 24, 2025</div>
+                        <div class="xl:col-span-3 bg-white p-4 border-black border-b">
+                            <img class="w-full" src="/assets/images/pool.png" />
+                            <div class="font-bold mt-4">Pool Party</div>
+                            <div class="my-3 italic">
+                                <div>Time: 11am - 4pm (confirmed)</div>
+                            </div>
+                            <div class="my-2">
+                                Join us for a pre-wedding pool party at a rented house, where you can mingle and get to know each other before the big day! We
+                                will provide non-alcoholic drinks and finger foods, and you are welcome to bring your own beverages (BYOB) or a side dish if
+                                you'd like. We expect a turnout of 10-40 people throughout the event.
+                            </div>
+                            <div class="my-2">
+                                The pool party will be held exclusively outdoors, with ample shade and ceiling fans to keep you comfortable. Please note that
+                                towels will not be supplied, so be sure to bring your own. If you have any small games you'd like to share, feel free to message
+                                us so we can coordinate.
+                            </div>
+                            <div class="my-2">
+                                On-site parking is available, but space is limited. If you plan to drive, please let us know in advance to ensure we can
+                                accommodate you. The address will be shared during the week of the wedding.
+                            </div>
+                        </div>
                         <div class="bg-white p-4 border-black border-b">
                             <div class="font-bold">Yard House</div>
                             <div class="my-3 italic">
-                                <div>Time: 4pm</div>
+                                <div>Time: 8pm</div>
                                 <div>Reservations recommended for dinner</div>
                                 <div>3545 S Las Vegas Blvd</div>
                                 <div>Las Vegas, NV 89109</div>
@@ -431,23 +418,22 @@
                                     info</a>
                             </div>
                         </div>
-                        <div class="xl:col-span-3 bg-white p-4 border-black border-b">
-                            <img class="w-full" src="/assets/images/blackEyedPeas.png" />
-                            <div class="font-bold mt-4">Black Eyed Peas</div>
-                            <div class="my-3 italic">
+                    </div>
+                </div>
+                <div class="flex justify-center place-content" [class.place-content-selected]="place === 'sunday'">
+                    <div class="s-five-grid xl:grid xl:gap-2.5">
+                        <div class="col-span-4 text-center text-white text-lg">Sunday May 25, 2025</div>
+                        <div class="col-span-1 p-4"></div>
 
+                        <div class="col-span-2 bg-white p-4 border-black border-b">
+                            <div class="font-bold">Wedding Day</div>
+                            <div class="my-3 italic">
+                                <div>Time: 12:45pm - 9:30pm</div>
+                                <div>RSVP Required</div>
+                                <div>The Wynn at the Wedding Salons</div>
                             </div>
-                            <div class="text-red-800">
-                                Black Eyed Peas has cancelled this event. TBD on next event.
-                            </div>
-                            <div class="mt-3">
-                                <a href="https://www.ticketmaster.com/bepvegas?CAMEFROM=CFC_CAESARSENT_WEB_CCOM_BLACKEYEDPEAS" target="_blank"
-                                    class="underline decoration-solid text-violet-700">Click for more
-                                    info</a>
-                            </div>
-                            <div class="mt-3">
-                                <a href="https://www.ticketmaster.com/black-eyed-peas-3008-the-las-las-vegas-nevada-05-24-2025/event/390061269E583BAA"
-                                    target="_blank" class="underline decoration-solid text-violet-700">Purchase at Ticket Master</a>
+                            <div (click)="goToPage(2)">
+                                Please <span class="text-violet-700 cursor-pointer underline">click here</span> to check out the Itinerary page.
                             </div>
                         </div>
                     </div>
