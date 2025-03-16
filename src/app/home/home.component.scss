@@ -23,6 +23,7 @@ $maxWidth: 1280px;
 .mobile-menu {
   transform: translateX(-100%);
   transition: transform ease-in 0.3s;
+  user-select: none;
 
   .menu-button {
     right: -43px;
