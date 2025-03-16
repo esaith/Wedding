@@ -17,6 +17,7 @@ export class HomeComponent implements AfterViewInit {
   itineraryTab = 1;
   clickMeClicked = false;
   place = 'thursday'
+  isMobileMenuOption = false;
 
   isGuestAttending = true;
   isGuestNotAttending = false;
@@ -209,6 +210,14 @@ export class HomeComponent implements AfterViewInit {
 
     const result = `${date.getUTCFullYear()}-${month}-${day}`
     return result;
+  }
+
+  toggleMobileMenu() {
+    this.isMobileMenuOption = !this.isMobileMenuOption;
+  }
+
+  closeMobileMenu() {
+    this.isMobileMenuOption = false;
   }
 
   selectPlace(place: string) {

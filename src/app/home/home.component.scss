@@ -12,6 +12,31 @@ $maxWidth: 1280px;
   box-sizing: content-box;
 }
 
+.z-100 {
+  z-index: 100;
+}
+
+.-z-1 {
+  z-index: -1;
+}
+
+.mobile-menu {
+  transform: translateX(-100%);
+  transition: transform ease-in 0.3s;
+
+  .menu-button {
+    right: -43px;
+  }
+
+  &.open {
+    transform: translateX(0%);
+
+    .menu-button {
+      right: 20px;
+    }
+  }
+}
+
 .nav {
   position: fixed;
   top: 60px;

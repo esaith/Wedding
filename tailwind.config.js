@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: ["./src/**/*.{html,js,ts,jsx,tsx,scss}"],
+    content: [
+        "./src/**/*.html",
+        "./src/**/*.scss"
+    ],
     plugins: { tailwindcss: {}, autoprefixer: {}, },
     theme: {
         extend: {
@@ -14,6 +17,7 @@ module.exports = {
                 '7': '7',
                 '8': '8',
                 '9': '9',
+                '99': '99',
             }
         }
     }

@@ -1,7 +1,7 @@
 <div class="bg-white box-border">
     <div class="names fixed top-0 left-0 right-0 h-10 text-3xl text-white font-bold box-content">
-        <div>JOHN & VERONICA</div>
-        <div class="font-xxs -mt-3.5">VIVA LAS VEGAS WITH THE VANIDESTINE'S</div>
+        <div class="pl-8">JOHN & VERONICA</div>
+        <div class="font-xxs -mt-3.5 pl-6">VIVA LAS VEGAS WITH THE VANIDESTINE'S</div>
     </div>
 
     <div class="nav fixed top-50 hidden xl:flex align-center justify-center">
@@ -13,8 +13,30 @@
         <div (click)="goToPage(5)">Schedule</div>
         <div (click)="goToPage(6)">RSVP</div>
     </div>
+    <div class="fixed h-screen w-4/5 border z-100 text-black font-bold mobile-menu" [class.open]="isMobileMenuOption">
+        <div class="absolute h-full w-full bg-white opacity-95 -z-1"></div>
+        <div class="absolute top-1.5 right-1 fill-violet-700 p-2 z-100 menu-button" (click)="toggleMobileMenu()">
+            <svg *ngIf="!isMobileMenuOption" class="fill-violet-700" xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px"
+                fill="#e3e3e3">
+                <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+            </svg>
+            <svg *ngIf="isMobileMenuOption" class="fill-violet-700" xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px"
+                fill="#e3e3e3">
+                <path d="M120-240v-80h520v80H120Zm664-40L584-480l200-200 56 56-144 144 144 144-56 56ZM120-440v-80h400v80H120Zm0-200v-80h520v80H120Z" />
+            </svg>
+        </div>
+        <div class="absolute h-full w-full p-4 text-xl">
+            <div class="p-2 size-fit" (click)="goToPage(0)">Home</div>
+            <div class="p-2 size-fit" (click)="goToPage(1)">About</div>
+            <div class="p-2 size-fit" (click)="goToPage(2)">Itinerary</div>
+            <div class="p-2 size-fit" (click)="goToPage(3)">Registry</div>
+            <div class="p-2 size-fit" (click)="goToPage(4)">Accomodations</div>
+            <div class="p-2 size-fit" (click)="goToPage(5)">Schedule</div>
+            <div class="p-2 size-fit" (click)="goToPage(6)">RSVP</div>
+        </div>
+    </div>
 
-    <div class="relative" #scrollbackground>
+    <div class="relative" #scrollbackground (click)="closeMobileMenu()">
         <div class="section fixed top-16 w-full bg-white s-one xl:min-h-screen z-[10] pb-5 shadow-2xl">
             <img class="m-auto w-full xl:w-1/2" src="/assets/images/JohnAndVeronica.jpg" />
         </div>
@@ -268,12 +290,21 @@
             <div class="p-4 text-center max-w-screen-lg text-white xl:text-2xl m-auto">
                 We plan on experiencing more of what Vegas has to offer during our stay. Everyone is welcome to join us but don't feel obligated to do so.*
             </div>
-            <div class="flex align-center justify-center text-white text-lg my-5 cursor-pointer tracking-normal">
-                <div class="mx-3" [class.place-selected]="place === 'thursday'" (click)="selectPlace('thursday')">Thursday</div> /
-                <div class="mx-3" [class.place-selected]="place === 'friday'" (click)="selectPlace('friday')">Friday</div> /
-                <div class="mx-3" [class.place-selected]="place === 'saturday'" (click)="selectPlace('saturday')">Saturday</div> /
-                <div class="mx-3" [class.place-selected]="place === 'sunday'" (click)="selectPlace('sunday')">Sunday</div> /
-                <div class="mx-3" [class.place-selected]="place === 'monday'" (click)="selectPlace('monday')">Monday</div>
+            <div class="flex align-center justify-center text-white text-lg my-5 cursor-pointer tracking-normal flex-wrap">
+                <div class="mx-3 hidden xl:block" [class.place-selected]="place === 'thursday'" (click)="selectPlace('thursday')">Thursday</div>
+                <div class="mx-3 block xl:hidden" [class.place-selected]="place === 'thursday'" (click)="selectPlace('thursday')">Thurs</div>
+                |
+                <div class="mx-3 hidden xl:block" [class.place-selected]="place === 'friday'" (click)="selectPlace('friday')">Friday</div>
+                <div class="mx-3 block xl:hidden" [class.place-selected]="place === 'friday'" (click)="selectPlace('friday')">Fri</div>
+                |
+                <div class="mx-3 hidden xl:block" [class.place-selected]="place === 'saturday'" (click)="selectPlace('saturday')">Saturday</div>
+                <div class="mx-3 block xl:hidden" [class.place-selected]="place === 'saturday'" (click)="selectPlace('saturday')">Sat</div>
+                |
+                <div class="mx-3 hidden xl:block" [class.place-selected]="place === 'sunday'" (click)="selectPlace('sunday')">Sunday</div>
+                <div class="mx-3 block xl:hidden" [class.place-selected]="place === 'sunday'" (click)="selectPlace('sunday')">Sun</div>
+                |
+                <div class="mx-3 hidden xl:block" [class.place-selected]="place === 'monday'" (click)="selectPlace('monday')">Monday</div>
+                <div class="mx-3 block xl:hidden" [class.place-selected]="place === 'monday'" (click)="selectPlace('monday')">Mon</div>
             </div>
             <div class="xl:mb-20 tracking-normal">
                 <div class="flex justify-center place-content" [class.place-content-selected]="place === 'thursday'">
@@ -282,7 +313,7 @@
                         <div class="bg-white p-4 border-black border-b">
                             <div class="font-bold">Grimaldi's Pizzeria</div>
                             <div class="my-3 italic">
-                                <div>Time: 3pm</div>
+                                <div>Time: 4pm</div>
                                 <div>3327 Las Vegas Blvd Ste. 2710</div>
                                 <div>Las Vegas, NV 89109</div>
                             </div>
@@ -332,21 +363,22 @@
                             <img class="w-full" src="/assets/images/murder.png" />
                             <div class="font-bold">Marriage Can Be Murder</div>
                             <div class="my-3 italic">
-                                <div>7 - 9pm</div>
+                                <div>7pm - 9pm</div>
                                 <div>Reservations required</div>
+                                <div>Our Seats: Regular Admission</div>
                                 <div>The Venue</div>
                                 <div>4500 W Tropicana Ave</div>
                                 <div>Las Vegas, NV 89101</div>
                             </div>
                             <div>
                                 "Marriage Can Be Murder" is an interactive comedy and murder mystery dinner show in Las Vegas. The show is known for its blend
-                                of humor, suspense, and audience participation. A three-course meal included, and you'll be immersed in a thrilling "whodunit"
-                                experience where actors are planted among the guests, and anyone could be a suspect.
+                                of humor, suspense, and audience participation. A three-course meal is included and you'll be immersed in a thrilling
+                                "whodunit" experience where actors are planted among the guests, and anyone could be a suspect.
                             </div>
                             <div class="my-3">Recommended to arrive early as seating is first come, first served.</div>
                             <div class="mt-3">
                                 <a href="https://thevenue.showare.com/ordertickets.asp?p=11738&src=eventperformances" target="_blank"
-                                    class="underline decoration-solid text-violet-300">Click for
+                                    class="underline decoration-solid text-violet-700">Click for
                                     more
                                     info.</a>
                                 <div class="my-2">Click the link then select 1 of the 3 images at the bottom of the page.</div>
@@ -368,7 +400,7 @@
                                 can explore the distillery, learn about bootleggers and rum runners, and enjoy a truly unique and educational night out.
                             </div>
                             <div class="mt-3">
-                                <a href="https://themobmuseum.org/underground/" target="_blank" class="underline decoration-solid text-violet-300">Click for
+                                <a href="https://themobmuseum.org/underground/" target="_blank" class="underline decoration-solid text-violet-700">Click for
                                     more
                                     info</a>
                             </div>
@@ -382,7 +414,7 @@
                             <img class="w-full" src="/assets/images/pool.png" />
                             <div class="font-bold mt-4">Pool Party</div>
                             <div class="my-3 italic">
-                                <div>Time: 11am - 4pm (confirmed)</div>
+                                <div>Time: 12pm - 4pm (confirmed)</div>
                             </div>
                             <div class="my-2">
                                 Join us for a pre-wedding pool party at a rented house, where you can mingle and get to know each other before the big day! We
@@ -428,12 +460,13 @@
                         <div class="col-span-2 bg-white p-4 border-black border-b">
                             <div class="font-bold">Wedding Day</div>
                             <div class="my-3 italic">
-                                <div>Time: 12:45pm - 9:30pm</div>
+                                <div>Time: 12:45pm - 8:30pm</div>
                                 <div>RSVP Required</div>
                                 <div>The Wynn at the Wedding Salons</div>
                             </div>
                             <div (click)="goToPage(2)">
-                                Please <span class="text-violet-700 cursor-pointer underline">click here</span> to check out the Itinerary page.
+                                Please <span class="underline decoration-solid text-violet-700 cursor-pointer">click here</span> to check out the Itinerary
+                                page.
                             </div>
                         </div>
                     </div>
@@ -491,12 +524,13 @@
                     <div class="flex align-center">
                         <label for="familyLastName" class="block text-sm font-medium text-gray-900">Invited Person's Addressee Name</label>
                     </div>
-                    <div class="text-sm underline decoration-dotted text-violet-700 mb-2" (click)="openWhereIsThis()">Where is this?</div>
+                    <div class="text-sm underline decoration-dotted text-violet-700 mb-2 cursor-pointer" (click)="openWhereIsThis()">Where is this?</div>
                     <input type="text" id="familyLastName" [(ngModel)]="familyLastName" name="familyLastName"
                         class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required />
                     <div class="flex align-center mt-5">
                         <button
-                            class="text-white bg-violet-700 hover:bg-violet-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-violet-600 dark:hover:bg-violet-700 dark:focus:ring-blue-800"
+                            class="text-white bg-violet-700 hover:bg-violet-800 focus:ring-4 focus:outline-none focus:ring-blue-300 
+                            font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-violet-600 dark:hover:bg-violet-700 dark:focus:ring-blue-800"
                             (click)="searchByName()">Search</button>
                         <img class="h-6 ml-3" *ngIf="isSearchForFamilyName" src="/assets/images/search.gif" />
                     </div>
