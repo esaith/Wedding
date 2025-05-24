@@ -86,6 +86,9 @@ export class HomeComponent implements AfterViewInit {
       case 'show':
         window.open('https://www.google.com/maps/dir/Mon+Ami+Gabi,+South+Las+Vegas+Boulevard,+Las+Vegas,+NV/K%C3%80+by+Cirque+du+Soleil,+MGM+Grand,+South+Las+Vegas+Boulevard,+Las+Vegas,+NV/@36.1082845,-115.1764577,16z/data=!3m2!4b1!5s0x80c8c5cc93820bd3:0x6c1168e3473cbd5b!4m13!4m12!1m5!1m1!1s0x80c8c4375b2e62dd:0xc249a313f7e029dc!2m2!1d-115.1724846!2d36.1128631!1m5!1m1!1s0x80c8c433370be08d:0x487d2ebb69e733c5!2m2!1d-115.1701311!2d36.1030917?entry=ttu&amp;g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D')
         break;
+      case 'pool':
+        window.open('https://www.google.com/maps/dir//6065+Wittig+Ave,+Las+Vegas,+NV+89131/@36.288654,-115.2257064,15z/data=!4m9!4m8!1m0!1m5!1m1!1s0x80c8eb85e9693a9d:0xd1881f8ddfbfd373!2m2!1d-115.2257357!2d36.2882947!3e0?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D')
+        break;
     }
   }
 
